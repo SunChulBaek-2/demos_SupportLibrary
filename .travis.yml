@@ -1,0 +1,19 @@
+language: android
+
+android:
+  components:
+    - android-22
+    - build-tools-22.0.1
+
+notifications:
+  email:
+    recipients:
+      - x1210x@gmail.com
+    on_success: always
+    on_failure: always
+
+before_install:
+  - chmod +x gradlew
+
+script:
+  - ./gradlew clean assemble
