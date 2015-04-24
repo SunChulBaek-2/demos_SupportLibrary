@@ -1,26 +1,56 @@
 package kr.pe.ssun.supportlibrary221demos;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
+import com.balysv.materialmenu.MaterialMenuDrawable;
 
-public class MainActivity extends ActionBarActivity {
+import java.util.ArrayList;
+
+import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_PRESSED_DURATION;
+import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_SCALE;
+import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_TRANSFORM_DURATION;
+
+public class MainActivity extends FragmentActivity
+		implements MainFragment.MainFragmentListener {
+	private Toolbar toolbar;
+	private MaterialMenuDrawable materialMenu;
+	private ArrayList<String> tags = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		toolbar = (Toolbar)findViewById(R.id.toolbar);
+		materialMenu = new MaterialMenuDrawable(this,
+				Color.WHITE,
+				MaterialMenuDrawable.Stroke.THIN,
+				DEFAULT_SCALE,
+				DEFAULT_TRANSFORM_DURATION,
+				DEFAULT_PRESSED_DURATION);
+		toolbar.setNavigationIcon(materialMenu);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (tags.size() > 0) {
+					popBackStack();
+				}
+			}
+		});
+		toolbar.setTitle(R.string.app_name);
+		toolbar.setTitleTextColor(Color.WHITE);
+
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment())
+					.add(R.id.container, new MainFragment(), MainFragment.TAG)
 					.commit();
 		}
 	}
@@ -48,19 +78,48 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
+	@Override
+	public void onBackPressed() {
+		popBackStack();
+	}
 
-		public PlaceholderFragment() {
+	@Override
+	public void onItemClick(int position) {
+		FragmentManager fm = getSupportFragmentManager();
+
+		Fragment fragment = null;
+		String tag = null;
+		if(position == DemoCategories.SupportV4DrawableCompat.ordinal()) {
+			fragment = new SupportV4DrawableCompatFragment();
+			tag = SupportV4DrawableCompatFragment.TAG;
 		}
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-								 Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-			return rootView;
+		if(fragment != null) {
+			fm.beginTransaction()
+					.add(R.id.container, fragment, tag)
+					.commit();
+			tags.add(tag);
+			materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
+			toolbar.setTitle(DemoCategories.values()[position].getTitle());
 		}
+	}
+
+	private void popBackStack() {
+		if (tags.size() <= 0) {
+			finish();
+			return;
+		}
+		FragmentManager fm = getSupportFragmentManager();
+		Fragment fragment = fm.findFragmentByTag(tags.get(tags.size() - 1));
+		if (fragment == null) {
+			return;
+		}
+
+		fm.beginTransaction()
+				.remove(fragment)
+				.commit();
+		tags.remove(tags.size() - 1);
+		materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
+		toolbar.setTitle(R.string.app_name);
 	}
 }
