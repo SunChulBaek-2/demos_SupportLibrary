@@ -8,7 +8,7 @@ public enum DemoCategories {
 	SupportV4DrawableCompat("Support V4 : DrawableCompat"),
 	SupportV4Palette("Support V4 : Palette (not implemented yet)"),
 	SupportV4PrebuiltInterpolators("Support V4 : Prebuilt Interpolators"),
-	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompt (not implemented yet)"),
+	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompat (not implemented yet)"),
 	SupportV4Space("Support V4 : Space (not implemented yet)"),
 	// AppCompat
 	AppCompatActivity("AppCompat : AppCompatActivity (not implemented yet)"),
