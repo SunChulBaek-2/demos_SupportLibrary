@@ -46,7 +46,7 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		final View rootView = inflater.inflate(R.layout.fragment_support_v4, container, false);
+		final View rootView = inflater.inflate(R.layout.fragment_support_v4_drawable_compat, container, false);
 		ListView lvTint = (ListView)rootView.findViewById(R.id.lvTint);
 		lvTint.setAdapter(new ArrayAdapter<Tint>(getActivity(),
 				R.layout.list_item_tint, Tint.values()){
