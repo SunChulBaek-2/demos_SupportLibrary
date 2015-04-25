@@ -15,6 +15,7 @@ import com.balysv.materialmenu.MaterialMenuDrawable;
 import java.util.ArrayList;
 
 import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4DrawableCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4PrebuiltInterpolatorsFragment;
 
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_PRESSED_DURATION;
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_SCALE;
@@ -31,24 +32,7 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		toolbar = (Toolbar)findViewById(R.id.toolbar);
-		materialMenu = new MaterialMenuDrawable(this,
-				Color.WHITE,
-				MaterialMenuDrawable.Stroke.THIN,
-				DEFAULT_SCALE,
-				DEFAULT_TRANSFORM_DURATION,
-				DEFAULT_PRESSED_DURATION);
-		toolbar.setNavigationIcon(materialMenu);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (tags.size() > 0) {
-					popBackStack();
-				}
-			}
-		});
-		toolbar.setTitle(R.string.app_name);
-		toolbar.setTitleTextColor(Color.WHITE);
+		setupToolbar();
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -56,6 +40,27 @@ public class MainActivity extends FragmentActivity
 					.commit();
 		}
 	}
+
+  private void setupToolbar() {
+    toolbar = (Toolbar)findViewById(R.id.toolbar);
+    materialMenu = new MaterialMenuDrawable(this,
+                                            Color.WHITE,
+                                            MaterialMenuDrawable.Stroke.THIN,
+                                            DEFAULT_SCALE,
+                                            DEFAULT_TRANSFORM_DURATION,
+                                            DEFAULT_PRESSED_DURATION);
+    toolbar.setNavigationIcon(materialMenu);
+    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        if (tags.size() > 0) {
+          popBackStack();
+        }
+      }
+    });
+    toolbar.setTitle(R.string.app_name);
+    toolbar.setTitleTextColor(Color.WHITE);
+  }
 
 
 	@Override
@@ -91,10 +96,13 @@ public class MainActivity extends FragmentActivity
 
 		Fragment fragment = null;
 		String tag = null;
-		if(position == DemoCategories.SupportV4DrawableCompat.ordinal()) {
+		if (position == DemoCategories.SupportV4DrawableCompat.ordinal()) {
 			fragment = new SupportV4DrawableCompatFragment();
 			tag = SupportV4DrawableCompatFragment.TAG;
-		}
+		} else if (position == DemoCategories.SupportV4PrebuiltInterpolators.ordinal()) {
+                  fragment = new SupportV4PrebuiltInterpolatorsFragment();
+                  tag = SupportV4PrebuiltInterpolatorsFragment.TAG;
+                }
 
 		if(fragment != null) {
 			fm.beginTransaction()
