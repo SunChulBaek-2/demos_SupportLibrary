@@ -10,7 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -60,30 +61,39 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 							R.layout.list_item_tint, null);
 				}
 
-				ImageView ibImage = (ImageView) view.findViewById(R.id.ivImage);
-				ibImage.setImageResource(R.drawable.ic_launcher);
-				Drawable drawable = ibImage.getDrawable();
+                          final ImageButton ibImage = (ImageButton) view.findViewById(R.id.ivImage);
+                          Button btnEnable = (Button)view.findViewById(R.id.btnToggle);
+
+                          btnEnable.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                              ibImage.setEnabled(!ibImage.isEnabled());
+                            }
+                          });
+
 				if(getItem(position).name().equals(Tint.Normal.name())) {
-					// nothing to do
+                                  ibImage.setImageResource(R.drawable.ic_launcher);
 				} else if(getItem(position).name().equals(Tint.SetTint.name())) {
+                                  ibImage.setImageResource(R.drawable.ic_launcher_tint);
+                                  Drawable drawable = ibImage.getDrawable();
 					DrawableCompat.setTint(drawable, Color.argb(0x55, 0x55, 0, 0));
 				} else if(getItem(position).name().equals(Tint.SetTintList.name())) {
+                                  ibImage.setImageResource(R.drawable.ic_launcher_tint_list);
+                                  Drawable drawable = ibImage.getDrawable();
 					int[][] states = new int[][] {
 							new int[] {  android.R.attr.state_enabled }, // enabled
 							new int[] { -android.R.attr.state_enabled }, // disabled
-							new int[] { -android.R.attr.state_checked }, // unchecked
-							new int[] {  android.R.attr.state_pressed }, // pressed
 					};
 
 					int[] colors = new int[] {
-							Color.BLACK,
 							Color.RED,
-							Color.GREEN,
-							Color.BLUE,
+							Color.BLACK,
 					};
 					DrawableCompat.setTintList(drawable, new ColorStateList(states, colors));
+
+                                  btnEnable.setVisibility(View.VISIBLE);
 				} else if(getItem(position).name().equals(Tint.SetTintMode.name())) {
-					//DrawableCompat.setTintMode(drawable)
+                                  ibImage.setImageResource(R.drawable.ic_launcher_tint_mode);
 				}
 
 				TextView tvDesc = (TextView)view.findViewById(R.id.tvDesc);
