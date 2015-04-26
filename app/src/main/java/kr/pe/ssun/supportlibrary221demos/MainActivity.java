@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4DrawableCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4PathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4PrebuiltInterpolatorsFragment;
+import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4SpaceFragment;
 
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_PRESSED_DURATION;
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_SCALE;
@@ -106,6 +107,9 @@ public class MainActivity extends FragmentActivity
                 } else if (position == DemoCategories.SupportV4PathInterpolatorCompat.ordinal()) {
                   fragment = new SupportV4PathInterpolatorCompatFragment();
                   tag = SupportV4PathInterpolatorCompatFragment.TAG;
+                } else if (position == DemoCategories.SupportV4Space.ordinal()) {
+                  fragment = new SupportV4SpaceFragment();
+                  tag = SupportV4SpaceFragment.TAG;
                 }
 
 		if(fragment != null) {
