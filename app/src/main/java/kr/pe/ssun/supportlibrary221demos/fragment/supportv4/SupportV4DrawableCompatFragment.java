@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos.supportv4;
+package kr.pe.ssun.supportlibrary221demos.fragment.supportv4;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -21,8 +21,6 @@ import kr.pe.ssun.supportlibrary221demos.R;
  * Created by x1210x on 2015-04-24.
  */
 public class SupportV4DrawableCompatFragment extends Fragment {
-	public static final String TAG = SupportV4DrawableCompatFragment.class.toString();
-
 	private enum Tint {
 		Normal("Normal"),
 		SetTint("SetTint()"),

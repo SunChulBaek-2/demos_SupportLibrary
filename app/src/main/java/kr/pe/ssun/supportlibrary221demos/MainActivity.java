@@ -14,10 +14,7 @@ import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import java.util.ArrayList;
 
-import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4DrawableCompatFragment;
-import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4PathInterpolatorCompatFragment;
-import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4PrebuiltInterpolatorsFragment;
-import kr.pe.ssun.supportlibrary221demos.supportv4.SupportV4SpaceFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.MainFragment;
 
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_PRESSED_DURATION;
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_SCALE;
@@ -43,26 +40,26 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-  private void setupToolbar() {
-    toolbar = (Toolbar)findViewById(R.id.toolbar);
-    materialMenu = new MaterialMenuDrawable(this,
+	private void setupToolbar() {
+		toolbar = (Toolbar)findViewById(R.id.toolbar);
+		materialMenu = new MaterialMenuDrawable(this,
                                             Color.WHITE,
                                             MaterialMenuDrawable.Stroke.THIN,
                                             DEFAULT_SCALE,
                                             DEFAULT_TRANSFORM_DURATION,
                                             DEFAULT_PRESSED_DURATION);
-    toolbar.setNavigationIcon(materialMenu);
-    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        if (tags.size() > 0) {
-          popBackStack();
-        }
-      }
-    });
-    toolbar.setTitle(R.string.app_name);
-    toolbar.setTitleTextColor(Color.WHITE);
-  }
+		toolbar.setNavigationIcon(materialMenu);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (tags.size() > 0) {
+					popBackStack();
+				}
+			}
+		});
+		toolbar.setTitle(R.string.app_name);
+		toolbar.setTitleTextColor(Color.WHITE);
+	}
 
 
 	@Override
@@ -96,23 +93,11 @@ public class MainActivity extends FragmentActivity
 	public void onItemClick(int position) {
 		FragmentManager fm = getSupportFragmentManager();
 
-		Fragment fragment = null;
-		String tag = null;
-		if (position == DemoCategories.SupportV4DrawableCompat.ordinal()) {
-			fragment = new SupportV4DrawableCompatFragment();
-			tag = SupportV4DrawableCompatFragment.TAG;
-		} else if (position == DemoCategories.SupportV4PrebuiltInterpolators.ordinal()) {
-                  fragment = new SupportV4PrebuiltInterpolatorsFragment();
-                  tag = SupportV4PrebuiltInterpolatorsFragment.TAG;
-                } else if (position == DemoCategories.SupportV4PathInterpolatorCompat.ordinal()) {
-                  fragment = new SupportV4PathInterpolatorCompatFragment();
-                  tag = SupportV4PathInterpolatorCompatFragment.TAG;
-                } else if (position == DemoCategories.SupportV4Space.ordinal()) {
-                  fragment = new SupportV4SpaceFragment();
-                  tag = SupportV4SpaceFragment.TAG;
-                }
+		DemoCategories category = DemoCategories.values()[position];
+		Fragment fragment = category.createFragment();
 
 		if(fragment != null) {
+			String tag = fragment.getClass().toString();
 			fm.beginTransaction()
 					.add(R.id.container, fragment, tag)
 					.commit();

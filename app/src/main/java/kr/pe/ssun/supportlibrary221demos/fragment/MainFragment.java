@@ -1,9 +1,8 @@
-package kr.pe.ssun.supportlibrary221demos;
+package kr.pe.ssun.supportlibrary221demos.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import java.util.ArrayList;
+import kr.pe.ssun.supportlibrary221demos.DemoCategories;
+import kr.pe.ssun.supportlibrary221demos.R;
 
 /**
  * Created by x1210x on 2015-04-24.
