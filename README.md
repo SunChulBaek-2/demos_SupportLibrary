@@ -6,6 +6,7 @@
    * Support v4 : Prebuilt Interpolators
    * Support v4 : PathInterpolatorComplat
    * Support v4 : Space (with GridLayout)
+
 Try out this application on the Play Store.
 
 [![Get it on Google Play][googleplay_store_badge]][demo_app]
