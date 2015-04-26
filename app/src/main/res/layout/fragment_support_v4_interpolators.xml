@@ -6,6 +6,11 @@
               android:background="#ffffff">
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content">
+        <Button
+                android:id="@+id/btnAnimate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animate!"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -16,11 +21,6 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:text="2000"/>
-        <Button
-                android:id="@+id/btnAnimate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Animate!"/>
     </LinearLayout>
 
     <LinearLayout
@@ -34,18 +34,22 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:gravity="left|center_vertical"
                     android:text="No Interpolator"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:gravity="left|center_vertical"
                     android:text="FastOutLinearInInterpolator"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:gravity="left|center_vertical"
                     android:text="FastOutSlowInInterpolator"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:gravity="left|center_vertical"
                     android:text="LinearOutSlowInInterpolator"/>
 
         </LinearLayout>

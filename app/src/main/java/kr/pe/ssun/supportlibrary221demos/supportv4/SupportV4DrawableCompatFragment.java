@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,9 +25,9 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 
 	private enum Tint {
 		Normal("Normal"),
-		SetTint("SetTint(drawable, Color.argb(0x55, 0x55, 0, 0))"),
-		SetTintList("SetTintList(drawable, new ColorStateList(states, colors))"),
-		SetTintMode("Sorry, I don't understand");
+		SetTint("SetTint()"),
+		SetTintList("SetTintList()");
+		//SetTintMode("Sorry, I don't understand");
 
 		private String mDesc;
 
@@ -61,7 +61,7 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 							R.layout.list_item_tint, null);
 				}
 
-                          final ImageButton ibImage = (ImageButton) view.findViewById(R.id.ivImage);
+                          final ImageView ibImage = (ImageView) view.findViewById(R.id.ivImage);
                           Button btnEnable = (Button)view.findViewById(R.id.btnToggle);
 
                           btnEnable.setOnClickListener(new View.OnClickListener() {
@@ -92,9 +92,11 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 					DrawableCompat.setTintList(drawable, new ColorStateList(states, colors));
 
                                   btnEnable.setVisibility(View.VISIBLE);
-				} else if(getItem(position).name().equals(Tint.SetTintMode.name())) {
-                                  ibImage.setImageResource(R.drawable.ic_launcher_tint_mode);
 				}
+				// TODO : SetTintMode
+//				else if(getItem(position).name().equals(Tint.SetTintMode.name())) {
+//                                  ibImage.setImageResource(R.drawable.ic_launcher_tint_mode);
+//				}
 
 				TextView tvDesc = (TextView)view.findViewById(R.id.tvDesc);
 				tvDesc.setText(getItem(position).getDescription());
