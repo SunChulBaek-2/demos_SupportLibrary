@@ -2,6 +2,7 @@ package kr.pe.ssun.supportlibrary221demos;
 
 import android.support.v4.app.Fragment;
 
+import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4DrawableCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PathInterpolatorCompatFragment;
@@ -20,7 +21,7 @@ public enum DemoCategories {
 	SupportV4Space("Support V4 : Space"),
 	// AppCompat
 	AppCompatActivity("AppCompat : AppCompatActivity (not implemented yet)"),
-	AppCompatDialog("AppCompat : AppCompatDialog (not implemented yet)"),
+	AppCompatDialog("AppCompat : AppCompatDialog"),
 	AppCompatWidget("AppCompat : AppCompatWidget (not implemented yet)"),
 	// LeanBack : for Android TV apps
 	//LeanBack("LeanBack", null),
@@ -57,8 +58,10 @@ public enum DemoCategories {
             fragment = new SupportV4PathInterpolatorCompatFragment();
           } else if(this.equals(SupportV4Space)) {
             fragment = new SupportV4SpaceFragment();
-          } else if(this.equals(RecyclerView)) {
-			  fragment = new RecyclerViewFragment();
+          } else if(this.equals(AppCompatDialog)) {
+			fragment = new AppCompatDialogFragment();
+		  } else if(this.equals(RecyclerView)) {
+			fragment = new RecyclerViewFragment();
 		  }
 
           return fragment;

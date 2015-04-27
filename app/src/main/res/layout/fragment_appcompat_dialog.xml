@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView	xmlns:android="http://schemas.android.com/apk/res/android"
+			   android:layout_width="match_parent"
+			   android:layout_height="match_parent" >
+	<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="#ffffff">
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialog"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithP"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with p button)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithNP"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with n/p button)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithNNP"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with n/n/p button)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with view)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithItems"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with items)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithSingleChoiceItems"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with single choice items)" />
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnShowDialogWithMultiChoiceItems"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="show alert dialog (with multi choice items)" />
+	</LinearLayout>
+</ScrollView>
