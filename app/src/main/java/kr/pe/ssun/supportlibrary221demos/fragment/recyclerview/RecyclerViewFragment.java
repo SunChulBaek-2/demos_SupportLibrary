@@ -135,7 +135,7 @@ public class RecyclerViewFragment extends Fragment {
 											})
 									.create().show();
 						} else if(position == 1) { // delete
-							sortedList.removeItemAt(position);
+							sortedList.removeItemAt(itemPosition);
 						}
 						mDialog.dismiss();
 					}
