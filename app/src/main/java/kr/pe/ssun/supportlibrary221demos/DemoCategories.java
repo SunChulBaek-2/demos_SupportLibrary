@@ -17,7 +17,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4SpaceFragme
 public enum DemoCategories {
 	// Support V4
 	SupportV4DrawableCompat("Support V4 : DrawableCompat"),
-	SupportV4Palette("Support V4 : Palette (not implemented yet)"),
+	SupportV4ColorUtils("Support V4 : ColorUtils (not implemented yet)"),
 	SupportV4PrebuiltInterpolators("Support V4 : Prebuilt Interpolators"),
 	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompat"),
 	SupportV4Space("Support V4 : Space"),
