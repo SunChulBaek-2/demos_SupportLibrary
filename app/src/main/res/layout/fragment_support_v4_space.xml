@@ -6,6 +6,7 @@
         android:alignmentMode="alignBounds"
         android:columnOrderPreserved="false"
         android:columnCount="4"
+		android:clickable="true"
         android:background="#ffffff">
 
 	<!-- row 0 -->
