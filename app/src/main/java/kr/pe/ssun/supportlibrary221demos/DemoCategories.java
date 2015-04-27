@@ -22,7 +22,6 @@ public enum DemoCategories {
 	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompat"),
 	SupportV4Space("Support V4 : Space"),
 	// AppCompat
-	AppCompatActivity("AppCompat : AppCompatActivity"),
 	AppCompatDelegate("AppCompat : AppCompatDelegate"),
 	AppCompatDialog("AppCompat : AppCompatDialog"),
 	AppCompatWidget("AppCompat : AppCompat Widgets"),
@@ -51,28 +50,26 @@ public enum DemoCategories {
 	}
 
 	public Fragment createFragment() {
-          Fragment fragment = null;
+		Fragment fragment = null;
 
-          if(this.equals(SupportV4DrawableCompat)) {
-            fragment = new SupportV4DrawableCompatFragment();
-          } else if(this.equals(SupportV4PrebuiltInterpolators)) {
-            fragment = new SupportV4PrebuiltInterpolatorsFragment();
-          } else if(this.equals(SupportV4PathInterpolatorCompat)) {
-            fragment = new SupportV4PathInterpolatorCompatFragment();
-          } else if(this.equals(SupportV4Space)) {
-            fragment = new SupportV4SpaceFragment();
-          } else if(this.equals(AppCompatActivity)) {
+		if (this.equals(SupportV4DrawableCompat)) {
+			fragment = new SupportV4DrawableCompatFragment();
+		} else if (this.equals(SupportV4PrebuiltInterpolators)) {
+			fragment = new SupportV4PrebuiltInterpolatorsFragment();
+		} else if (this.equals(SupportV4PathInterpolatorCompat)) {
+			fragment = new SupportV4PathInterpolatorCompatFragment();
+		} else if (this.equals(SupportV4Space)) {
+			fragment = new SupportV4SpaceFragment();
+		} else if (this.equals(AppCompatDelegate)) {
 			fragment = null;
-		  } else if(this.equals(AppCompatDelegate)) {
-			fragment = null;
-		  } else if(this.equals(AppCompatDialog)) {
+		} else if (this.equals(AppCompatDialog)) {
 			fragment = new AppCompatDialogFragment();
-		  } else if(this.equals(AppCompatWidget)) {
+		} else if (this.equals(AppCompatWidget)) {
 			fragment = new AppCompatWidgetFragment();
-		  } else if(this.equals(RecyclerView)) {
+		} else if (this.equals(RecyclerView)) {
 			fragment = new RecyclerViewFragment();
-		  }
+		}
 
-          return fragment;
-        }
+		return fragment;
+	}
 }

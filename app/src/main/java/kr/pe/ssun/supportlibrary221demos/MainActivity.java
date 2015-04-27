@@ -118,13 +118,7 @@ public class MainActivity extends FragmentActivity
 			materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
 			toolbar.setTitle(DemoCategories.values()[position].getTitle());
 		} else {
-			if(category.equals(DemoCategories.AppCompatActivity)) {
-				new AlertDialog.Builder(this)
-						.setTitle("AppCompatActivity")
-						.setMessage("I don't think AppCompatActivity need sample.")
-						.setPositiveButton(android.R.string.ok, null)
-						.create().show();
-			} else if(category.equals(DemoCategories.AppCompatDelegate)) {
+			if(category.equals(DemoCategories.AppCompatDelegate)) {
 				new AlertDialog.Builder(this)
 						.setTitle("AppCompatDelegate")
 						.setMessage("MainActivity is created using AppCompatDelegate.")
