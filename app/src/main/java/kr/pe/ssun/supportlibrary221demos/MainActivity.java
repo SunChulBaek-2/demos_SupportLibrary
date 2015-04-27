@@ -1,14 +1,21 @@
 package kr.pe.ssun.supportlibrary221demos;
 
 import android.graphics.Color;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatCallback;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.Toast;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
@@ -21,15 +28,21 @@ import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_SCALE;
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_TRANSFORM_DURATION;
 
 public class MainActivity extends FragmentActivity
-		implements MainFragment.MainFragmentListener {
+		implements AppCompatCallback, MainFragment.MainFragmentListener {
+	private AppCompatDelegate mDelegate;
+
 	private Toolbar toolbar;
 	private MaterialMenuDrawable materialMenu;
 	private ArrayList<String> tags = new ArrayList<String>();
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		getDelegate().installViewFactory();
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		getDelegate().onCreate(savedInstanceState);
+
+		getDelegate().setContentView(R.layout.activity_main);
+		getDelegate().getSupportActionBar().hide();
 
 		setupToolbar();
 
@@ -104,6 +117,20 @@ public class MainActivity extends FragmentActivity
 			tags.add(tag);
 			materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
 			toolbar.setTitle(DemoCategories.values()[position].getTitle());
+		} else {
+			if(category.equals(DemoCategories.AppCompatActivity)) {
+				new AlertDialog.Builder(this)
+						.setTitle("AppCompatActivity")
+						.setMessage("I don't think AppCompatActivity need sample.")
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			} else if(category.equals(DemoCategories.AppCompatDelegate)) {
+				new AlertDialog.Builder(this)
+						.setTitle("AppCompatDelegate")
+						.setMessage("MainActivity is created using AppCompatDelegate.")
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			}
 		}
 	}
 
@@ -124,5 +151,22 @@ public class MainActivity extends FragmentActivity
 		tags.remove(tags.size() - 1);
 		materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
 		toolbar.setTitle(R.string.app_name);
+	}
+
+	@Override
+	public void onSupportActionModeStarted(ActionMode mode) {
+
+	}
+
+	@Override
+	public void onSupportActionModeFinished(ActionMode mode) {
+
+	}
+
+	public AppCompatDelegate getDelegate() {
+		if (mDelegate == null) {
+			mDelegate = AppCompatDelegate.create(this, this);
+		}
+		return mDelegate;
 	}
 }
