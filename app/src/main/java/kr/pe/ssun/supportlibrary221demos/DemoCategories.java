@@ -2,6 +2,7 @@ package kr.pe.ssun.supportlibrary221demos;
 
 import android.support.v4.app.Fragment;
 
+import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4DrawableCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PrebuiltInterpolatorsFragment;
@@ -24,7 +25,7 @@ public enum DemoCategories {
 	// LeanBack : for Android TV apps
 	//LeanBack("LeanBack", null),
 	// RecyclerView
-	RecyclerView("RecyclerView (not implemented yet)"),
+	RecyclerView("RecyclerView"),
 	// Palette
 	Palette("Palette (not implemented yet)"),
 	// RenderScript
@@ -56,7 +57,9 @@ public enum DemoCategories {
             fragment = new SupportV4PathInterpolatorCompatFragment();
           } else if(this.equals(SupportV4Space)) {
             fragment = new SupportV4SpaceFragment();
-          }
+          } else if(this.equals(RecyclerView)) {
+			  fragment = new RecyclerViewFragment();
+		  }
 
           return fragment;
         }
