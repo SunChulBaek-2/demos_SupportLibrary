@@ -1,6 +1,5 @@
 package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -29,10 +28,20 @@ public class AppCompatDialogFragment extends Fragment {
 		AppCompatButton btnShowDialogWithSingleChoiceItems = (AppCompatButton) rootView.findViewById(R.id.btnShowDialogWithSingleChoiceItems);
 		AppCompatButton btnShowDialogWithMultiChoiceItems = (AppCompatButton) rootView.findViewById(R.id.btnShowDialogWithMultiChoiceItems);
 
+		AppCompatButton btnShowAppCompatDialog = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialog);
+		AppCompatButton btnShowAppCompatDialogWithP = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithP);
+		AppCompatButton btnShowAppCompatDialogWithNP = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithNP);
+		AppCompatButton btnShowAppCompatDialogWithNNP = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithNNP);
+		AppCompatButton btnShowAppCompatDialogWithView = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithView);
+		AppCompatButton btnShowAppCompatDialogWithItems = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithItems);
+		AppCompatButton btnShowAppCompatDialogWithSingleChoiceItems = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithSingleChoiceItems);
+		AppCompatButton btnShowAppCompatDialogWithMultiChoiceItems = (AppCompatButton) rootView.findViewById(R.id.btnShowAppCompatDialogWithMultiChoiceItems);
+
+		// show Dialogs
 		btnShowDialog.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(getActivity())
+				new android.app.AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
 						.setMessage("Message")
@@ -43,7 +52,7 @@ public class AppCompatDialogFragment extends Fragment {
 		btnShowDialogWithP.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(getActivity())
+				new android.app.AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
 						.setMessage("Message")
@@ -55,7 +64,7 @@ public class AppCompatDialogFragment extends Fragment {
 		btnShowDialogWithNP.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(getActivity())
+				new android.app.AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
 						.setMessage("Message")
@@ -68,7 +77,7 @@ public class AppCompatDialogFragment extends Fragment {
 		btnShowDialogWithNNP.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(getActivity())
+				new android.app.AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
 						.setMessage("Message")
@@ -82,6 +91,115 @@ public class AppCompatDialogFragment extends Fragment {
 		btnShowDialogWithView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				View view = LayoutInflater.from(getActivity()).inflate(
+						R.layout.dialog_recycler_view_add, null, false);
+				new android.app.AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+						.setMessage("Message")
+						.setView(view)
+						.setNegativeButton(android.R.string.cancel, null)
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			}
+		});
+
+		btnShowDialogWithItems.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new android.app.AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+								//.setMessage("Message")
+						.setItems(new String[]{
+								"Apple", "Banana", "Google", "Infraware", "Microsoft"
+						}, null)
+						.create().show();
+			}
+		});
+
+		btnShowDialogWithSingleChoiceItems.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new android.app.AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+								//.setMessage("Message")
+						.setSingleChoiceItems(new String[]{
+								"Apple", "Banana", "Google", "Infraware", "Microsoft"
+						}, -1, null)
+						.create().show();
+			}
+		});
+
+		btnShowDialogWithMultiChoiceItems.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+								//.setMessage("Message")
+						.setMultiChoiceItems(new String[]{
+								"Apple", "Banana", "Google", "Infraware", "Microsoft"
+						}, null, null)
+						.create().show();
+			}
+		});
+
+		// show AppCompatDialogs
+		btnShowAppCompatDialog.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+						.setMessage("Message")
+						.create().show();
+			}
+		});
+
+		btnShowAppCompatDialogWithP.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+						.setMessage("Message")
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			}
+		});
+
+		btnShowAppCompatDialogWithNP.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+						.setMessage("Message")
+						.setNegativeButton(android.R.string.cancel, null)
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			}
+		});
+
+		btnShowAppCompatDialogWithNNP.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new AlertDialog.Builder(getActivity())
+						.setIcon(R.drawable.ic_launcher)
+						.setTitle("Title")
+						.setMessage("Message")
+						.setNeutralButton("Neutral", null)
+						.setNegativeButton(android.R.string.cancel, null)
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+			}
+		});
+
+		btnShowAppCompatDialogWithView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
 				new AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
@@ -93,13 +211,13 @@ public class AppCompatDialogFragment extends Fragment {
 			}
 		});
 
-		btnShowDialogWithItems.setOnClickListener(new View.OnClickListener() {
+		btnShowAppCompatDialogWithItems.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				new AlertDialog.Builder(getActivity())
 						.setIcon(R.drawable.ic_launcher)
 						.setTitle("Title")
-						//.setMessage("Message")
+								//.setMessage("Message")
 						.setItems(new String[]{
 								"Apple", "Banana", "Google", "Infraware", "Microsoft"
 						}, null)
@@ -107,7 +225,7 @@ public class AppCompatDialogFragment extends Fragment {
 			}
 		});
 
-		btnShowDialogWithSingleChoiceItems.setOnClickListener(new View.OnClickListener() {
+		btnShowAppCompatDialogWithSingleChoiceItems.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				new AlertDialog.Builder(getActivity())
@@ -121,7 +239,7 @@ public class AppCompatDialogFragment extends Fragment {
 			}
 		});
 
-		btnShowDialogWithMultiChoiceItems.setOnClickListener(new View.OnClickListener() {
+		btnShowAppCompatDialogWithMultiChoiceItems.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				new AlertDialog.Builder(getActivity())
