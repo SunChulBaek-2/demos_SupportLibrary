@@ -6,6 +6,10 @@
    * Support v4 : Prebuilt Interpolators
    * Support v4 : PathInterpolatorComplat
    * Support v4 : Space (with GridLayout)
+   * AppCompat : AppCompatDelegate
+   * AppCompat : AppCompatDialog
+   * AppCompat : AppCompat Widgets
+   * RecyclerView
 
 Try out this application on the Play Store.
 
