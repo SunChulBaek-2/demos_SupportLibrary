@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
 									  xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:useDefaultMargins="true"
-		app:alignmentMode="alignBounds"
-		app:columnOrderPreserved="false"
-		app:columnCount="4"
-		android:clickable="true"
-        android:background="#ffffff">
+									  android:layout_width="match_parent"
+									  android:layout_height="match_parent"
+									  android:background="#ffffff"
+									  android:clickable="true"
+									  app:alignmentMode="alignBounds"
+									  app:columnCount="4"
+									  app:columnOrderPreserved="false"
+									  app:useDefaultMargins="true">
 
 	<!-- row 0 -->
-    <android.support.v7.widget.AppCompatTextView
-            android:text="Email setup"
-            android:textSize="32dip"
-			app:layout_columnSpan="4"
-			app:layout_gravity="center_horizontal" />
+	<android.support.v7.widget.AppCompatTextView
+		android:text="Email setup"
+		android:textSize="32dip"
+		app:layout_columnSpan="4"
+		app:layout_gravity="center_horizontal"/>
 
 	<!-- row 1 -->
-    <android.support.v7.widget.AppCompatTextView
-            android:text="You can configure email in just a few steps:"
-            android:textSize="16dip"
-			app:layout_columnSpan="4"
-			app:layout_gravity="left" />
+	<android.support.v7.widget.AppCompatTextView
+		android:text="You can configure email in just a few steps:"
+		android:textSize="16dip"
+		app:layout_columnSpan="4"
+		app:layout_gravity="left"/>
 
 	<!-- row 2 -->
-    <android.support.v7.widget.AppCompatTextView
-            android:text="Email address:"
-			app:layout_gravity="right" />
+	<android.support.v7.widget.AppCompatTextView
+		android:text="Email address:"
+		app:layout_gravity="right"/>
 
-    <android.support.v7.widget.AppCompatEditText
-            android:ems="10" />
+	<android.support.v7.widget.AppCompatEditText
+		android:ems="10"/>
 
 	<!-- row 3 -->
 	<android.support.v7.widget.AppCompatButton
 		android:text="element below is space"
-		app:layout_row="3"
-		app:layout_column="3" />
+		app:layout_column="3"
+		app:layout_row="3"/>
 
 	<!-- row 4 -->
-    <Space
-		app:layout_row="4"
+	<Space
 		app:layout_column="0"
 		app:layout_columnSpan="3"
-		app:layout_gravity="fill" />
+		app:layout_gravity="fill"
+		app:layout_row="4"/>
 
 	<!-- row 5 -->
-    <android.support.v7.widget.AppCompatButton
+	<android.support.v7.widget.AppCompatButton
 		android:text="element above is space"
-		app:layout_row="5"
-		app:layout_column="3" />
+		app:layout_column="3"
+		app:layout_row="5"/>
 </android.support.v7.widget.GridLayout>

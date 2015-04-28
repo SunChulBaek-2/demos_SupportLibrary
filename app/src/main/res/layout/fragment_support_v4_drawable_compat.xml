@@ -1,7 +1,8 @@
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-		  android:id="@+id/lvTint"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:orientation="horizontal"
-				android:clickable="true"
-				android:background="#ffffff"/>
+<ListView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/lvTint"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#ffffff"
+	android:clickable="true"
+	android:orientation="horizontal"/>

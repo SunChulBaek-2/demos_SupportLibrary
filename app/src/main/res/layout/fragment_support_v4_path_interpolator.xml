@@ -1,252 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:clickable="true"
-    android:orientation="vertical">
+			  xmlns:app="http://schemas.android.com/apk/res-auto"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:background="#ffffff"
+			  android:clickable="true"
+			  android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
 
-        </LinearLayout>
-    </LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnCreate1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Animate!" />
+			<android.support.v7.widget.AppCompatButton
+				android:id="@+id/btnCreate1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Animate!"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="create x1 : " />
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="create x1 : "/>
 
-            <EditText
-                android:id="@+id/etX1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.3" />
+			<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/etX1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.3"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=", y1 : " />
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=", y1 : "/>
 
-            <EditText
-                android:id="@+id/etY1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.3" />
+			<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/etY1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.3"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=", x2 : " />
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=", x2 : "/>
 
-            <EditText
-                android:id="@+id/etX2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.6" />
+			<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/etX2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.6"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=", y2 : " />
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=", y2 : "/>
 
-            <EditText
-                android:id="@+id/etY2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.6" />
+			<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/etY2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.6"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text=", Duration : " />
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="number"
+				android:text=", Duration : "/>
 
-            <EditText
-                android:id="@+id/etDuration1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2000" />
-        </LinearLayout>
+			<android.support.v7.widget.AppCompatEditText
+				android:id="@+id/etDuration1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="2000"/>
+		</LinearLayout>
 
-        <android.support.v7.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:columnCount="2"
-            app:orientation="horizontal">
+		<android.support.v7.widget.GridLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:columnCount="2"
+			app:orientation="horizontal">
 
-            <!-- row 0 -->
-            <TextView
-                android:layout_height="50dp"
-                android:gravity="left|center_vertical"
-                android:text="Normal"
-                app:layout_column="0"
-                app:layout_row="0" />
+			<!-- row 0 -->
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_height="50dp"
+				android:gravity="left|center_vertical"
+				android:text="Normal"
+				app:layout_column="0"
+				app:layout_row="0"/>
 
-            <RelativeLayout
-                app:layout_column="1"
-                app:layout_gravity="fill_horizontal"
-                app:layout_row="0">
+			<RelativeLayout
+				app:layout_column="1"
+				app:layout_gravity="fill_horizontal"
+				app:layout_row="0">
 
-                <ImageView
-                    android:id="@+id/ivNormal1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
-            </RelativeLayout>
+				<ImageView
+					android:id="@+id/ivNormal1"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:scaleType="fitXY"
+					android:src="@drawable/ic_launcher"/>
+			</RelativeLayout>
 
-            <!-- row 1 -->
-            <TextView
-                android:layout_height="50dp"
-                android:gravity="left|center_vertical"
-                android:text="Interpolator"
-                app:layout_column="0"
-                app:layout_row="1" />
+			<!-- row 1 -->
+			<android.support.v7.widget.AppCompatTextView
+				android:layout_height="50dp"
+				android:gravity="left|center_vertical"
+				android:text="Interpolator"
+				app:layout_column="0"
+				app:layout_row="1"/>
 
-            <RelativeLayout
-                app:layout_column="1"
-                app:layout_gravity="fill_horizontal"
-                app:layout_row="1">
+			<RelativeLayout
+				app:layout_column="1"
+				app:layout_gravity="fill_horizontal"
+				app:layout_row="1">
 
-                <ImageView
-                    android:id="@+id/ivCreate1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
-            </RelativeLayout>
-        </android.support.v7.widget.GridLayout>
-    </LinearLayout>
+				<ImageView
+					android:id="@+id/ivCreate1"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:scaleType="fitXY"
+					android:src="@drawable/ic_launcher"/>
+			</RelativeLayout>
+		</android.support.v7.widget.GridLayout>
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnCreate2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Animate!" />
+			<Button
+				android:id="@+id/btnCreate2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Animate!"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="create x : " />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="create x : "/>
 
-            <EditText
-                android:id="@+id/etX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.5" />
+			<EditText
+				android:id="@+id/etX"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.5"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=", y : " />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=", y : "/>
 
-            <EditText
-                android:id="@+id/etY"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="0.5" />
+			<EditText
+				android:id="@+id/etY"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="numberDecimal"
+				android:text="0.5"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=", Duration : " />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=", Duration : "/>
 
-            <EditText
-                android:id="@+id/etDuration2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:text="2000" />
-        </LinearLayout>
+			<EditText
+				android:id="@+id/etDuration2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="number"
+				android:text="2000"/>
+		</LinearLayout>
 
-        <android.support.v7.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:columnCount="2"
-            app:orientation="horizontal">
+		<android.support.v7.widget.GridLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:columnCount="2"
+			app:orientation="horizontal">
 
-            <!-- row 0 -->
-            <TextView
-                android:layout_height="50dp"
-                android:gravity="left|center_vertical"
-                android:text="Normal"
-                app:layout_column="0"
-                app:layout_row="0" />
+			<!-- row 0 -->
+			<TextView
+				android:layout_height="50dp"
+				android:gravity="left|center_vertical"
+				android:text="Normal"
+				app:layout_column="0"
+				app:layout_row="0"/>
 
-            <RelativeLayout
-                app:layout_column="1"
-                app:layout_gravity="fill_horizontal"
-                app:layout_row="0">
+			<RelativeLayout
+				app:layout_column="1"
+				app:layout_gravity="fill_horizontal"
+				app:layout_row="0">
 
-                <ImageView
-                    android:id="@+id/ivNormal2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
-            </RelativeLayout>
+				<ImageView
+					android:id="@+id/ivNormal2"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:scaleType="fitXY"
+					android:src="@drawable/ic_launcher"/>
+			</RelativeLayout>
 
-            <!-- row 1 -->
-            <TextView
-                android:layout_height="50dp"
-                android:gravity="left|center_vertical"
-                android:text="Interpolator"
-                app:layout_column="0"
-                app:layout_row="1" />
+			<!-- row 1 -->
+			<TextView
+				android:layout_height="50dp"
+				android:gravity="left|center_vertical"
+				android:text="Interpolator"
+				app:layout_column="0"
+				app:layout_row="1"/>
 
-            <RelativeLayout
-                app:layout_column="1"
-                app:layout_gravity="fill_horizontal"
-                app:layout_row="1">
+			<RelativeLayout
+				app:layout_column="1"
+				app:layout_gravity="fill_horizontal"
+				app:layout_row="1">
 
-                <ImageView
-                    android:id="@+id/ivCreate2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
-            </RelativeLayout>
-        </android.support.v7.widget.GridLayout>
-    </LinearLayout>
+				<ImageView
+					android:id="@+id/ivCreate2"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:scaleType="fitXY"
+					android:src="@drawable/ic_launcher"/>
+			</RelativeLayout>
+		</android.support.v7.widget.GridLayout>
+	</LinearLayout>
 </LinearLayout>

@@ -1,110 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView	xmlns:android="http://schemas.android.com/apk/res/android"
-			   xmlns:app="http://schemas.android.com/apk/res-auto"
-			   android:layout_width="match_parent"
-			   android:layout_height="match_parent"
-			   android:clickable="true"
-			   android:background="#ffffff">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:app="http://schemas.android.com/apk/res-auto"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#ffffff"
+			android:clickable="true">
+
 	<android.support.v7.widget.GridLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				app:orientation="horizontal"
-				app:columnCount="2">
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:columnCount="2"
+		app:orientation="horizontal">
 		<!-- row 0 -->
 		<android.support.v7.widget.AppCompatTextView
-			app:layout_column="0"
-			android:text="android.app.AlertDialog"/>
+			android:text="android.app.AlertDialog"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatTextView
-			app:layout_column="1"
-			android:text="android.support.v7.AlertDialog"/>
+			android:text="android.support.v7.AlertDialog"
+			app:layout_column="1"/>
 
 		<!-- row 1 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialog"
-			app:layout_column="0"
-			android:text="show alert dialog" />
+			android:text="show alert dialog"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialog"
-			app:layout_column="1"
-			android:text="show alert dialog" />
+			android:text="show alert dialog"
+			app:layout_column="1"/>
 
 		<!-- row 2 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithP"
-			app:layout_column="0"
-			android:text="show alert dialog (with p button)" />
+			android:text="show alert dialog (with p button)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithP"
-			app:layout_column="1"
-			android:text="show alert dialog (with p button)" />
+			android:text="show alert dialog (with p button)"
+			app:layout_column="1"/>
 
 		<!-- row 3 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithNP"
-			app:layout_column="0"
-			android:text="show alert dialog (with n/p button)" />
+			android:text="show alert dialog (with n/p button)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithNP"
-			app:layout_column="1"
-			android:text="show alert dialog (with n/p button)" />
+			android:text="show alert dialog (with n/p button)"
+			app:layout_column="1"/>
 
 		<!-- row 4 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithNNP"
-			app:layout_column="0"
-			android:text="show alert dialog (with n/n/p button)" />
+			android:text="show alert dialog (with n/n/p button)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithNNP"
-			app:layout_column="1"
-			android:text="show alert dialog (with n/n/p button)" />
+			android:text="show alert dialog (with n/n/p button)"
+			app:layout_column="1"/>
 
 		<!-- row 5 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithView"
-			app:layout_column="0"
-			android:text="show alert dialog (with view)" />
+			android:text="show alert dialog (with view)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithView"
-			app:layout_column="1"
-			android:text="show alert dialog (with view)" />
+			android:text="show alert dialog (with view)"
+			app:layout_column="1"/>
 
 		<!-- row 6 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithItems"
-			app:layout_column="0"
-			android:text="show alert dialog (with items)" />
+			android:text="show alert dialog (with items)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithItems"
-			app:layout_column="1"
-			android:text="show alert dialog (with items)" />
+			android:text="show alert dialog (with items)"
+			app:layout_column="1"/>
 
 		<!-- row 7 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithSingleChoiceItems"
-			app:layout_column="0"
-			android:text="show alert dialog (with single choice items)" />
+			android:text="show alert dialog (with single choice items)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithSingleChoiceItems"
-			app:layout_column="1"
-			android:text="show alert dialog (with single choice items)" />
+			android:text="show alert dialog (with single choice items)"
+			app:layout_column="1"/>
 
 		<!-- row 8 -->
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowDialogWithMultiChoiceItems"
-			app:layout_column="0"
-			android:text="show alert dialog (with multi choice items)" />
+			android:text="show alert dialog (with multi choice items)"
+			app:layout_column="0"/>
 
 		<android.support.v7.widget.AppCompatButton
 			android:id="@+id/btnShowAppCompatDialogWithMultiChoiceItems"
-			app:layout_column="1"
-			android:text="show alert dialog (with multi choice items)" />
+			android:text="show alert dialog (with multi choice items)"
+			app:layout_column="1"/>
 	</android.support.v7.widget.GridLayout>
 </ScrollView>

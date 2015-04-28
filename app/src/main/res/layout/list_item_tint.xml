@@ -2,26 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
+
 	<ImageView
 		android:id="@+id/ivImage"
 		android:layout_width="50dp"
 		android:layout_height="50dp"
-		android:scaleType="fitXY" />
+		android:scaleType="fitXY"/>
 
-	<TextView
+	<android.support.v7.widget.AppCompatTextView
 		android:id="@+id/tvDesc"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_toRightOf="@id/ivImage"
-        android:layout_marginLeft="10dp"
-		android:layout_centerVertical="true" />
+		android:layout_centerVertical="true"
+		android:layout_marginLeft="10dp"
+		android:layout_toRightOf="@id/ivImage"/>
 
-    <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btnToggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Toggle"
-            android:capitalize="none"
-            android:visibility="gone"/>
+	<android.support.v7.widget.AppCompatButton
+		android:id="@+id/btnToggle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:capitalize="none"
+		android:text="Toggle"
+		android:visibility="gone"/>
 </RelativeLayout>
