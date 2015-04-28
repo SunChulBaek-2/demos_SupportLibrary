@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.palette.PaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4DrawableCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PathInterpolatorCompatFragment;
@@ -30,7 +31,7 @@ public enum DemoCategories {
 	// RecyclerView
 	RecyclerView("RecyclerView"),
 	// Palette
-	Palette("Palette (not implemented yet)"),
+	Palette("Palette"),
 	// RenderScript
 	RenderScript("RenderScript (not implemented yet)");
 
@@ -68,6 +69,8 @@ public enum DemoCategories {
 			fragment = new AppCompatWidgetFragment();
 		} else if (this.equals(RecyclerView)) {
 			fragment = new RecyclerViewFragment();
+		} else if (this.equals(Palette)) {
+			fragment = new PaletteFragment();
 		}
 
 		return fragment;

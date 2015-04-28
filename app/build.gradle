@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:22.1.0+'
     compile 'com.getbase:floatingactionbutton:1.9.0+'
     compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.1+'
+    compile 'com.jpardogo.materialtabstrip:library:1.0.9+'
 }
