@@ -1,11 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			  android:orientation="vertical"
-			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal">
+
+	<ScrollView
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant (body)"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantDarkTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant Dark (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantDarkBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant Dark (body)"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantLightTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant Light (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvVibrantLightBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Vibrant Light (body)"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted (body)"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedDarkTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted Dark (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedDarkBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted Dark (body)"/>
+
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedLightTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted Light (title)"/>
+			<android.support.v7.widget.AppCompatTextView
+				android:id="@+id/actvMutedLightBody"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Muted Light (body)"/>
+		</LinearLayout>
+	</ScrollView>
+
 	<ImageView
 		android:id="@+id/ivImage"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:scaleType="fitXY"/>
+		android:scaleType="fitXY" />
 </LinearLayout>

@@ -56,11 +56,11 @@ public class MainActivity extends FragmentActivity
 	private void setupToolbar() {
 		toolbar = (Toolbar)findViewById(R.id.toolbar);
 		materialMenu = new MaterialMenuDrawable(this,
-                                            Color.WHITE,
-                                            MaterialMenuDrawable.Stroke.THIN,
-                                            DEFAULT_SCALE,
-                                            DEFAULT_TRANSFORM_DURATION,
-                                            DEFAULT_PRESSED_DURATION);
+				Color.WHITE,
+				MaterialMenuDrawable.Stroke.THIN,
+				DEFAULT_SCALE,
+				DEFAULT_TRANSFORM_DURATION,
+				DEFAULT_PRESSED_DURATION);
 		toolbar.setNavigationIcon(materialMenu);
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
