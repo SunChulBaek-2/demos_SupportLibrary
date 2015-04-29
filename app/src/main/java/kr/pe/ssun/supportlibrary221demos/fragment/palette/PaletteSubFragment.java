@@ -19,6 +19,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 public class PaletteSubFragment extends Fragment {
 	private int resId;
 	private Palette palette;
+	private Palette.Swatch swatch = new Palette.Swatch(0, 0);
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,49 +59,86 @@ public class PaletteSubFragment extends Fragment {
 
 			palette = new Palette.Builder(((BitmapDrawable) ivImage.getDrawable()).getBitmap()).generate();
 
-			if (palette.getVibrantSwatch() != null) {
-				actvVibrantTitle.setBackgroundColor(palette.getVibrantSwatch().getRgb());
-				actvVibrantTitle.setTextColor(palette.getVibrantSwatch().getTitleTextColor());
-				actvVibrantBody.setBackgroundColor(palette.getVibrantSwatch().getRgb());
-				actvVibrantBody.setTextColor(palette.getVibrantSwatch().getBodyTextColor());
+			Palette.Swatch vibrantSwatch = palette.getVibrantSwatch();
+			Palette.Swatch darkVibrantSwatch = palette.getDarkVibrantSwatch();
+			Palette.Swatch lightVibrantSwatch = palette.getLightVibrantSwatch();
+			Palette.Swatch mutedSwatch = palette.getMutedSwatch();
+			Palette.Swatch darkMutedSwatch = palette.getDarkMutedSwatch();
+			Palette.Swatch lightMutedSwatch = palette.getLightMutedSwatch();
+
+			if (vibrantSwatch != null) {
+				actvVibrantTitle.setBackgroundColor(vibrantSwatch.getRgb());
+				actvVibrantTitle.setTextColor(vibrantSwatch.getTitleTextColor());
+				actvVibrantBody.setBackgroundColor(vibrantSwatch.getRgb());
+				actvVibrantBody.setTextColor(vibrantSwatch.getBodyTextColor());
+				if (vibrantSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = vibrantSwatch;
+				}
 			}
 
-			if (palette.getDarkVibrantSwatch() != null) {
-				actvVibrantDarkTitle.setBackgroundColor(palette.getDarkVibrantSwatch().getRgb());
-				actvVibrantDarkTitle.setTextColor(palette.getDarkVibrantSwatch().getTitleTextColor());
-				actvVibrantDarkBody.setBackgroundColor(palette.getDarkVibrantSwatch().getRgb());
-				actvVibrantDarkBody.setTextColor(palette.getDarkVibrantSwatch().getBodyTextColor());
+			if (darkVibrantSwatch != null) {
+				actvVibrantDarkTitle.setBackgroundColor(darkVibrantSwatch.getRgb());
+				actvVibrantDarkTitle.setTextColor(darkVibrantSwatch.getTitleTextColor());
+				actvVibrantDarkBody.setBackgroundColor(darkVibrantSwatch.getRgb());
+				actvVibrantDarkBody.setTextColor(darkVibrantSwatch.getBodyTextColor());
+				if(darkVibrantSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = darkVibrantSwatch;
+				}
 			}
 
-			if (palette.getLightVibrantSwatch() != null) {
-				actvVibrantLightTitle.setBackgroundColor(palette.getLightVibrantSwatch().getRgb());
-				actvVibrantLightTitle.setTextColor(palette.getLightVibrantSwatch().getTitleTextColor());
-				actvVibrantLightBody.setBackgroundColor(palette.getLightVibrantSwatch().getRgb());
-				actvVibrantLightBody.setTextColor(palette.getLightVibrantSwatch().getBodyTextColor());
+			if (lightVibrantSwatch != null) {
+				actvVibrantLightTitle.setBackgroundColor(lightVibrantSwatch.getRgb());
+				actvVibrantLightTitle.setTextColor(lightVibrantSwatch.getTitleTextColor());
+				actvVibrantLightBody.setBackgroundColor(lightVibrantSwatch.getRgb());
+				actvVibrantLightBody.setTextColor(lightVibrantSwatch.getBodyTextColor());
+				if (lightVibrantSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = lightVibrantSwatch;
+				}
 			}
 
-			if (palette.getMutedSwatch() != null) {
-				actvMutedTitle.setBackgroundColor(palette.getMutedSwatch().getRgb());
-				actvMutedTitle.setTextColor(palette.getMutedSwatch().getTitleTextColor());
-				actvMutedBody.setBackgroundColor(palette.getMutedSwatch().getRgb());
-				actvMutedBody.setTextColor(palette.getMutedSwatch().getBodyTextColor());
+			if (mutedSwatch != null) {
+				actvMutedTitle.setBackgroundColor(mutedSwatch.getRgb());
+				actvMutedTitle.setTextColor(mutedSwatch.getTitleTextColor());
+				actvMutedBody.setBackgroundColor(mutedSwatch.getRgb());
+				actvMutedBody.setTextColor(mutedSwatch.getBodyTextColor());
+				if (mutedSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = mutedSwatch;
+				}
 			}
 
-			if (palette.getDarkMutedSwatch() != null) {
-				actvMutedDarkTitle.setBackgroundColor(palette.getDarkMutedSwatch().getRgb());
-				actvMutedDarkTitle.setTextColor(palette.getDarkMutedSwatch().getTitleTextColor());
-				actvMutedDarkBody.setBackgroundColor(palette.getDarkMutedSwatch().getRgb());
-				actvMutedDarkBody.setTextColor(palette.getDarkMutedSwatch().getBodyTextColor());
+			if (darkMutedSwatch != null) {
+				actvMutedDarkTitle.setBackgroundColor(darkMutedSwatch.getRgb());
+				actvMutedDarkTitle.setTextColor(darkMutedSwatch.getTitleTextColor());
+				actvMutedDarkBody.setBackgroundColor(darkMutedSwatch.getRgb());
+				actvMutedDarkBody.setTextColor(darkMutedSwatch.getBodyTextColor());
+				if (darkMutedSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = darkMutedSwatch;
+				}
 			}
 
-			if (palette.getLightMutedSwatch() != null) {
-				actvMutedLightTitle.setBackgroundColor(palette.getLightMutedSwatch().getRgb());
-				actvMutedLightTitle.setTextColor(palette.getLightMutedSwatch().getTitleTextColor());
-				actvMutedLightBody.setBackgroundColor(palette.getLightMutedSwatch().getRgb());
-				actvMutedLightBody.setTextColor(palette.getLightMutedSwatch().getBodyTextColor());
+			if (lightMutedSwatch != null) {
+				actvMutedLightTitle.setBackgroundColor(lightMutedSwatch.getRgb());
+				actvMutedLightTitle.setTextColor(lightMutedSwatch.getTitleTextColor());
+				actvMutedLightBody.setBackgroundColor(lightMutedSwatch.getRgb());
+				actvMutedLightBody.setTextColor(lightMutedSwatch.getBodyTextColor());
+				if (lightMutedSwatch.getPopulation() >= swatch.getPopulation()) {
+					swatch = lightMutedSwatch;
+				}
 			}
 		}
 
 		return rootView;
+	}
+
+	public int getRGB() {
+		return swatch.getRgb();
+	}
+
+	public int getBodyTextColor() {
+		return swatch.getBodyTextColor();
+	}
+
+	public int getTitleTextColor() {
+		return swatch.getTitleTextColor();
 	}
 }
