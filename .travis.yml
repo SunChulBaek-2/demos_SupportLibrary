@@ -4,6 +4,8 @@ android:
   components:
     - android-22
     - build-tools-22.0.1
+    - extra-android-support
+    - extra-android-m2repository
 
 notifications:
   email:
@@ -14,8 +16,6 @@ notifications:
 
 before_install:
   - chmod +x gradlew
-  - echo yes | android update sdk --filter extra-android-support --no-ui --force > /dev/null
-  - echo yes | android update sdk --filter extra-android-m2repository --no-ui --force > /dev/null
 
 script:
   - ./gradlew clean assemble
