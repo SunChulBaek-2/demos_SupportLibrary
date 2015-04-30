@@ -14,6 +14,8 @@ notifications:
 
 before_install:
   - chmod +x gradlew
+  - android update sdk --filter extra-android-support --no-ui --force
+  - android update sdk --filter extra-android-m2repository --no-ui --force
 
 script:
   - ./gradlew clean assemble
