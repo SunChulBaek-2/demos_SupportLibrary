@@ -8,8 +8,8 @@ android {
         applicationId "kr.pe.ssun.supportlibrary221demos"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 1
-        versionName "0.1"
+        versionCode 4
+        versionName "0.4"
     }
     buildTypes {
         release {
