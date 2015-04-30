@@ -9,17 +9,26 @@
 		android:layout_alignParentTop="true"
 		android:background="@android:color/holo_blue_dark"/>
 
-	<RelativeLayout
-		android:id="@+id/list"
+	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:layout_below="@id/toolbar"
 		android:layout_alignParentBottom="true"
-		android:layout_below="@id/toolbar"/>
+		android:orientation="horizontal">
 
-	<RelativeLayout
-		android:id="@+id/container"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_alignParentBottom="true"
-		android:layout_below="@id/toolbar"/>
+		<RelativeLayout
+			android:id="@+id/list"
+			android:layout_width="360dp"
+			android:layout_height="match_parent"
+			android:layout_alignParentBottom="true"/>
+
+		<RelativeLayout
+			android:id="@+id/container"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:layout_alignParentBottom="true"
+			android:layout_below="@id/toolbar"
+			android:background="#ffffff"/>
+	</LinearLayout>
 </RelativeLayout>

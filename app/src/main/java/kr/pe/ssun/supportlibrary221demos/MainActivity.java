@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new MainFragment(), MainFragment.TAG)
+					.add(R.id.list, new MainFragment(), MainFragment.TAG)
 					.commit();
 		}
 	}
@@ -112,7 +112,7 @@ public class MainActivity extends FragmentActivity
 		if(fragment != null) {
 			String tag = fragment.getClass().toString();
 			fm.beginTransaction()
-					.add(R.id.container, fragment, tag)
+					.replace(R.id.container, fragment, tag)
 					.commit();
 			tags.add(tag);
 			materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
