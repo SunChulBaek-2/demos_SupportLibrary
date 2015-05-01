@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
@@ -45,6 +46,12 @@ public class MainActivity extends FragmentActivity
 		getDelegate().getSupportActionBar().hide();
 
 		setupToolbar();
+
+		RelativeLayout rlMain = (RelativeLayout)findViewById(R.id.rlMain);
+		if(rlMain.getTag() != null) {
+			Screen screen = Screen.valueOf(((String)rlMain.getTag()).toUpperCase());
+			Screen.setCurrent(screen);
+		}
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -114,9 +121,12 @@ public class MainActivity extends FragmentActivity
 			fm.beginTransaction()
 					.replace(R.id.container, fragment, tag)
 					.commit();
-			tags.add(tag);
-			materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
-			toolbar.setTitle(DemoCategories.values()[position].getTitle());
+
+			if(Screen.getCurrent().equals(Screen.NORMAL)) {
+				tags.add(tag);
+				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
+				toolbar.setTitle(DemoCategories.values()[position].getTitle());
+			}
 		} else {
 			if(category.equals(DemoCategories.AppCompatDelegate)) {
 				new AlertDialog.Builder(this)

@@ -3,6 +3,8 @@ package kr.pe.ssun.supportlibrary221demos.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,8 @@ import android.widget.RelativeLayout;
 
 import kr.pe.ssun.supportlibrary221demos.DemoCategories;
 import kr.pe.ssun.supportlibrary221demos.R;
+import kr.pe.ssun.supportlibrary221demos.Screen;
+import kr.pe.ssun.supportlibrary221demos.adapter.MainFragmentAdapter;
 
 /**
  * Created by x1210x on 2015-04-24.
@@ -35,21 +39,20 @@ public class MainFragment extends Fragment {
 							 final Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 		final RelativeLayout rlContainer = (RelativeLayout) rootView.findViewById(R.id.rlContainer);
-		ListView lvCategory = (ListView) rootView.findViewById(R.id.lvCategory);
+		final RecyclerView rvCategory = (RecyclerView)rootView.findViewById(R.id.rvCategory);
 
-		lvCategory.setAdapter(new ArrayAdapter<DemoCategories>(getActivity(),
-				android.R.layout.simple_list_item_1,
-				android.R.id.text1,
-				DemoCategories.values()));
-
-		lvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
+		rvCategory.setAdapter(new MainFragmentAdapter(new MainFragmentAdapter.MainFragmentAdapterListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			public void onItemClick(View view) {
+				int position = rvCategory.getChildAdapterPosition(view);
+				DemoCategories.selected = position;
+
 				if (listener != null) {
 					listener.onItemClick(position);
 				}
 			}
-		});
+		}));
 
 		return rootView;
 	}

@@ -35,6 +35,7 @@ public enum DemoCategories {
 	// RenderScript
 	RenderScript("RenderScript (not implemented yet)");
 
+	public static int selected = -1;
 	private String title;
 
 	DemoCategories(String title) {
