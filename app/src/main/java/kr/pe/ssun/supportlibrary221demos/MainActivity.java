@@ -123,8 +123,10 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		if (!Screen.getCurrent().equals(Screen.LARGE_LAND)) {
-			DemoCategories.selected = -1;
+		DemoCategories.selected = -1;
+		if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+			finish();
+		} else {
 			popBackStack();
 		}
 	}

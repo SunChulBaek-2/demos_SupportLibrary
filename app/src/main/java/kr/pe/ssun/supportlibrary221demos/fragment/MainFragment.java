@@ -8,14 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
+
 import kr.pe.ssun.supportlibrary221demos.DemoCategories;
+import kr.pe.ssun.supportlibrary221demos.decoration.DividerDecoration;
 import kr.pe.ssun.supportlibrary221demos.R;
-import kr.pe.ssun.supportlibrary221demos.Screen;
 import kr.pe.ssun.supportlibrary221demos.adapter.MainFragmentAdapter;
 
 /**
@@ -25,6 +24,7 @@ public class MainFragment extends Fragment {
 	public static final String TAG = MainFragment.class.toString();
 
 	private RecyclerView rvCategory;
+	private MainFragmentAdapter adapter;
 
 	public interface MainFragmentListener {
 		public void onItemClick(int position);
@@ -44,7 +44,7 @@ public class MainFragment extends Fragment {
 		rvCategory = (RecyclerView)rootView.findViewById(R.id.rvCategory);
 
 		rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
-		rvCategory.setAdapter(new MainFragmentAdapter(new MainFragmentAdapter.MainFragmentAdapterListener() {
+		adapter = new MainFragmentAdapter(new MainFragmentAdapter.MainFragmentAdapterListener() {
 			@Override
 			public void onItemClick(View view) {
 				int position = rvCategory.getChildAdapterPosition(view);
@@ -54,7 +54,11 @@ public class MainFragment extends Fragment {
 					listener.onItemClick(position);
 				}
 			}
-		}));
+		});
+		rvCategory.setAdapter(adapter);
+		StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(adapter);
+		rvCategory.addItemDecoration(headersDecor);
+		rvCategory.addItemDecoration(new DividerDecoration(getActivity()));
 
 		return rootView;
 	}

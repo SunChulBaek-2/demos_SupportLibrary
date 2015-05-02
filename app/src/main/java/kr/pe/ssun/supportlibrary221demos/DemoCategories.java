@@ -17,28 +17,34 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4SpaceFragment
  */
 public enum DemoCategories {
 	// Support V4
-	V4SupportDrawableCompat("v4 support : DrawableCompat"),
+	V4SupportDrawableCompat(Version.V22_1, "v4 support : DrawableCompat"),
 	//SupportV4ColorUtils("v4 support : ColorUtils (not implemented yet)"),
-	V4SupportPrebuiltInterpolators("v4 support : Prebuilt Interpolators"),
-	V4SupportPathInterpolatorCompat("v4 support : PathInterpolatorCompat"),
-	V4SupportSpace("v4 support : Space"),
-	V4SupportNestedScrollView("v4 support : NestedScrollView"),
+	V4SupportPrebuiltInterpolators(Version.V22_1, "v4 support : Prebuilt Interpolators"),
+	V4SupportPathInterpolatorCompat(Version.V22_1, "v4 support : PathInterpolatorCompat"),
+	V4SupportSpace(Version.V22_1, "v4 support : Space"),
+	V4SupportNestedScrollView(Version.V22_1, "v4 support : NestedScrollView"),
 	// AppCompat
-	V7AppCompatDelegate("v7 appcompat : AppCompatDelegate"),
-	V7AppCompatDialog("v7 appcompat : AppCompatDialog"),
-	V7AppCompatWidget("v7 appcompat : AppCompat Widgets"),
-	V7AppCompatPalette("v4 appcompat : Palette"),
+	V7AppCompatDelegate(Version.V22_1, "v7 appcompat : AppCompatDelegate"),
+	V7AppCompatDialog(Version.V22_1, "v7 appcompat : AppCompatDialog"),
+	V7AppCompatWidget(Version.V22_1, "v7 appcompat : AppCompat Widgets"),
+	V7AppCompatPalette(Version.V22_1, "v4 appcompat : Palette"),
 	// V7RecyclerViewSortedList
-	V7RecyclerViewSortedList("v7 recyclerview : SortedList");
+	V7RecyclerViewSortedList(Version.V22_1, "v7 recyclerview : SortedList");
 
 	// RenderScript
 	//RenderScript("RenderScript (not implemented yet)");
 
 	public static int selected = -1;
+	private Version version;
 	private String title;
 
-	DemoCategories(String title) {
+	DemoCategories(Version version, String title) {
+		this.version = version;
 		this.title = title;
+	}
+
+	public Version getVersion() {
+		return this.version;
 	}
 
 	public String getTitle() {
