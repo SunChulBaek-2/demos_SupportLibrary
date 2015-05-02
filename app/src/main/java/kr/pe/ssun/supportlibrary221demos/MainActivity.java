@@ -145,10 +145,10 @@ public class MainActivity extends FragmentActivity
 				toolbar.setTitle(DemoCategories.values()[position].getTitle());
 			}
 		} else {
-			if(category.equals(DemoCategories.AppCompatDelegate)) {
+			if(category.equals(DemoCategories.V7AppCompatDelegate)) {
 				new AlertDialog.Builder(this)
-						.setTitle("AppCompatDelegate")
-						.setMessage("MainActivity is created using AppCompatDelegate.")
+						.setTitle("V7AppCompatDelegate")
+						.setMessage("MainActivity is created using V7AppCompatDelegate.")
 						.setPositiveButton(android.R.string.ok, null)
 						.create().show();
 			}

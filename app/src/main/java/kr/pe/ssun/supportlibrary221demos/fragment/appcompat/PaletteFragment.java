@@ -1,11 +1,5 @@
-package kr.pe.ssun.supportlibrary221demos.fragment.palette;
+package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;

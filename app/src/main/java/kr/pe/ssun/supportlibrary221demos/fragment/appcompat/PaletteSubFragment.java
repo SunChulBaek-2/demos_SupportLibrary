@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos.fragment.palette;
+package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;

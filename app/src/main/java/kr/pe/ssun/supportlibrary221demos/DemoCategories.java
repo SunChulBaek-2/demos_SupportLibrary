@@ -1,39 +1,36 @@
 package kr.pe.ssun.supportlibrary221demos;
 
 import android.support.v4.app.Fragment;
-import android.widget.Toast;
 
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.palette.PaletteFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.PaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4DrawableCompatFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4NestedScrollViewFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PathInterpolatorCompatFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PrebuiltInterpolatorsFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4SpaceFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4DrawableCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4NestedScrollViewFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4PathInterpolatorCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4PrebuiltInterpolatorsFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportV4SpaceFragment;
 
 /**
  * Created by x1210x on 2015-04-24.
  */
 public enum DemoCategories {
 	// Support V4
-	SupportV4DrawableCompat("Support V4 : DrawableCompat"),
-	//SupportV4ColorUtils("Support V4 : ColorUtils (not implemented yet)"),
-	SupportV4PrebuiltInterpolators("Support V4 : Prebuilt Interpolators"),
-	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompat"),
-	SupportV4Space("Support V4 : Space"),
-	SupportV4NestedScrollView("Support V4 : NestedScrollView"),
+	V4SupportDrawableCompat("v4 support : DrawableCompat"),
+	//SupportV4ColorUtils("v4 support : ColorUtils (not implemented yet)"),
+	V4SupportPrebuiltInterpolators("v4 support : Prebuilt Interpolators"),
+	V4SupportPathInterpolatorCompat("v4 Support : PathInterpolatorCompat"),
+	V4SupportSpace("v4 support : Space"),
+	V4SupportNestedScrollView("v4 Support : NestedScrollView"),
 	// AppCompat
-	AppCompatDelegate("AppCompat : AppCompatDelegate"),
-	AppCompatDialog("AppCompat : AppCompatDialog"),
-	AppCompatWidget("AppCompat : AppCompat Widgets"),
-	// LeanBack : for Android TV apps
-	//LeanBack("LeanBack", null),
-	// RecyclerView
-	RecyclerView("RecyclerView"),
-	// Palette
-	Palette("Palette");
+	V7AppCompatDelegate("v7 appcompat : AppCompatDelegate"),
+	V7AppCompatDialog("v7 appcompat : AppCompatDialog"),
+	V7AppCompatWidget("v7 appcompat : AppCompat Widgets"),
+	V7AppCompatPalette("v4 appcompat : Palette"),
+	// V7RecyclerViewSortedList
+	V7RecyclerViewSortedList("v7 recyclerview : SortedList");
+
 	// RenderScript
 	//RenderScript("RenderScript (not implemented yet)");
 
@@ -56,25 +53,25 @@ public enum DemoCategories {
 	public Fragment createFragment() {
 		Fragment fragment = null;
 
-		if (this.equals(SupportV4DrawableCompat)) {
+		if (this.equals(V4SupportDrawableCompat)) {
 			fragment = new SupportV4DrawableCompatFragment();
-		} else if (this.equals(SupportV4PrebuiltInterpolators)) {
+		} else if (this.equals(V4SupportPrebuiltInterpolators)) {
 			fragment = new SupportV4PrebuiltInterpolatorsFragment();
-		} else if (this.equals(SupportV4PathInterpolatorCompat)) {
+		} else if (this.equals(V4SupportPathInterpolatorCompat)) {
 			fragment = new SupportV4PathInterpolatorCompatFragment();
-		} else if (this.equals(SupportV4Space)) {
+		} else if (this.equals(V4SupportSpace)) {
 			fragment = new SupportV4SpaceFragment();
-		} else if (this.equals(SupportV4NestedScrollView)) {
+		} else if (this.equals(V4SupportNestedScrollView)) {
 			fragment = new SupportV4NestedScrollViewFragment();
-		} else if (this.equals(AppCompatDelegate)) {
+		} else if (this.equals(V7AppCompatDelegate)) {
 			fragment = null;
-		} else if (this.equals(AppCompatDialog)) {
+		} else if (this.equals(V7AppCompatDialog)) {
 			fragment = new AppCompatDialogFragment();
-		} else if (this.equals(AppCompatWidget)) {
+		} else if (this.equals(V7AppCompatWidget)) {
 			fragment = new AppCompatWidgetFragment();
-		} else if (this.equals(RecyclerView)) {
+		} else if (this.equals(V7RecyclerViewSortedList)) {
 			fragment = new RecyclerViewFragment();
-		} else if (this.equals(Palette)) {
+		} else if (this.equals(V7AppCompatPalette)) {
 			fragment = new PaletteFragment();
 		}
 

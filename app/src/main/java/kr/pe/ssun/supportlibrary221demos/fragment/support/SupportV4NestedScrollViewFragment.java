@@ -1,8 +1,7 @@
-package kr.pe.ssun.supportlibrary221demos.fragment.supportv4;
+package kr.pe.ssun.supportlibrary221demos.fragment.support;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
