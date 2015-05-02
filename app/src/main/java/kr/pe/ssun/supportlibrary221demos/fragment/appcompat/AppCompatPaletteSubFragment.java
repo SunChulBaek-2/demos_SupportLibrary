@@ -1,6 +1,5 @@
 package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,7 +15,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-28.
  */
-public class PaletteSubFragment extends Fragment {
+public class AppCompatPaletteSubFragment extends Fragment {
 	private int resId;
 	private Palette palette;
 	private Palette.Swatch swatch = new Palette.Swatch(0, 0);
@@ -37,7 +36,7 @@ public class PaletteSubFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_sub_palette, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_appcompat_palette_sub, container, false);
 
 		AppCompatTextView actvVibrantTitle = (AppCompatTextView) rootView.findViewById(R.id.actvVibrantTitle);
 		AppCompatTextView actvVibrantBody = (AppCompatTextView) rootView.findViewById(R.id.actvVibrantBody);

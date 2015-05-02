@@ -2,7 +2,6 @@ package kr.pe.ssun.supportlibrary221demos.fragment.recyclerview;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.preference.DialogPreference;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.util.SortedList;
@@ -20,13 +19,13 @@ import android.widget.Toast;
 import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 import kr.pe.ssun.supportlibrary221demos.R;
-import kr.pe.ssun.supportlibrary221demos.adapter.MyRecyclerViewAdapter;
+import kr.pe.ssun.supportlibrary221demos.adapter.RecyclerViewSortedListAdapter;
 
 /**
  * Created by x1210x on 2015-04-27.
  */
-public class RecyclerViewFragment extends Fragment {
-	private MyRecyclerViewAdapter adapter;
+public class RecyclerViewSortedListFragment extends Fragment {
+	private RecyclerViewSortedListAdapter adapter;
 
 	private SortedList<String> sortedList = new SortedList<String>(String.class,
 			new SortedList.Callback<String>() {
@@ -87,13 +86,13 @@ public class RecyclerViewFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		final View rootView = inflater.inflate(R.layout.fragment_recycler_view, container, false);
+		final View rootView = inflater.inflate(R.layout.fragment_recyclerview_sorted_list, container, false);
 		final RecyclerView rcRecyclerView = (RecyclerView)rootView.findViewById(R.id.rvRecyclerView);
 		final AddFloatingActionButton fab = (AddFloatingActionButton)rootView.findViewById(R.id.fab);
 
 		rcRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-		adapter = new MyRecyclerViewAdapter(sortedList, new View.OnLongClickListener() {
+		adapter = new RecyclerViewSortedListAdapter(sortedList, new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View v) {
 				final int itemPosition = rcRecyclerView.getChildAdapterPosition(v);

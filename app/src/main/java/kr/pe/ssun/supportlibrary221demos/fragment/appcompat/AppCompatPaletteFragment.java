@@ -21,7 +21,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-28.
  */
-public class PaletteFragment extends Fragment implements MaterialTabListener {
+public class AppCompatPaletteFragment extends Fragment implements MaterialTabListener {
 	private static final int SIZE = 3;
 	private static SparseIntArray RESOURCES = new SparseIntArray();
 
@@ -44,7 +44,7 @@ public class PaletteFragment extends Fragment implements MaterialTabListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_palette, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_appcompat_palette, container, false);
 
 		tabHost = (MaterialTabHost) rootView.findViewById(R.id.tabHost);
 		pager = (ViewPager)rootView.findViewById(R.id.vpPager);
@@ -52,7 +52,7 @@ public class PaletteFragment extends Fragment implements MaterialTabListener {
 		adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
 			@Override
 			public Fragment getItem(int position) {
-				PaletteSubFragment fragment = new PaletteSubFragment();
+				AppCompatPaletteSubFragment fragment = new AppCompatPaletteSubFragment();
 				Bundle bundle = new Bundle();
 				bundle.putInt("resId", RESOURCES.get(position));
 				fragment.setArguments(bundle);
@@ -83,7 +83,7 @@ public class PaletteFragment extends Fragment implements MaterialTabListener {
 				tabHost.setSelectedNavigationItem(position);
 
 				List<Fragment> fragments = getChildFragmentManager().getFragments();
-				PaletteSubFragment fragment = (PaletteSubFragment) fragments.get(position);
+				AppCompatPaletteSubFragment fragment = (AppCompatPaletteSubFragment) fragments.get(position);
 
 				tabHost.setPrimaryColor(fragment.getRGB());
 				tabHost.setTextColor(fragment.getTitleTextColor());

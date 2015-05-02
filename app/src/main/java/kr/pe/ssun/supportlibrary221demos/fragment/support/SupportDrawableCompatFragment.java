@@ -21,7 +21,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-24.
  */
-public class SupportV4DrawableCompatFragment extends Fragment {
+public class SupportDrawableCompatFragment extends Fragment {
 	private enum Tint {
 		Normal("Normal", R.drawable.ic_launcher, null),
 		SetTint("SetTint()", R.drawable.ic_launcher_tint, null),
@@ -68,17 +68,17 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 		}
 	}
 
-	public SupportV4DrawableCompatFragment() {
+	public SupportDrawableCompatFragment() {
 
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		final View rootView = inflater.inflate(R.layout.fragment_support_v4_drawable_compat, container, false);
+		final View rootView = inflater.inflate(R.layout.fragment_support_drawable_compat, container, false);
 		ListView lvTint = (ListView) rootView.findViewById(R.id.lvTint);
 		lvTint.setAdapter(new ArrayAdapter<Tint>(getActivity(),
-				R.layout.list_item_tint, Tint.values()) {
+				R.layout.list_support_drawable_compat_item, Tint.values()) {
 			@Override
 			public View getView(int position, View convertView, ViewGroup parent) {
 				View view;
@@ -86,7 +86,7 @@ public class SupportV4DrawableCompatFragment extends Fragment {
 					view = convertView;
 				} else {
 					view = getLayoutInflater(savedInstanceState).inflate(
-							R.layout.list_item_tint, null);
+							R.layout.list_support_drawable_compat_item, null);
 				}
 
 				final ImageView ibImage = (ImageView) view.findViewById(R.id.ivImage);

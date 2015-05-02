@@ -18,11 +18,11 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 15. 4. 26..
  */
-public class SupportV4PathInterpolatorCompatFragment extends Fragment {
+public class SupportPathInterpolatorCompatFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            final Bundle savedInstanceState) {
-    View rootView = inflater.inflate(R.layout.fragment_support_v4_path_interpolator, container, false);
+    View rootView = inflater.inflate(R.layout.fragment_support_path_interpolator, container, false);
 
     // create from path
 

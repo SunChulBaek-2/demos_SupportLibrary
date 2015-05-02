@@ -3,13 +3,18 @@ package kr.pe.ssun.supportlibrary221demos;
 /**
  * Created by x1210x on 15. 5. 2..
  */
-public enum Version {
-	V22_1("v22.1", 0);
+public enum Revision {
+	REV_22_1_0("revision 22.1.0", 0),
+	REV_22("revision 22", 1),
+	REV_21_0_3("revision 21.0.3", 2),
+	REV_21_0_2("revision 21.0.2", 3),
+	REV_21_0_1("revision 21.0.1", 4),
+	REV_21("revision 21", 5);
 
 	private String text;
 	private long id;
 
-	Version(String text, long id) {
+	Revision(String text, long id) {
 		this.text = text;
 		this.id = id;
 	}

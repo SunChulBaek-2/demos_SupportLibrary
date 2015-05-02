@@ -7,10 +7,10 @@ import android.widget.TextView;
 /**
  * Created by x1210x on 2015-04-27.
  */
-public class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
+public class RecyclerViewSortedListViewHolder extends RecyclerView.ViewHolder {
 	private TextView textView;
 
-	public MyRecyclerViewHolder(View itemView) {
+	public RecyclerViewSortedListViewHolder(View itemView) {
 		super(itemView);
 
 		textView = (TextView)itemView.findViewById(android.R.id.text1);

@@ -19,11 +19,11 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 15. 4. 26..
  */
-public class SupportV4PrebuiltInterpolatorsFragment extends Fragment {
+public class SupportPrebuiltInterpolatorsFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            final Bundle savedInstanceState) {
-    View rootView = inflater.inflate(R.layout.fragment_support_v4_interpolators, container, false);
+    View rootView = inflater.inflate(R.layout.fragment_support_interpolators, container, false);
 
     final EditText etDuration = (EditText)rootView.findViewById(R.id.etDuration);
     Button btnAnimate = (Button)rootView.findViewById(R.id.btnAnimate);

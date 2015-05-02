@@ -11,11 +11,11 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 15. 4. 26..
  */
-public class SupportV4SpaceFragment extends Fragment {
+public class SupportSpaceFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            final Bundle savedInstanceState) {
-    final View rootView = inflater.inflate(R.layout.fragment_support_v4_space, container, false);
+    final View rootView = inflater.inflate(R.layout.fragment_support_space, container, false);
 
     return rootView;
   }

@@ -11,11 +11,11 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-27.
  */
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RecyclerViewSortedListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	private SortedList<String> list;
 	private View.OnLongClickListener listener;
 
-	public MyRecyclerViewAdapter(SortedList<String> list, View.OnLongClickListener onLongClickListener) {
+	public RecyclerViewSortedListAdapter(SortedList<String> list, View.OnLongClickListener onLongClickListener) {
 		this.list = list;
 		this.listener = onLongClickListener;
 	}
@@ -23,16 +23,16 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 	@Override
 	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 		View view = LayoutInflater.from(viewGroup.getContext())
-				.inflate(R.layout.recycler_view_item, viewGroup, false);
+				.inflate(R.layout.recycler_recyclerview_item, viewGroup, false);
 		if (listener != null) {
 			view.setOnLongClickListener(listener);
 		}
-		return new MyRecyclerViewHolder(view);
+		return new RecyclerViewSortedListViewHolder(view);
 	}
 
 	@Override
 	public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-		MyRecyclerViewHolder vh = (MyRecyclerViewHolder) viewHolder;
+		RecyclerViewSortedListViewHolder vh = (RecyclerViewSortedListViewHolder) viewHolder;
 		vh.setText(list.get(i));
 	}
 

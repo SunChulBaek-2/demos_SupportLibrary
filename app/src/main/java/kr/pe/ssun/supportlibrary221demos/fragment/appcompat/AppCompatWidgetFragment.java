@@ -15,7 +15,7 @@ public class AppCompatWidgetFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 final Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_appcompat_tint_widgets, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_appcompat_widget, container, false);
 
 		return rootView;
 	}
