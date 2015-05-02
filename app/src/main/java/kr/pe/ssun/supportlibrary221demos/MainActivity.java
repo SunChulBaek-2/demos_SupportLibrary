@@ -119,7 +119,11 @@ public class MainActivity extends FragmentActivity
 			finish();
 			return;
 		}
-		popBackStack();
+
+		if (!Screen.getCurrent().equals(Screen.LARGE)) {
+			DemoCategories.selected = -1;
+			popBackStack();
+		}
 	}
 
 	@Override
@@ -156,7 +160,13 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 		FragmentManager fm = getSupportFragmentManager();
-		Fragment fragment = fm.findFragmentByTag(tags.get(tags.size() - 1));
+		Fragment fragment = fm.findFragmentByTag(MainFragment.TAG);
+		if (fragment != null) {
+			MainFragment mainFragment = (MainFragment) fragment;
+			mainFragment.updateUI();
+		}
+
+		fragment = fm.findFragmentByTag(tags.get(tags.size() - 1));
 		if (fragment == null) {
 			return;
 		}

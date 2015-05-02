@@ -24,6 +24,8 @@ import kr.pe.ssun.supportlibrary221demos.adapter.MainFragmentAdapter;
 public class MainFragment extends Fragment {
 	public static final String TAG = MainFragment.class.toString();
 
+	private RecyclerView rvCategory;
+
 	public interface MainFragmentListener {
 		public void onItemClick(int position);
 	}
@@ -39,7 +41,7 @@ public class MainFragment extends Fragment {
 							 final Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 		final RelativeLayout rlContainer = (RelativeLayout) rootView.findViewById(R.id.rlContainer);
-		final RecyclerView rvCategory = (RecyclerView)rootView.findViewById(R.id.rvCategory);
+		rvCategory = (RecyclerView)rootView.findViewById(R.id.rvCategory);
 
 		rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
 		rvCategory.setAdapter(new MainFragmentAdapter(new MainFragmentAdapter.MainFragmentAdapterListener() {
@@ -62,5 +64,10 @@ public class MainFragment extends Fragment {
 		super.onAttach(activity);
 
 		listener = (MainFragmentListener)activity;
+	}
+
+	public void updateUI() {
+		if (rvCategory != null && rvCategory.getAdapter() != null)
+			rvCategory.getAdapter().notifyDataSetChanged();
 	}
 }

@@ -8,6 +8,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragm
 import kr.pe.ssun.supportlibrary221demos.fragment.palette.PaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4DrawableCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4NestedScrollViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4PrebuiltInterpolatorsFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4SpaceFragment;
@@ -18,10 +19,11 @@ import kr.pe.ssun.supportlibrary221demos.fragment.supportv4.SupportV4SpaceFragme
 public enum DemoCategories {
 	// Support V4
 	SupportV4DrawableCompat("Support V4 : DrawableCompat"),
-	SupportV4ColorUtils("Support V4 : ColorUtils (not implemented yet)"),
+	//SupportV4ColorUtils("Support V4 : ColorUtils (not implemented yet)"),
 	SupportV4PrebuiltInterpolators("Support V4 : Prebuilt Interpolators"),
 	SupportV4PathInterpolatorCompat("Support V4 : PathInterpolatorCompat"),
 	SupportV4Space("Support V4 : Space"),
+	SupportV4NestedScrollView("Support V4 : NestedScrollView"),
 	// AppCompat
 	AppCompatDelegate("AppCompat : AppCompatDelegate"),
 	AppCompatDialog("AppCompat : AppCompatDialog"),
@@ -31,9 +33,9 @@ public enum DemoCategories {
 	// RecyclerView
 	RecyclerView("RecyclerView"),
 	// Palette
-	Palette("Palette"),
+	Palette("Palette");
 	// RenderScript
-	RenderScript("RenderScript (not implemented yet)");
+	//RenderScript("RenderScript (not implemented yet)");
 
 	public static int selected = -1;
 	private String title;
@@ -62,6 +64,8 @@ public enum DemoCategories {
 			fragment = new SupportV4PathInterpolatorCompatFragment();
 		} else if (this.equals(SupportV4Space)) {
 			fragment = new SupportV4SpaceFragment();
+		} else if (this.equals(SupportV4NestedScrollView)) {
+			fragment = new SupportV4NestedScrollViewFragment();
 		} else if (this.equals(AppCompatDelegate)) {
 			fragment = null;
 		} else if (this.equals(AppCompatDialog)) {
