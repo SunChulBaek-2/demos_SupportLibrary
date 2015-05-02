@@ -14,9 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
@@ -57,7 +55,18 @@ public class MainActivity extends FragmentActivity
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.list, new MainFragment(), MainFragment.TAG)
 					.commit();
+		} else {
+			tags = savedInstanceState.getStringArrayList("tags");
+			DemoCategories.selected = -1;
+			popBackStack();
 		}
+	}
+
+	@Override
+	protected void onSaveInstanceState (Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putStringArrayList("tags", tags);
 	}
 
 	private void setupToolbar() {
@@ -106,6 +115,10 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public void onBackPressed() {
+		if (tags.size() <= 0) {
+			finish();
+			return;
+		}
 		popBackStack();
 	}
 
@@ -122,8 +135,8 @@ public class MainActivity extends FragmentActivity
 					.replace(R.id.container, fragment, tag)
 					.commit();
 
+			tags.add(tag);
 			if(Screen.getCurrent().equals(Screen.NORMAL)) {
-				tags.add(tag);
 				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
 				toolbar.setTitle(DemoCategories.values()[position].getTitle());
 			}
@@ -140,7 +153,6 @@ public class MainActivity extends FragmentActivity
 
 	private void popBackStack() {
 		if (tags.size() <= 0) {
-			finish();
 			return;
 		}
 		FragmentManager fm = getSupportFragmentManager();
