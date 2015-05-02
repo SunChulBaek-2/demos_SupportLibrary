@@ -20,9 +20,9 @@ public enum DemoCategories {
 	V4SupportDrawableCompat("v4 support : DrawableCompat"),
 	//SupportV4ColorUtils("v4 support : ColorUtils (not implemented yet)"),
 	V4SupportPrebuiltInterpolators("v4 support : Prebuilt Interpolators"),
-	V4SupportPathInterpolatorCompat("v4 Support : PathInterpolatorCompat"),
+	V4SupportPathInterpolatorCompat("v4 support : PathInterpolatorCompat"),
 	V4SupportSpace("v4 support : Space"),
-	V4SupportNestedScrollView("v4 Support : NestedScrollView"),
+	V4SupportNestedScrollView("v4 support : NestedScrollView"),
 	// AppCompat
 	V7AppCompatDelegate("v7 appcompat : AppCompatDelegate"),
 	V7AppCompatDialog("v7 appcompat : AppCompatDialog"),

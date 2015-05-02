@@ -5,7 +5,7 @@ package kr.pe.ssun.supportlibrary221demos;
  */
 public enum Screen {
 	NORMAL,
-	LARGE;
+	LARGE_LAND;
 
 	private static Screen current;
 

@@ -81,8 +81,11 @@ public class MainActivity extends FragmentActivity
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (tags.size() > 0) {
-					popBackStack();
+				if (!Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+					if (tags.size() > 0) {
+						DemoCategories.selected = -1;
+						popBackStack();
+					}
 				}
 			}
 		});
@@ -120,7 +123,7 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		if (!Screen.getCurrent().equals(Screen.LARGE)) {
+		if (!Screen.getCurrent().equals(Screen.LARGE_LAND)) {
 			DemoCategories.selected = -1;
 			popBackStack();
 		}
