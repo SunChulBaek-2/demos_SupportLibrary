@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportNestedScrollViewFragment;
@@ -30,7 +31,8 @@ public enum DemoCategories {
 	RecyclerViewSortedList(Revision.REV_22_1_0, "v7 recyclerview : SortedList"),
 
 	// Revision 22
-	SupportResourceCompat(Revision.REV_22, "v4 support : ResourceCompat");
+	SupportResourceCompat(Revision.REV_22, "v4 support : ResourceCompat"),
+	RecyclerViewPosition(Revision.REV_22, "v7 recyclerview : getLayoutPosition (), getAdapterPosition ()");
 
 	public static int selected = -1;
 	private Revision revision;
@@ -82,6 +84,8 @@ public enum DemoCategories {
 		// Revision 22
 		else if (this.equals(SupportResourceCompat)) {
 			fragment = new SupportResourceCompatFragment();
+		} else if (this.equals(RecyclerViewPosition)) {
+			fragment = new RecyclerViewPositionFragment();
 		}
 
 		return fragment;
