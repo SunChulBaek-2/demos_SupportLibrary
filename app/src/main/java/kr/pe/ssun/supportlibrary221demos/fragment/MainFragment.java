@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 
-import kr.pe.ssun.supportlibrary221demos.DemoCategories;
+import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
 import kr.pe.ssun.supportlibrary221demos.decoration.DividerDecoration;
 import kr.pe.ssun.supportlibrary221demos.R;
 import kr.pe.ssun.supportlibrary221demos.adapter.MainFragmentAdapter;

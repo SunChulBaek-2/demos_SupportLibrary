@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos;
+package kr.pe.ssun.supportlibrary221demos.data;
 
 import android.support.v4.app.Fragment;
 
@@ -19,32 +19,38 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  */
 public enum DemoCategories {
 	// Revision 22.1.0
-	SupportDrawableCompat(Revision.REV_22_1_0, "v4 support : DrawableCompat"),
-	SupportPrebuiltInterpolators(Revision.REV_22_1_0, "v4 support : Prebuilt Interpolators"),
-	SupportPathInterpolatorCompat(Revision.REV_22_1_0, "v4 support : PathInterpolatorCompat"),
-	SupportSpace(Revision.REV_22_1_0, "v4 support : Space"),
-	SupportNestedScrollView(Revision.REV_22_1_0, "v4 support : NestedScrollView"),
-	AppCompatDelegate(Revision.REV_22_1_0, "v7 appcompat : AppCompatDelegate"),
-	AppCompatDialog(Revision.REV_22_1_0, "v7 appcompat : AppCompatDialog"),
-	AppCompatWidget(Revision.REV_22_1_0, "v7 appcompat : AppCompat Widgets"),
-	AppCompatPalette(Revision.REV_22_1_0, "v4 appcompat : Palette"),
-	RecyclerViewSortedList(Revision.REV_22_1_0, "v7 recyclerview : SortedList"),
+	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "DrawableCompat"),
+	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT, "Prebuilt Interpolators"),
+	SupportPathInterpolatorCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "PathInterpolatorCompat"),
+	SupportSpace(Revision.REV_22_1_0, Library.V4_SUPPORT, "Space"),
+	SupportNestedScrollView(Revision.REV_22_1_0, Library.V4_SUPPORT, "NestedScrollView"),
+	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompatDelegate"),
+	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompatDialog"),
+	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompat Widgets"),
+	AppCompatPalette(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "Palette"),
+	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW, "SortedList"),
 
 	// Revision 22
-	SupportResourceCompat(Revision.REV_22, "v4 support : ResourceCompat"),
-	RecyclerViewPosition(Revision.REV_22, "v7 recyclerview : getLayoutPosition (), getAdapterPosition ()");
+	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT, "ResourceCompat"),
+	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW, "getLayoutPosition (), getAdapterPosition ()");
 
 	public static int selected = -1;
 	private Revision revision;
+	private Library library;
 	private String title;
 
-	DemoCategories(Revision revision, String title) {
+	DemoCategories(Revision revision, Library library, String title) {
 		this.revision = revision;
+		this.library = library;
 		this.title = title;
 	}
 
 	public Revision getRevision() {
 		return this.revision;
+	}
+
+	public Library getLibrary() {
+		return this.library;
 	}
 
 	public String getTitle() {

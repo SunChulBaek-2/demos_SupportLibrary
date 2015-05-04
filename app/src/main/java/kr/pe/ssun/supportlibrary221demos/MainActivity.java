@@ -20,6 +20,7 @@ import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import java.util.ArrayList;
 
+import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
 import kr.pe.ssun.supportlibrary221demos.fragment.MainFragment;
 
 import static com.balysv.materialmenu.MaterialMenuDrawable.DEFAULT_PRESSED_DURATION;

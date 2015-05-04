@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos;
+package kr.pe.ssun.supportlibrary221demos.data;
 
 /**
  * Created by x1210x on 15. 5. 2..

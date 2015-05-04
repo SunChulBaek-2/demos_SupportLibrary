@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
 
-import kr.pe.ssun.supportlibrary221demos.DemoCategories;
+import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
 import kr.pe.ssun.supportlibrary221demos.R;
 
 /**
@@ -47,7 +47,8 @@ public class MainFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 	@Override
 	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 		MainFragmentViewHolder vh = (MainFragmentViewHolder) holder;
-		vh.setText(DemoCategories.values()[position].getTitle());
+		vh.setText(DemoCategories.values()[position].getLibrary().getText() + " : " +
+				DemoCategories.values()[position].getTitle());
 		if (position == DemoCategories.selected) {
 			vh.setSelected(true);
 		} else {
