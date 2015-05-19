@@ -1,8 +1,105 @@
 <resources>
 
 	<!-- Base application theme. -->
-	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+	<style name="AppTheme" parent="BlueColorAppTheme">
 		<!-- Customize your theme here. -->
 	</style>
 
+	<style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+	<style name="RedColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/red500</item>
+		<item name="colorPrimaryDark">@color/red700</item>
+	</style>
+
+	<style name="PinkColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/pink500</item>
+		<item name="colorPrimaryDark">@color/pink700</item>
+	</style>
+
+	<style name="PurpleColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/purple500</item>
+		<item name="colorPrimaryDark">@color/purple700</item>
+	</style>
+
+	<style name="DeepPurpleColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/deepPurple500</item>
+		<item name="colorPrimaryDark">@color/deepPurple700</item>
+	</style>
+
+	<style name="IndigoColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/indigo500</item>
+		<item name="colorPrimaryDark">@color/indigo700</item>
+	</style>
+
+	<style name="BlueColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/blue500</item>
+		<item name="colorPrimaryDark">@color/blue700</item>
+		<item name="colorAccent">@color/pinkA200</item>
+	</style>
+
+	<style name="LightBlueColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/lightBlue500</item>
+		<item name="colorPrimaryDark">@color/lightBlue700</item>
+	</style>
+
+	<style name="CyanColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/cyan500</item>
+		<item name="colorPrimaryDark">@color/cyan700</item>
+	</style>
+
+	<style name="TealColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/teal500</item>
+		<item name="colorPrimaryDark">@color/teal700</item>
+	</style>
+
+	<style name="GreenColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/green500</item>
+		<item name="colorPrimaryDark">@color/green700</item>
+	</style>
+
+	<style name="LightGreenColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/lightGreen500</item>
+		<item name="colorPrimaryDark">@color/lightGreen700</item>
+	</style>
+
+	<style name="LimeColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/lime500</item>
+		<item name="colorPrimaryDark">@color/lime700</item>
+	</style>
+
+	<style name="YellowColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/yellow500</item>
+		<item name="colorPrimaryDark">@color/yellow700</item>
+	</style>
+
+	<style name="AmberColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/amber500</item>
+		<item name="colorPrimaryDark">@color/amber700</item>
+	</style>
+
+	<style name="OrangeColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/orange500</item>
+		<item name="colorPrimaryDark">@color/orange700</item>
+	</style>
+
+	<style name="DeepOrangeColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/deepOrange500</item>
+		<item name="colorPrimaryDark">@color/deepOrange700</item>
+	</style>
+
+	<style name="BrownColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/brown500</item>
+		<item name="colorPrimaryDark">@color/brown700</item>
+	</style>
+
+	<style name="GreyColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/grey500</item>
+		<item name="colorPrimaryDark">@color/grey700</item>
+	</style>
+
+	<style name="BlueGreyColorAppTheme" parent="BaseAppTheme">
+		<item name="colorPrimary">@color/blueGrey500</item>
+		<item name="colorPrimaryDark">@color/blueGrey700</item>
+	</style>
 </resources>

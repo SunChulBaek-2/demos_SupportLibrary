@@ -42,7 +42,6 @@ public class MainActivity extends FragmentActivity
 		getDelegate().onCreate(savedInstanceState);
 
 		getDelegate().setContentView(R.layout.activity_main);
-		getDelegate().getSupportActionBar().hide();
 
 		setupToolbar();
 
