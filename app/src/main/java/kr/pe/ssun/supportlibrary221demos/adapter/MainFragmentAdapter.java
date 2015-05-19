@@ -78,7 +78,9 @@ public class MainFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
 	@Override
 	public void onBindHeaderViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-		TextView tv = (TextView)viewHolder.itemView;
+		View view = viewHolder.itemView;
+
+		TextView tv = (TextView) view.findViewById(R.id.text);
 		tv.setText(DemoCategories.values()[position].getRevision().getText());
 	}
 }

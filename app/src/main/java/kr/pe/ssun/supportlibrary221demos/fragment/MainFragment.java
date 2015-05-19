@@ -58,7 +58,7 @@ public class MainFragment extends Fragment {
 		rvCategory.setAdapter(adapter);
 		StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(adapter);
 		rvCategory.addItemDecoration(headersDecor);
-		rvCategory.addItemDecoration(new DividerDecoration(getActivity()));
+		//rvCategory.addItemDecoration(new DividerDecoration(getActivity()));
 
 		return rootView;
 	}

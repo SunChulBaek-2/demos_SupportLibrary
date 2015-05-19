@@ -84,9 +84,9 @@
 	<!-- opacity : 87% -->
 	<color name="darkTextPrimary">#DD000000</color>
 	<!-- opacity : 54% -->
-	<color name="darkTextSecondary">#54000000</color>
+	<color name="darkTextSecondary">#89000000</color>
 	<!-- opacity : 26% -->
-	<color name="darkTextHints">#26000000</color>
+	<color name="darkTextHints">#42000000</color>
 	<!-- opacity : 12% -->
 	<color name="darkDividers">#1E000000</color>
 

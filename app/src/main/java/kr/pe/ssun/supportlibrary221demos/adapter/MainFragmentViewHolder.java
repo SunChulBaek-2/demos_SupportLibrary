@@ -10,12 +10,14 @@ import kr.pe.ssun.supportlibrary221demos.R;
  * Created by x1210x on 15. 5. 1..
  */
 public class MainFragmentViewHolder extends RecyclerView.ViewHolder {
+	private View itemView;
 	private AppCompatTextView textView;
 
 	public MainFragmentViewHolder(View itemView) {
 		super(itemView);
 
-		textView = (AppCompatTextView) itemView.findViewById(R.id.text);
+		this.itemView = itemView;
+		this.textView = (AppCompatTextView) itemView.findViewById(R.id.text);
 	}
 
 	public void setText(String text) {
@@ -25,8 +27,6 @@ public class MainFragmentViewHolder extends RecyclerView.ViewHolder {
 	}
 
 	public void setSelected(boolean selected) {
-		if(textView != null) {
-			textView.setSelected(selected);
-		}
+		this.itemView.setSelected(selected);
 	}
 }

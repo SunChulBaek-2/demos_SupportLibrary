@@ -4,5 +4,5 @@
 		  android:drawable="?attr/colorControlActivated"/>
 	<item android:state_pressed="true"
 		  android:drawable="?attr/colorControlActivated"/>
-	<item android:drawable="@android:color/transparent"/>
+	<item android:drawable="@android:color/background_light"/>
 </selector>
