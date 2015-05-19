@@ -73,4 +73,9 @@ public class MainFragment extends Fragment {
 		if (rvCategory != null && rvCategory.getAdapter() != null)
 			rvCategory.getAdapter().notifyDataSetChanged();
 	}
+
+	public void setSelected(int position) {
+		DemoCategories.setSelected(position);
+		adapter.notifyDataSetChanged();
+	}
 }

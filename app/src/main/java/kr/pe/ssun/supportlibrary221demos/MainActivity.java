@@ -59,7 +59,12 @@ public class MainActivity extends FragmentActivity
 			tag = savedInstanceState.getString("tag");
 			selected = savedInstanceState.getInt("selected");
 
-			if (tag != null && !tag.trim().isEmpty()) {
+			DemoCategories.setSelected(selected);
+
+			if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+				materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
+				toolbar.setTitle(R.string.app_name);
+			} else if (tag != null && !tag.trim().isEmpty()) {
 				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
 				toolbar.setTitle(DemoCategories.values()[selected].getTitle());
 			}
@@ -86,8 +91,19 @@ public class MainActivity extends FragmentActivity
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (tag != null && !tag.trim().isEmpty()) {
+				selected = -1;
+				DemoCategories.setSelected(-1);
+
+				if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+					finish();
+					return;
+				} else if (tag != null && !tag.trim().isEmpty()) {
+					MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
+					fragment.setSelected(-1);
 					popBackStack();
+				} else {
+					finish();
+					return;
 				}
 			}
 		});
@@ -119,10 +135,19 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public void onBackPressed() {
-		if (tag == null || tag.trim().isEmpty()) {
+		selected = -1;
+		DemoCategories.setSelected(-1);
+
+		if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+			finish();
+			return;
+		} else if (tag == null || tag.trim().isEmpty()) {
 			finish();
 			return;
 		}
+
+		MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
+		fragment.setSelected(-1);
 
 		popBackStack();
 	}
@@ -130,6 +155,11 @@ public class MainActivity extends FragmentActivity
 	@Override
 	public void onItemClick(int position) {
 		selected = position;
+
+		if (selected >= 0) {
+			MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
+			fragment.setSelected(selected);
+		}
 
 		FragmentManager fm = getSupportFragmentManager();
 

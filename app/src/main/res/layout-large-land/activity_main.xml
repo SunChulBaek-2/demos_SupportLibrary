@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:id="@+id/rlMain"
+				android:tag="large_land"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_alignParentTop="true"
+		android:background="?attr/colorPrimary"/>
+
+	<RelativeLayout
+		android:id="@+id/list"
+		android:layout_width="320dp"
+		android:layout_height="match_parent"
+		android:layout_alignParentBottom="true"
+		android:layout_below="@id/toolbar"/>
+
+	<RelativeLayout
+		android:id="@+id/container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_toRightOf="@id/list"
+		android:layout_alignParentBottom="true"
+		android:layout_below="@id/toolbar"/>
+</RelativeLayout>

@@ -48,6 +48,7 @@ public class MainFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 		MainFragmentViewHolder vh = (MainFragmentViewHolder) holder;
 		vh.setText(DemoCategories.values()[position].getLibrary().getText() + " : " +
 				DemoCategories.values()[position].getTitle());
+		vh.setSelected(position == DemoCategories.getSelected());
 	}
 
 	@Override
