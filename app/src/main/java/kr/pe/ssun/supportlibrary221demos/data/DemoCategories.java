@@ -34,7 +34,6 @@ public enum DemoCategories {
 	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT, "ResourceCompat"),
 	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW, "getLayoutPosition (), getAdapterPosition ()");
 
-	public static int selected = -1;
 	private Revision revision;
 	private Library library;
 	private String title;

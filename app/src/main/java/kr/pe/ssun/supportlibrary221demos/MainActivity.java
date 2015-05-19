@@ -18,8 +18,6 @@ import android.widget.RelativeLayout;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
-import java.util.ArrayList;
-
 import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
 import kr.pe.ssun.supportlibrary221demos.fragment.MainFragment;
 
@@ -33,7 +31,9 @@ public class MainActivity extends FragmentActivity
 
 	private Toolbar toolbar;
 	private MaterialMenuDrawable materialMenu;
-	private ArrayList<String> tags = new ArrayList<String>();
+
+	private String tag = null;
+	private int selected = -1;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,9 +56,13 @@ public class MainActivity extends FragmentActivity
 					.add(R.id.list, new MainFragment(), MainFragment.TAG)
 					.commit();
 		} else {
-			tags = savedInstanceState.getStringArrayList("tags");
-			DemoCategories.selected = -1;
-			popBackStack();
+			tag = savedInstanceState.getString("tag");
+			selected = savedInstanceState.getInt("selected");
+
+			if (tag != null && !tag.trim().isEmpty()) {
+				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
+				toolbar.setTitle(DemoCategories.values()[selected].getTitle());
+			}
 		}
 	}
 
@@ -66,7 +70,8 @@ public class MainActivity extends FragmentActivity
 	protected void onSaveInstanceState (Bundle outState) {
 		super.onSaveInstanceState(outState);
 
-		outState.putStringArrayList("tags", tags);
+		outState.putString("tag", tag);
+		outState.putInt("selected", selected);
 	}
 
 	private void setupToolbar() {
@@ -81,18 +86,14 @@ public class MainActivity extends FragmentActivity
 		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!Screen.getCurrent().equals(Screen.LARGE_LAND)) {
-					if (tags.size() > 0) {
-						DemoCategories.selected = -1;
-						popBackStack();
-					}
+				if (tag != null && !tag.trim().isEmpty()) {
+					popBackStack();
 				}
 			}
 		});
 		toolbar.setTitle(R.string.app_name);
 		toolbar.setTitleTextColor(Color.WHITE);
 	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,21 +119,18 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public void onBackPressed() {
-		if (tags.size() <= 0) {
+		if (tag == null || tag.trim().isEmpty()) {
 			finish();
 			return;
 		}
 
-		DemoCategories.selected = -1;
-		if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
-			finish();
-		} else {
-			popBackStack();
-		}
+		popBackStack();
 	}
 
 	@Override
 	public void onItemClick(int position) {
+		selected = position;
+
 		FragmentManager fm = getSupportFragmentManager();
 
 		DemoCategories category = DemoCategories.values()[position];
@@ -144,7 +142,7 @@ public class MainActivity extends FragmentActivity
 					.replace(R.id.container, fragment, tag)
 					.commit();
 
-			tags.add(tag);
+			this.tag = tag;
 			if(Screen.getCurrent().equals(Screen.NORMAL)) {
 				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
 				toolbar.setTitle(DemoCategories.values()[position].getTitle());
@@ -161,7 +159,7 @@ public class MainActivity extends FragmentActivity
 	}
 
 	private void popBackStack() {
-		if (tags.size() <= 0) {
+		if (tag == null || tag.trim().isEmpty()) {
 			return;
 		}
 		FragmentManager fm = getSupportFragmentManager();
@@ -171,7 +169,7 @@ public class MainActivity extends FragmentActivity
 			mainFragment.updateUI();
 		}
 
-		fragment = fm.findFragmentByTag(tags.get(tags.size() - 1));
+		fragment = fm.findFragmentByTag(tag);
 		if (fragment == null) {
 			return;
 		}
@@ -179,7 +177,8 @@ public class MainActivity extends FragmentActivity
 		fm.beginTransaction()
 				.remove(fragment)
 				.commit();
-		tags.remove(tags.size() - 1);
+
+		tag = null;
 		materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
 		toolbar.setTitle(R.string.app_name);
 	}

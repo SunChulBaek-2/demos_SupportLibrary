@@ -25,8 +25,4 @@ public class MainFragmentViewHolder extends RecyclerView.ViewHolder {
 			textView.setText(text);
 		}
 	}
-
-	public void setSelected(boolean selected) {
-		this.itemView.setSelected(selected);
-	}
 }

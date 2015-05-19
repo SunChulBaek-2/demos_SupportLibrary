@@ -37,7 +37,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 				if (listener != null) {
 					listener.onItemClick(v);
 				}
-				notifyDataSetChanged();
 			}
 		});
 
@@ -49,11 +48,6 @@ public class MainFragmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 		MainFragmentViewHolder vh = (MainFragmentViewHolder) holder;
 		vh.setText(DemoCategories.values()[position].getLibrary().getText() + " : " +
 				DemoCategories.values()[position].getTitle());
-		if (position == DemoCategories.selected) {
-			vh.setSelected(true);
-		} else {
-			vh.setSelected(false);
-		}
 	}
 
 	@Override

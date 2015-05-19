@@ -48,7 +48,6 @@ public class MainFragment extends Fragment {
 			@Override
 			public void onItemClick(View view) {
 				int position = rvCategory.getChildAdapterPosition(view);
-				DemoCategories.selected = position;
 
 				if (listener != null) {
 					listener.onItemClick(position);
