@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatCallback;
 import android.support.v7.app.AppCompatDelegate;
@@ -29,8 +30,12 @@ public class MainActivity extends FragmentActivity
 		implements AppCompatCallback, MainFragment.MainFragmentListener {
 	private AppCompatDelegate mDelegate;
 
-	private Toolbar toolbar;
-	private MaterialMenuDrawable materialMenu;
+	private DrawerLayout mDrawer;
+	private RelativeLayout mRlMain;
+	private RelativeLayout mRlDrawer;
+	private Toolbar mMainToolbar;
+	private Toolbar mDrawerToolbar;
+	private MaterialMenuDrawable mMaterialMenu;
 
 	private String tag = null;
 	private int selected = -1;
@@ -43,12 +48,32 @@ public class MainActivity extends FragmentActivity
 
 		getDelegate().setContentView(R.layout.activity_main);
 
+		mDrawer = (DrawerLayout) findViewById(R.id.drawer);
+		// Drawer
+		mRlDrawer = (RelativeLayout)findViewById(R.id.rlDrawer);
+		mDrawerToolbar = (Toolbar) findViewById(R.id.drawer_toolbar);
+		// Main Content
+		mRlMain = (RelativeLayout)findViewById(R.id.rlMain);
+		mMainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+
+		mMaterialMenu = new MaterialMenuDrawable(this,
+				Color.WHITE,
+				MaterialMenuDrawable.Stroke.THIN,
+				DEFAULT_SCALE,
+				DEFAULT_TRANSFORM_DURATION,
+				DEFAULT_PRESSED_DURATION);
+
+		if(mDrawer.getTag() != null) {
+			Screen screen = Screen.valueOf(((String)mDrawer.getTag()).toUpperCase());
+			Screen.setCurrent(screen);
+			mDrawer.requestDisallowInterceptTouchEvent(true);
+		}
+
 		setupToolbar();
 
-		RelativeLayout rlMain = (RelativeLayout)findViewById(R.id.rlMain);
-		if(rlMain.getTag() != null) {
-			Screen screen = Screen.valueOf(((String)rlMain.getTag()).toUpperCase());
-			Screen.setCurrent(screen);
+		if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
+			mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+			mDrawer.setScrimColor(Color.TRANSPARENT);
 		}
 
 		if (savedInstanceState == null) {
@@ -61,12 +86,8 @@ public class MainActivity extends FragmentActivity
 
 			DemoCategories.setSelected(selected);
 
-			if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
-				materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
-				toolbar.setTitle(R.string.app_name);
-			} else if (tag != null && !tag.trim().isEmpty()) {
-				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
-				toolbar.setTitle(DemoCategories.values()[selected].getTitle());
+			if (selected >= 0) {
+				mMainToolbar.setTitle(DemoCategories.values()[selected].getTitle());
 			}
 		}
 	}
@@ -80,35 +101,22 @@ public class MainActivity extends FragmentActivity
 	}
 
 	private void setupToolbar() {
-		toolbar = (Toolbar)findViewById(R.id.toolbar);
-		materialMenu = new MaterialMenuDrawable(this,
-				Color.WHITE,
-				MaterialMenuDrawable.Stroke.THIN,
-				DEFAULT_SCALE,
-				DEFAULT_TRANSFORM_DURATION,
-				DEFAULT_PRESSED_DURATION);
-		toolbar.setNavigationIcon(materialMenu);
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				selected = -1;
-				DemoCategories.setSelected(-1);
+		// Drawer Toolbar
+		mDrawerToolbar.setTitle(R.string.app_name);
+		mDrawerToolbar.setTitleTextColor(Color.WHITE);
 
-				if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
-					finish();
-					return;
-				} else if (tag != null && !tag.trim().isEmpty()) {
-					MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
-					fragment.setSelected(-1);
-					popBackStack();
-				} else {
-					finish();
-					return;
+		// Main Toolbar
+		if (Screen.getCurrent().equals(Screen.NORMAL)) {
+			mMainToolbar.setNavigationIcon(mMaterialMenu);
+			mMainToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					mDrawer.openDrawer(mRlDrawer);
 				}
-			}
-		});
-		toolbar.setTitle(R.string.app_name);
-		toolbar.setTitleTextColor(Color.WHITE);
+			});
+			mMainToolbar.setTitle(R.string.app_name);
+		}
+		mMainToolbar.setTitleTextColor(Color.WHITE);
 	}
 
 	@Override
@@ -135,21 +143,14 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public void onBackPressed() {
-		selected = -1;
-		DemoCategories.setSelected(-1);
+		if (Screen.getCurrent().equals(Screen.NORMAL) && mDrawer.isDrawerOpen(mRlDrawer)) {
+			mDrawer.closeDrawer(mRlDrawer);
+		} else {
+			selected = -1;
+			DemoCategories.setSelected(-1);
 
-		if (Screen.getCurrent().equals(Screen.LARGE_LAND)) {
 			finish();
-			return;
-		} else if (tag == null || tag.trim().isEmpty()) {
-			finish();
-			return;
 		}
-
-		MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
-		fragment.setSelected(-1);
-
-		popBackStack();
 	}
 
 	@Override
@@ -167,6 +168,8 @@ public class MainActivity extends FragmentActivity
 		Fragment fragment = category.createFragment();
 
 		if(fragment != null) {
+			mMainToolbar.setTitle(category.getTitle());
+
 			String tag = fragment.getClass().toString();
 			fm.beginTransaction()
 					.replace(R.id.container, fragment, tag)
@@ -174,8 +177,7 @@ public class MainActivity extends FragmentActivity
 
 			this.tag = tag;
 			if(Screen.getCurrent().equals(Screen.NORMAL)) {
-				materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW, false);
-				toolbar.setTitle(DemoCategories.values()[position].getTitle());
+				mDrawer.closeDrawer(mRlDrawer);
 			}
 		} else {
 			if(category.equals(DemoCategories.AppCompatDelegate)) {
@@ -186,31 +188,6 @@ public class MainActivity extends FragmentActivity
 						.create().show();
 			}
 		}
-	}
-
-	private void popBackStack() {
-		if (tag == null || tag.trim().isEmpty()) {
-			return;
-		}
-		FragmentManager fm = getSupportFragmentManager();
-		Fragment fragment = fm.findFragmentByTag(MainFragment.TAG);
-		if (fragment != null) {
-			MainFragment mainFragment = (MainFragment) fragment;
-			mainFragment.updateUI();
-		}
-
-		fragment = fm.findFragmentByTag(tag);
-		if (fragment == null) {
-			return;
-		}
-
-		fm.beginTransaction()
-				.remove(fragment)
-				.commit();
-
-		tag = null;
-		materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER, false);
-		toolbar.setTitle(R.string.app_name);
 	}
 
 	@Override
