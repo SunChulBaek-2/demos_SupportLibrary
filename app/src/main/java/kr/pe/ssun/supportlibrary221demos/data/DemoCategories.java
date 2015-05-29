@@ -7,6 +7,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragm
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignFloatingActionButtonFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignSwipeDismissBehaviorFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
@@ -23,6 +24,7 @@ public enum DemoCategories {
 	// Revision 22.2.0
 	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN, "AppBarLayout"),
 	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN, "Floating Action Button"),
+	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN, "SwipeDismissBehavior"),
 
 	// Revision 22.1.0
 	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "DrawableCompat"),
@@ -85,6 +87,8 @@ public enum DemoCategories {
 			fragment = new DesignAppBarLayoutFragment();
 		} else if (this.equals(DesignFloatingActionButton)) {
 			fragment = new DesignFloatingActionButtonFragment();
+		} else if (this.equals(DesignSwipeDismissBehavior)) {
+			fragment = new DesignSwipeDismissBehaviorFragment();
 		}
 		// Revision 22.1.0
 		else if (this.equals(SupportDrawableCompat)) {
