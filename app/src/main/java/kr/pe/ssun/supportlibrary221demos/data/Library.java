@@ -6,6 +6,7 @@ package kr.pe.ssun.supportlibrary221demos.data;
 public enum Library {
 	V4_SUPPORT("v4 support"),
 	V7_APPCOMPAT("v7 appcompat"),
+	V7_DESIGN("v7 design"),
 	V7_RECYCLERVIEW("v7 recyclerview");
 
 	private String text;

@@ -200,6 +200,12 @@ public class MainActivity extends FragmentActivity
 
 	}
 
+	@Nullable
+	@Override
+	public ActionMode onWindowStartingSupportActionMode(ActionMode.Callback callback) {
+		return null;
+	}
+
 	public AppCompatDelegate getDelegate() {
 		if (mDelegate == null) {
 			mDelegate = AppCompatDelegate.create(this, this);

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
@@ -18,6 +19,9 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  * Created by x1210x on 2015-04-24.
  */
 public enum DemoCategories {
+	// Revision 22.2.0
+	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN, "AppBarLayout"),
+
 	// Revision 22.1.0
 	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "DrawableCompat"),
 	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT, "Prebuilt Interpolators"),
@@ -74,8 +78,12 @@ public enum DemoCategories {
 	public Fragment createFragment() {
 		Fragment fragment = null;
 
+		// Revision 22.2.0
+		if (this.equals(DesignAppBarLAyout)) {
+			fragment = new DesignAppBarLayoutFragment();
+		}
 		// Revision 22.1.0
-		if (this.equals(SupportDrawableCompat)) {
+		else if (this.equals(SupportDrawableCompat)) {
 			fragment = new SupportDrawableCompatFragment();
 		} else if (this.equals(SupportPrebuiltInterpolators)) {
 			fragment = new SupportPrebuiltInterpolatorsFragment();
