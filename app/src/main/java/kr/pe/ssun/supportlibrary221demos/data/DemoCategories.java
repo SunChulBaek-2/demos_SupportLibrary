@@ -6,6 +6,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragm
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignFloatingActionButtonFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
@@ -21,6 +22,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
 public enum DemoCategories {
 	// Revision 22.2.0
 	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN, "AppBarLayout"),
+	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN, "Floating Action Button"),
 
 	// Revision 22.1.0
 	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "DrawableCompat"),
@@ -81,6 +83,8 @@ public enum DemoCategories {
 		// Revision 22.2.0
 		if (this.equals(DesignAppBarLAyout)) {
 			fragment = new DesignAppBarLayoutFragment();
+		} else if (this.equals(DesignFloatingActionButton)) {
+			fragment = new DesignFloatingActionButtonFragment();
 		}
 		// Revision 22.1.0
 		else if (this.equals(SupportDrawableCompat)) {
