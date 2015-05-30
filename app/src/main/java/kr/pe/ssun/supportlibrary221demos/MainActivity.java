@@ -77,17 +77,19 @@ public class MainActivity extends FragmentActivity
 		}
 
 		if (savedInstanceState == null) {
+			MainFragment fragment = new MainFragment();
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.list, new MainFragment(), MainFragment.TAG)
+					.add(R.id.list, fragment, MainFragment.TAG)
 					.commit();
 		} else {
 			tag = savedInstanceState.getString("tag");
 			selected = savedInstanceState.getInt("selected");
+			String title = savedInstanceState.getString("title", getString(R.string.app_name));
 
 			DemoCategories.setSelected(selected);
 
 			if (selected >= 0) {
-				mMainToolbar.setTitle(DemoCategories.values()[selected].getTitle());
+				mMainToolbar.setTitle(title);
 			}
 		}
 	}
@@ -98,6 +100,10 @@ public class MainActivity extends FragmentActivity
 
 		outState.putString("tag", tag);
 		outState.putInt("selected", selected);
+
+		if (mMainToolbar.getTitle() != null) {
+			outState.putString("title", mMainToolbar.getTitle().toString());
+		}
 	}
 
 	private void setupToolbar() {
@@ -127,21 +133,6 @@ public class MainActivity extends FragmentActivity
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
 	public void onBackPressed() {
 		if (Screen.getCurrent().equals(Screen.NORMAL) && mDrawer.isDrawerOpen(mRlDrawer)) {
 			mDrawer.closeDrawer(mRlDrawer);
@@ -154,21 +145,20 @@ public class MainActivity extends FragmentActivity
 	}
 
 	@Override
-	public void onItemClick(int position) {
-		selected = position;
+	public boolean onItemClick(MenuItem menuItem) {
+		selected = menuItem.getItemId();
 
 		if (selected >= 0) {
-			MainFragment fragment = (MainFragment) getSupportFragmentManager().findFragmentByTag(MainFragment.TAG);
-			fragment.setSelected(selected);
+			DemoCategories.setSelected(selected);
 		}
 
 		FragmentManager fm = getSupportFragmentManager();
 
-		DemoCategories category = DemoCategories.values()[position];
+		DemoCategories category = DemoCategories.get(menuItem.getItemId());
 		Fragment fragment = category.createFragment();
 
 		if(fragment != null) {
-			mMainToolbar.setTitle(category.getTitle());
+			mMainToolbar.setTitle(menuItem.getTitle());
 
 			String tag = fragment.getClass().toString();
 			fm.beginTransaction()
@@ -179,15 +169,25 @@ public class MainActivity extends FragmentActivity
 			if(Screen.getCurrent().equals(Screen.NORMAL)) {
 				mDrawer.closeDrawer(mRlDrawer);
 			}
+			return true;
 		} else {
 			if(category.equals(DemoCategories.AppCompatDelegate)) {
 				new AlertDialog.Builder(this)
-						.setTitle("AppCompatDelegate")
+						.setTitle(R.string.action_app_compat_delegate)
 						.setMessage("MainActivity is created using AppCompatDelegate.")
 						.setPositiveButton(android.R.string.ok, null)
 						.create().show();
+				return true;
+			} else if (category.equals(DemoCategories.DesignNavigationView)) {
+				new AlertDialog.Builder(this)
+						.setTitle(R.string.action_design_navigation_view)
+						.setMessage("MainActivity is created using NavigationView.")
+						.setPositiveButton(android.R.string.ok, null)
+						.create().show();
+				return true;
 			}
 		}
+		return false;
 	}
 
 	@Override

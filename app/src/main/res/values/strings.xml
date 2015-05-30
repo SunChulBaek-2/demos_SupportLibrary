@@ -1,4 +1,29 @@
 <resources>
-	<string name="app_name">Support Library Demos</string>
-	<string name="action_settings">Settings</string>
+	<string name="app_name" translatable="false">Support Library Demos</string>
+
+	<!-- Revision 22.2.0 -->
+	<string name="revision_22_2_0" translatable="false">Revision 22.2.0</string>
+	<string name="action_design_appbar_layout" translatable="false">AppBarLayout, TabLayout</string>
+	<string name="action_design_navigation_view" translatable="false">NavigationView</string>
+	<string name="action_design_floating_action_button" translatable="false">Floating Action Button</string>
+	<string name="action_design_swipe_dismiss_behavior" translatable="false">SwipeDismissBehavior</string>
+	<string name="action_design_text_input_layout" translatable="false">TextInputLayout</string>
+
+	<!-- Revision 22.1.0 -->
+	<string name="revision_22_1_0" translatable="false">Revision 22.1.0</string>
+	<string name="action_support_drawable_compat" translatable="false">DrawableCompat</string>
+	<string name="action_support_prebuilt_interpolators" translatable="false">Prebuilt Interpolators</string>
+	<string name="action_support_path_interpolator_compat" translatable="false">PathInterpolatorCompat</string>
+	<string name="action_support_space" translatable="false">Space</string>
+	<string name="action_support_nested_scroll_view" translatable="false">NestedScrollView</string>
+	<string name="action_app_compat_delegate" translatable="false">AppCompatDelegate</string>
+	<string name="action_app_compat_dialog" translatable="false">AppCompatDialog</string>
+	<string name="action_app_compat_widget" translatable="false">AppCompat Widgets</string>
+	<string name="action_app_compat_palette" translatable="false">Palette</string>
+	<string name="action_recycler_view_sorted_list" translatable="false">SortedList</string>
+
+	<!-- Revision 22 -->
+	<string name="revision_22" translatable="false">Revision 22</string>
+	<string name="action_support_resource_compat" translatable="false">ResourceCompat</string>
+	<string name="action_recycler_view_position" translatable="false">getLayoutPosition, getAdapterPosition</string>
 </resources>

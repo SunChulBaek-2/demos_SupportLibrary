@@ -1,7 +1,9 @@
 package kr.pe.ssun.supportlibrary221demos.data;
 
 import android.support.v4.app.Fragment;
+import android.util.SparseArray;
 
+import kr.pe.ssun.supportlibrary221demos.R;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
@@ -23,37 +25,66 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  */
 public enum DemoCategories {
 	// Revision 22.2.0
-	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN, "AppBarLayout"),
-	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN, "Floating Action Button"),
-	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN, "SwipeDismissBehavior"),
-	DesignTextInputLayout(Revision.REV_22_2_0, Library.V7_DESIGN, "TextInputLayout"),
+	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignNavigationView(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignTextInputLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
 
 	// Revision 22.1.0
-	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "DrawableCompat"),
-	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT, "Prebuilt Interpolators"),
-	SupportPathInterpolatorCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, "PathInterpolatorCompat"),
-	SupportSpace(Revision.REV_22_1_0, Library.V4_SUPPORT, "Space"),
-	SupportNestedScrollView(Revision.REV_22_1_0, Library.V4_SUPPORT, "NestedScrollView"),
-	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompatDelegate"),
-	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompatDialog"),
-	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "AppCompat Widgets"),
-	AppCompatPalette(Revision.REV_22_1_0, Library.V7_APPCOMPAT, "Palette"),
-	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW, "SortedList"),
+	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT),
+	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT),
+	SupportPathInterpolatorCompat(Revision.REV_22_1_0, Library.V4_SUPPORT),
+	SupportSpace(Revision.REV_22_1_0, Library.V4_SUPPORT),
+	SupportNestedScrollView(Revision.REV_22_1_0, Library.V4_SUPPORT),
+	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
+	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
+	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
+	AppCompatPalette(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
+	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW),
 
 	// Revision 22
-	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT, "ResourceCompat"),
-	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW, "getLayoutPosition (), getAdapterPosition ()");
+	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT),
+	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW);
 
-	private static int selected = -1;
+	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
+	static {
+		// Revision 22.2.0
+		mArray.put(R.id.design_appbar_layout, DesignAppBarLAyout);
+		mArray.put(R.id.design_navigation_view, DesignNavigationView);
+		mArray.put(R.id.design_floating_action_button, DesignFloatingActionButton);
+		mArray.put(R.id.design_swipe_dismiss_behavior, DesignSwipeDismissBehavior);
+		mArray.put(R.id.design_text_input_layout, DesignTextInputLayout);
+
+		// Revision 22.1.0
+		mArray.put(R.id.support_drawable_compat, SupportDrawableCompat);
+		mArray.put(R.id.support_prebuilt_interpolators, SupportPrebuiltInterpolators);
+		mArray.put(R.id.support_path_interpolator_compat, SupportPathInterpolatorCompat);
+		mArray.put(R.id.support_space, SupportSpace);
+		mArray.put(R.id.support_nested_scroll_view, SupportNestedScrollView);
+		mArray.put(R.id.app_compat_delegate, AppCompatDelegate);
+		mArray.put(R.id.app_compat_dialog, AppCompatDialog);
+		mArray.put(R.id.app_compat_widget, AppCompatWidget);
+		mArray.put(R.id.app_compat_palette, AppCompatPalette);
+		mArray.put(R.id.recycler_view_sorted_list, RecyclerViewSortedList);
+
+		// Revision 22
+		mArray.put(R.id.support_resource_compat, SupportResourceCompat);
+		mArray.put(R.id.recycler_view_position, RecyclerViewPosition);
+	}
+
+	public static DemoCategories get(int menuId) {
+		return mArray.get(menuId);
+	}
+
+	private static int selected = -1; // menuId
 
 	private Revision revision;
 	private Library library;
-	private String title;
 
-	DemoCategories(Revision revision, Library library, String title) {
+	DemoCategories(Revision revision, Library library) {
 		this.revision = revision;
 		this.library = library;
-		this.title = title;
 	}
 
 	public Revision getRevision() {
@@ -64,10 +95,6 @@ public enum DemoCategories {
 		return this.library;
 	}
 
-	public String getTitle() {
-		return this.title;
-	}
-
 	public static void setSelected(int selected) {
 		DemoCategories.selected = selected;
 	}
@@ -76,17 +103,14 @@ public enum DemoCategories {
 		return DemoCategories.selected;
 	}
 
-	@Override
-	public String toString() {
-		return this.title;
-	}
-
 	public Fragment createFragment() {
 		Fragment fragment = null;
 
 		// Revision 22.2.0
 		if (this.equals(DesignAppBarLAyout)) {
 			fragment = new DesignAppBarLayoutFragment();
+		} else if (this.equals(DesignNavigationView)) {
+			fragment = null;
 		} else if (this.equals(DesignFloatingActionButton)) {
 			fragment = new DesignFloatingActionButtonFragment();
 		} else if (this.equals(DesignSwipeDismissBehavior)) {
