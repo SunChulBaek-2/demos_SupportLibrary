@@ -1,15 +1,7 @@
 # demos_SupportLibrary221 [![Build Status](https://travis-ci.org/x1210x/demos_SupportLibrary221.svg?branch=master)](https://travis-ci.org/x1210x/demos_SupportLibrary221)
-* This Application does not cover all the features of support library 22.1 (http://android-developers.blogspot.kr/2015/04/android-support-library-221.html)
 
-* This Application covers...
-   * Support v4 : DrawableCompat
-   * Support v4 : Prebuilt Interpolators
-   * Support v4 : PathInterpolatorComplat
-   * Support v4 : Space (with GridLayout)
-   * AppCompat : AppCompatDelegate
-   * AppCompat : AppCompatDialog
-   * AppCompat : AppCompat Widgets
-   * RecyclerView
+* This Application covers support library features.
+* Added design support library features (support library revision 22.2)
 
 Try out this application on the Play Store.
 
