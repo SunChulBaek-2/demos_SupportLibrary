@@ -1,6 +1,7 @@
 package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
@@ -13,15 +14,12 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import it.neokree.materialtabs.MaterialTab;
-import it.neokree.materialtabs.MaterialTabHost;
-import it.neokree.materialtabs.MaterialTabListener;
 import kr.pe.ssun.supportlibrary221demos.R;
 
 /**
  * Created by x1210x on 2015-04-28.
  */
-public class AppCompatPaletteFragment extends Fragment implements MaterialTabListener {
+public class AppCompatPaletteFragment extends Fragment implements TabLayout.OnTabSelectedListener {
 	private static final int SIZE = 3;
 	private static SparseIntArray RESOURCES = new SparseIntArray();
 
@@ -37,7 +35,7 @@ public class AppCompatPaletteFragment extends Fragment implements MaterialTabLis
 			"tulip"
 	};
 
-	private MaterialTabHost tabHost;
+	private TabLayout tabLayout;
 	private ViewPager pager;
 	private PagerAdapter adapter;
 
@@ -46,7 +44,7 @@ public class AppCompatPaletteFragment extends Fragment implements MaterialTabLis
 							 final Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_appcompat_palette, container, false);
 
-		tabHost = (MaterialTabHost) rootView.findViewById(R.id.tabHost);
+		tabLayout = (TabLayout) rootView.findViewById(R.id.tabHost);
 		pager = (ViewPager)rootView.findViewById(R.id.vpPager);
 
 		adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
@@ -70,9 +68,12 @@ public class AppCompatPaletteFragment extends Fragment implements MaterialTabLis
 				return SIZE;
 			}
 		};
-		pager.setAdapter(adapter);
 
-		pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+		tabLayout.setOnTabSelectedListener(this);
+		tabLayout.setTabsFromPagerAdapter(adapter);
+
+		pager.setAdapter(adapter);
+		pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout) {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -80,13 +81,13 @@ public class AppCompatPaletteFragment extends Fragment implements MaterialTabLis
 
 			@Override
 			public void onPageSelected(int position) {
-				tabHost.setSelectedNavigationItem(position);
+				tabLayout.getTabAt(position).select();
 
 				List<Fragment> fragments = getChildFragmentManager().getFragments();
 				AppCompatPaletteSubFragment fragment = (AppCompatPaletteSubFragment) fragments.get(position);
 
-				tabHost.setPrimaryColor(fragment.getRGB());
-				tabHost.setTextColor(fragment.getTitleTextColor());
+				tabLayout.setBackgroundColor(fragment.getRGB());
+				tabLayout.setTabTextColors(fragment.getBodyTextColor(), fragment.getTitleTextColor());
 			}
 
 			@Override
@@ -95,31 +96,21 @@ public class AppCompatPaletteFragment extends Fragment implements MaterialTabLis
 			}
 		});
 
-		// insert all tabs from pagerAdapter data
-		for (int i = 0; i < adapter.getCount(); i++) {
-			tabHost.addTab(
-					tabHost.newTab()
-							.setText(adapter.getPageTitle(i))
-							.setTabListener(this)
-			);
-
-		}
-
 		return rootView;
 	}
 
 	@Override
-	public void onTabSelected(MaterialTab materialTab) {
-		pager.setCurrentItem(materialTab.getPosition());
+	public void onTabSelected(TabLayout.Tab tab) {
+		pager.setCurrentItem(tab.getPosition());
 	}
 
 	@Override
-	public void onTabReselected(MaterialTab materialTab) {
+	public void onTabUnselected(TabLayout.Tab tab) {
 
 	}
 
 	@Override
-	public void onTabUnselected(MaterialTab materialTab) {
+	public void onTabReselected(TabLayout.Tab tab) {
 
 	}
 }

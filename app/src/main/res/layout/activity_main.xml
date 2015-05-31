@@ -30,19 +30,11 @@
 		android:layout_height="match_parent"
 		android:layout_gravity="left">
 
-		<android.support.v7.widget.Toolbar
-			android:id="@+id/drawer_toolbar"
-			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize"
-			android:layout_alignParentTop="true"
-			android:background="?attr/colorPrimary"/>
-
 		<RelativeLayout
 			android:id="@+id/list"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_alignParentBottom="true"
-			android:layout_below="@id/drawer_toolbar"/>
+			android:layout_alignParentBottom="true"/>
 
 		<View
 			android:layout_width="1dp"

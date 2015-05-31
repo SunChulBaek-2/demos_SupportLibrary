@@ -2,6 +2,7 @@ package kr.pe.ssun.supportlibrary221demos.fragment.recyclerview;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.util.SortedList;
@@ -15,8 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 import kr.pe.ssun.supportlibrary221demos.R;
 import kr.pe.ssun.supportlibrary221demos.adapter.RecyclerViewSortedListAdapter;
@@ -88,7 +87,7 @@ public class RecyclerViewSortedListFragment extends Fragment {
 							 final Bundle savedInstanceState) {
 		final View rootView = inflater.inflate(R.layout.fragment_recyclerview_sorted_list, container, false);
 		final RecyclerView rcRecyclerView = (RecyclerView)rootView.findViewById(R.id.rvRecyclerView);
-		final AddFloatingActionButton fab = (AddFloatingActionButton)rootView.findViewById(R.id.fab);
+		final FloatingActionButton fab = (FloatingActionButton)rootView.findViewById(R.id.fab);
 
 		rcRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
