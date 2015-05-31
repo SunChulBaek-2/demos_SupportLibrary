@@ -25,7 +25,8 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  */
 public enum DemoCategories {
 	// Revision 22.2.0
-	DesignAppBarLAyout(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignAppBarLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignTabLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
 	DesignNavigationView(Revision.REV_22_2_0, Library.V7_DESIGN),
 	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN),
 	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN),
@@ -50,7 +51,8 @@ public enum DemoCategories {
 	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
 	static {
 		// Revision 22.2.0
-		mArray.put(R.id.design_appbar_layout, DesignAppBarLAyout);
+		mArray.put(R.id.design_appbar_layout, DesignAppBarLayout);
+		mArray.put(R.id.design_tab_layout, DesignTabLayout);
 		mArray.put(R.id.design_navigation_view, DesignNavigationView);
 		mArray.put(R.id.design_floating_action_button, DesignFloatingActionButton);
 		mArray.put(R.id.design_swipe_dismiss_behavior, DesignSwipeDismissBehavior);
@@ -107,8 +109,10 @@ public enum DemoCategories {
 		Fragment fragment = null;
 
 		// Revision 22.2.0
-		if (this.equals(DesignAppBarLAyout)) {
+		if (this.equals(DesignAppBarLayout)) {
 			fragment = new DesignAppBarLayoutFragment();
+		} else if (this.equals(DesignTabLayout)) {
+			fragment = new AppCompatPaletteFragment();
 		} else if (this.equals(DesignNavigationView)) {
 			fragment = null;
 		} else if (this.equals(DesignFloatingActionButton)) {

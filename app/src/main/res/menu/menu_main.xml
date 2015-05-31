@@ -12,6 +12,11 @@
 			android:title="@string/action_design_appbar_layout"
 			app:showAsAction="never"/>
 		<item
+			android:id="@+id/design_tab_layout"
+			android:checkable="true"
+			android:title="@string/action_design_tab_layout"
+			app:showAsAction="never"/>
+		<item
 			android:id="@+id/design_navigation_view"
 			android:checkable="true"
 			android:title="@string/action_design_navigation_view"

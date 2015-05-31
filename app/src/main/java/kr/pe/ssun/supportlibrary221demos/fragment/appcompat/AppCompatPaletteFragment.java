@@ -1,5 +1,6 @@
 package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -69,6 +70,7 @@ public class AppCompatPaletteFragment extends Fragment implements TabLayout.OnTa
 			}
 		};
 
+		tabLayout.setBackgroundColor(Color.rgb(138, 0, 0));
 		tabLayout.setOnTabSelectedListener(this);
 		tabLayout.setTabsFromPagerAdapter(adapter);
 

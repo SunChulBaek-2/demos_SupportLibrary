@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/enter_always"
+		android:title="Enter Always"
+		app:showAsAction="never"/>
+	<item
+		android:id="@+id/enter_always_collapsed"
+		android:title="Enter Always Collapsed"
+		app:showAsAction="never"/>
+	<item
+		android:id="@+id/exit_until_collapsed"
+		android:title="Exit Until Collapsed"
+		app:showAsAction="never"/>
+</menu>

@@ -3,7 +3,8 @@
 
 	<!-- Revision 22.2.0 -->
 	<string name="revision_22_2_0" translatable="false">Revision 22.2.0</string>
-	<string name="action_design_appbar_layout" translatable="false">AppBarLayout, TabLayout</string>
+	<string name="action_design_appbar_layout" translatable="false">AppBarLayout</string>
+	<string name="action_design_tab_layout" translatable="false">TabLayout</string>
 	<string name="action_design_navigation_view" translatable="false">NavigationView</string>
 	<string name="action_design_floating_action_button" translatable="false">Floating Action Button</string>
 	<string name="action_design_swipe_dismiss_behavior" translatable="false">SwipeDismissBehavior</string>
