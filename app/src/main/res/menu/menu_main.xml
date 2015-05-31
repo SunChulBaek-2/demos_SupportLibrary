@@ -36,6 +36,11 @@
 			android:checkable="true"
 			android:title="@string/action_design_text_input_layout"
 			app:showAsAction="never"/>
+		<item
+			android:id="@+id/design_collapsing_toolbar_layout"
+			android:checkable="true"
+			android:title="@string/action_design_collapsing_toolbar_layout"
+			app:showAsAction="never"/>
 	</group>
 
 	<!-- Revision 22.1.0-->

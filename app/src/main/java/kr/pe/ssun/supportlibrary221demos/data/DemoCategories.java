@@ -8,6 +8,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragm
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignCollapsingToolbarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignFloatingActionButtonFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignSwipeDismissBehaviorFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTextInputLayoutFragment;
@@ -31,6 +32,7 @@ public enum DemoCategories {
 	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN),
 	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN),
 	DesignTextInputLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignCollapsingToolbarLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
 
 	// Revision 22.1.0
 	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT),
@@ -57,6 +59,7 @@ public enum DemoCategories {
 		mArray.put(R.id.design_floating_action_button, DesignFloatingActionButton);
 		mArray.put(R.id.design_swipe_dismiss_behavior, DesignSwipeDismissBehavior);
 		mArray.put(R.id.design_text_input_layout, DesignTextInputLayout);
+		mArray.put(R.id.design_collapsing_toolbar_layout, DesignCollapsingToolbarLayout);
 
 		// Revision 22.1.0
 		mArray.put(R.id.support_drawable_compat, SupportDrawableCompat);
@@ -121,6 +124,8 @@ public enum DemoCategories {
 			fragment = new DesignSwipeDismissBehaviorFragment();
 		} else if (this.equals(DesignTextInputLayout)) {
 			fragment = new DesignTextInputLayoutFragment();
+		} else if (this.equals(DesignCollapsingToolbarLayout)) {
+			fragment = new DesignCollapsingToolbarLayoutFragment();
 		}
 		// Revision 22.1.0
 		else if (this.equals(SupportDrawableCompat)) {

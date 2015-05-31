@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#ffffff">
+
+	<android.support.v4.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ1"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ2"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ3"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ4"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ5"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ6"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ7"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ8"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ9"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ10"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ1"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ2"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ3"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ4"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ5"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ6"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ7"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ8"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ9"
+				android:textSize="50sp"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="ㅋㅋㅋ10"
+				android:textSize="50sp"/>
+		</LinearLayout>
+	</android.support.v4.widget.NestedScrollView>
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="192dp"
+		android:background="@color/amber500">
+
+		<android.support.design.widget.CollapsingToolbarLayout
+			android:id="@+id/toolbarLayout"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layout_scrollFlags="scroll|exitUntilCollapsed"
+			app:contentScrim="#8a0000">
+
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="centerCrop"
+				android:src="@drawable/chrysanthemum"
+				app:layout_collapseMode="parallax"/>
+			<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				app:layout_scrollFlags="scroll|enterAlways"/>
+
+		</android.support.design.widget.CollapsingToolbarLayout>
+	</android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>

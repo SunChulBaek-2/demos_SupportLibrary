@@ -9,6 +9,7 @@
 	<string name="action_design_floating_action_button" translatable="false">Floating Action Button</string>
 	<string name="action_design_swipe_dismiss_behavior" translatable="false">SwipeDismissBehavior</string>
 	<string name="action_design_text_input_layout" translatable="false">TextInputLayout</string>
+	<string name="action_design_collapsing_toolbar_layout" translatable="false">CollapsingToolbarLayout</string>
 
 	<!-- Revision 22.1.0 -->
 	<string name="revision_22_1_0" translatable="false">Revision 22.1.0</string>
