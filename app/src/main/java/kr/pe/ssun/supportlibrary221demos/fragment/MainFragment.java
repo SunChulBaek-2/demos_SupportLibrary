@@ -36,6 +36,7 @@ public class MainFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
 		nav = (NavigationView)rootView.findViewById(R.id.navigation);
+		nav.inflateHeaderView(R.layout.header_navigation_view);
 		nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 			@Override
 			public boolean onNavigationItemSelected(MenuItem menuItem) {
