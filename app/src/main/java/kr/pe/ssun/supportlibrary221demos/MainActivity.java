@@ -148,13 +148,6 @@ public class MainActivity extends FragmentActivity
 						.setPositiveButton(android.R.string.ok, null)
 						.create().show();
 				return true;
-			} else if (category.equals(DemoCategories.DesignNavigationView)) {
-				new AlertDialog.Builder(this)
-						.setTitle(R.string.action_design_navigation_view)
-						.setMessage("MainActivity is created using NavigationView.")
-						.setPositiveButton(android.R.string.ok, null)
-						.create().show();
-				return true;
 			}
 		}
 		return false;

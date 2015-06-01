@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/amber500"
+				android:paddingTop="16dp"
+				android:paddingLeft="16dp"
+				android:paddingBottom="8dp"
+				android:paddingRight="16dp">
+	<!--http://www.google.com/design/spec/patterns/navigation-drawer.html#navigation-drawer-specs-->
+	<de.hdodenhof.circleimageview.CircleImageView
+		android:id="@+id/ivProfile"
+		android:layout_width="70dp"
+		android:layout_height="70dp"
+		android:src="@drawable/profile_x1210x"
+		app:border_width="0dp"
+		app:border_color="#00000000"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="56dp"
+		android:layout_below="@id/ivProfile"
+		android:gravity="center">
+
+		<TextView
+			android:id="@+id/tvName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Sunchul Baek"
+			android:textColor="@color/lightTextPrimary"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tvEmail"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tvName"
+			android:text="x1210x@gmail.com"
+			android:textColor="@color/lightTextPrimary"
+			android:textSize="14sp"/>
+	</RelativeLayout>
+</RelativeLayout>
