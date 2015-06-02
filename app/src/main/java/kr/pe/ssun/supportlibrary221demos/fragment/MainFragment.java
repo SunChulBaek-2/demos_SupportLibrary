@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,14 @@ public class MainFragment extends Fragment {
 			}
 		});
 		setNavItemChecked(DemoCategories.getSelected());
+
+		// init
+		MenuItem item = nav.getMenu().getItem(0);
+		setNavItemChecked(item.getItemId());
+		if (listener != null && item.isEnabled() && item.isCheckable()) {
+			listener.onItemClick(item);
+		}
+
 
 		return rootView;
 	}
