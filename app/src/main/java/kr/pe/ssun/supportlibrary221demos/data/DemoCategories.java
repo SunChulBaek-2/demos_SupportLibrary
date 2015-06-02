@@ -12,6 +12,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignCollapsingToolbar
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignFloatingActionButtonFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignNavigationViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignSwipeDismissBehaviorFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTabLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTextInputLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
@@ -116,7 +117,7 @@ public enum DemoCategories {
 		if (this.equals(DesignAppBarLayout)) {
 			fragment = new DesignAppBarLayoutFragment();
 		} else if (this.equals(DesignTabLayout)) {
-			fragment = new AppCompatPaletteFragment();
+			fragment = new DesignTabLayoutFragment();
 		} else if (this.equals(DesignNavigationView)) {
 			fragment = new DesignNavigationViewFragment();
 		} else if (this.equals(DesignFloatingActionButton)) {
