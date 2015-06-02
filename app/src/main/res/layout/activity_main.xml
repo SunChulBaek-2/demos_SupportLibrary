@@ -1,8 +1,9 @@
-<kr.pe.ssun.supportlibrary221demos.view.BetterDrawerLayout android:id="@+id/drawer"
-														   xmlns:android="http://schemas.android.com/apk/res/android"
-														   android:layout_width="match_parent"
-														   android:layout_height="match_parent"
-														   android:tag="normal">
+<android.support.v4.widget.DrawerLayout
+	android:id="@+id/drawer"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:tag="normal">
 
 	<RelativeLayout
 		android:id="@+id/rlMain"
@@ -42,4 +43,4 @@
 			android:layout_alignParentRight="true"
 			android:background="@color/darkDividers"/>
 	</RelativeLayout>
-</kr.pe.ssun.supportlibrary221demos.view.BetterDrawerLayout>
+</android.support.v4.widget.DrawerLayout>
