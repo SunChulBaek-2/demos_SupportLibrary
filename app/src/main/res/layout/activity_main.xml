@@ -1,9 +1,11 @@
 <android.support.v4.widget.DrawerLayout
 	android:id="@+id/drawer"
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:tag="normal">
+	android:tag="normal"
+	android:fitsSystemWindows="true">
 
 	<RelativeLayout
 		android:id="@+id/rlMain"
@@ -25,22 +27,12 @@
 			android:layout_below="@id/main_toolbar"/>
 	</RelativeLayout>
 
-	<RelativeLayout
-		android:id="@+id/rlDrawer"
+	<android.support.design.widget.NavigationView
+		android:id="@+id/navigation"
 		android:layout_width="320dp"
 		android:layout_height="match_parent"
-		android:layout_gravity="left">
-
-		<RelativeLayout
-			android:id="@+id/list"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_alignParentBottom="true"/>
-
-		<View
-			android:layout_width="1dp"
-			android:layout_height="match_parent"
-			android:layout_alignParentRight="true"
-			android:background="@color/darkDividers"/>
-	</RelativeLayout>
+		android:layout_gravity="left"
+		android:background="@android:color/background_light"
+		android:fitsSystemWindows="true"
+		app:menu="@menu/menu_main"/>
 </android.support.v4.widget.DrawerLayout>

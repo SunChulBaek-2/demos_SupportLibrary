@@ -1,0 +1,4 @@
+<resources>
+	<dimen name="nav_header_view_height">174dp</dimen><!-- 150+24(status bar) -->
+	<dimen name="nav_header_view_paddingTop">40dp</dimen><!-- 16+24(status bar) -->
+</resources>

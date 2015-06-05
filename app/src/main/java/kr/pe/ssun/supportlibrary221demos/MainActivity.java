@@ -2,6 +2,7 @@ package kr.pe.ssun.supportlibrary221demos;
 
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -18,15 +19,13 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
-import kr.pe.ssun.supportlibrary221demos.fragment.MainFragment;
 
-public class MainActivity extends FragmentActivity
-		implements AppCompatCallback, MainFragment.MainFragmentListener {
+public class MainActivity extends FragmentActivity implements AppCompatCallback {
 	private AppCompatDelegate mDelegate;
 
 	private DrawerLayout mDrawer;
 	private RelativeLayout mRlMain;
-	private RelativeLayout mRlDrawer;
+	private NavigationView mNavigation;
 	private Toolbar mToolbar;
 
 	private String tag = null;
@@ -42,10 +41,31 @@ public class MainActivity extends FragmentActivity
 
 		mDrawer = (DrawerLayout) findViewById(R.id.drawer);
 		// Drawer
-		mRlDrawer = (RelativeLayout)findViewById(R.id.rlDrawer);
+		mNavigation = (NavigationView) findViewById(R.id.navigation);
 		// Main Content
 		mRlMain = (RelativeLayout)findViewById(R.id.rlMain);
 		mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+
+		mNavigation.inflateHeaderView(R.layout.header_navigation_view);
+		mNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+			@Override
+			public boolean onNavigationItemSelected(MenuItem menuItem) {
+				setNavItemChecked(menuItem.getItemId());
+
+				if (menuItem.isEnabled() && menuItem.isCheckable()) {
+					return onItemClick(menuItem);
+				}
+				return false;
+			}
+		});
+		setNavItemChecked(DemoCategories.getSelected());
+
+		// init
+		MenuItem item = mNavigation.getMenu().getItem(0);
+		setNavItemChecked(item.getItemId());
+		if (item.isEnabled() && item.isCheckable()) {
+			onItemClick(item);
+		}
 
 		mToolbar.setNavigationIcon(R.drawable.ic_action_navigation_menu);
 
@@ -57,10 +77,6 @@ public class MainActivity extends FragmentActivity
 		setupToolbar();
 
 		if (savedInstanceState == null) {
-			MainFragment fragment = new MainFragment();
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.list, fragment, MainFragment.TAG)
-					.commit();
 		} else {
 			tag = savedInstanceState.getString("tag");
 			selected = savedInstanceState.getInt("selected");
@@ -70,6 +86,15 @@ public class MainActivity extends FragmentActivity
 
 			if (selected >= 0) {
 				mToolbar.setTitle(title);
+			}
+		}
+	}
+
+	private void setNavItemChecked(int id) {
+		for (int i=0; i<mNavigation.getMenu().size(); i++) {
+			MenuItem item = mNavigation.getMenu().getItem(i);
+			if (item.isEnabled() && item.isCheckable()) {
+				item.setChecked(item.getItemId() == id);
 			}
 		}
 	}
@@ -90,7 +115,7 @@ public class MainActivity extends FragmentActivity
 		mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mDrawer.openDrawer(mRlDrawer);
+				mDrawer.openDrawer(mNavigation);
 			}
 		});
 		mToolbar.setTitle(R.string.app_name);
@@ -106,8 +131,8 @@ public class MainActivity extends FragmentActivity
 
 	@Override
 	public void onBackPressed() {
-		if (mDrawer.isDrawerOpen(mRlDrawer)) {
-			mDrawer.closeDrawer(mRlDrawer);
+		if (mDrawer.isDrawerOpen(mNavigation)) {
+			mDrawer.closeDrawer(mNavigation);
 		} else {
 			selected = -1;
 			DemoCategories.setSelected(-1);
@@ -116,7 +141,6 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	@Override
 	public boolean onItemClick(MenuItem menuItem) {
 		selected = menuItem.getItemId();
 
@@ -138,7 +162,7 @@ public class MainActivity extends FragmentActivity
 					.commit();
 
 			this.tag = tag;
-			mDrawer.closeDrawer(mRlDrawer);
+			mDrawer.closeDrawer(mNavigation);
 			return true;
 		} else {
 			if(category.equals(DemoCategories.AppCompatDelegate)) {
