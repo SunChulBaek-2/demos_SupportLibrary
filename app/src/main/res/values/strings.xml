@@ -22,11 +22,20 @@
 	<string name="action_app_compat_delegate" translatable="false">AppCompatDelegate</string>
 	<string name="action_app_compat_dialog" translatable="false">AppCompatDialog</string>
 	<string name="action_app_compat_widget" translatable="false">AppCompat Widgets</string>
-	<string name="action_app_compat_palette" translatable="false">Palette</string>
+	<string name="action_app_compat_palette_builder" translatable="false">Palette.Builder</string>
 	<string name="action_recycler_view_sorted_list" translatable="false">SortedList</string>
 
 	<!-- Revision 22 -->
 	<string name="revision_22" translatable="false">Revision 22</string>
 	<string name="action_support_resource_compat" translatable="false">ResourceCompat</string>
 	<string name="action_recycler_view_position" translatable="false">getLayoutPosition, getAdapterPosition</string>
+
+	<!-- Revision 21.0.3 -->
+
+	<!-- Revision 21.0.2 -->
+
+	<!-- Revision 21.0.1 -->
+
+	<!-- Revision 21 -->
+	<string name="action_app_compat_palette" translatable="false">Palette</string>
 </resources>

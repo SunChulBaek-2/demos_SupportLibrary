@@ -45,12 +45,21 @@ public enum DemoCategories {
 	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
 	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
 	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
-	AppCompatPalette(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
+	AppCompatPaletteBuilder(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
 	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW),
 
 	// Revision 22
 	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT),
-	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW);
+	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW),
+
+	// Revision 21.0.3
+
+	// Revision 21.0.2
+
+	// Revision 21.0.1
+
+	// Revision 21
+	AppCompatPalette(Revision.REV_21, Library.V7_APPCOMPAT);
 
 	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
 	static {
@@ -72,12 +81,21 @@ public enum DemoCategories {
 		mArray.put(R.id.app_compat_delegate, AppCompatDelegate);
 		mArray.put(R.id.app_compat_dialog, AppCompatDialog);
 		mArray.put(R.id.app_compat_widget, AppCompatWidget);
-		mArray.put(R.id.app_compat_palette, AppCompatPalette);
+		mArray.put(R.id.app_compat_palette_builder, AppCompatPaletteBuilder);
 		mArray.put(R.id.recycler_view_sorted_list, RecyclerViewSortedList);
 
 		// Revision 22
 		mArray.put(R.id.support_resource_compat, SupportResourceCompat);
 		mArray.put(R.id.recycler_view_position, RecyclerViewPosition);
+
+		// Revision 21.0.3
+
+		// Revision 21.0.2
+
+		// Revision 21.0.1
+
+		// Revision 21
+		mArray.put(R.id.app_compat_palette, AppCompatPalette);
 	}
 
 	public static DemoCategories get(int menuId) {
@@ -148,7 +166,7 @@ public enum DemoCategories {
 			fragment = new AppCompatWidgetFragment();
 		} else if (this.equals(RecyclerViewSortedList)) {
 			fragment = new RecyclerViewSortedListFragment();
-		} else if (this.equals(AppCompatPalette)) {
+		} else if (this.equals(AppCompatPaletteBuilder)) {
 			fragment = new AppCompatPaletteFragment();
 		}
 		// Revision 22
@@ -156,6 +174,13 @@ public enum DemoCategories {
 			fragment = new SupportResourceCompatFragment();
 		} else if (this.equals(RecyclerViewPosition)) {
 			fragment = new RecyclerViewPositionFragment();
+		}
+		// Revision 21.0.3
+		// Revision 21.0.2
+		// Revision 21.0.1
+		// Revision 21
+		else if (this.equals(AppCompatPalette)) {
+			fragment = new AppCompatPaletteFragment();
 		}
 
 		return fragment;

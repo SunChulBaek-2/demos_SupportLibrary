@@ -88,9 +88,9 @@
 			android:title="@string/action_app_compat_widget"
 			app:showAsAction="never"/>
 		<item
-			android:id="@+id/app_compat_palette"
+			android:id="@+id/app_compat_palette_builder"
 			android:checkable="true"
-			android:title="@string/action_app_compat_palette"
+			android:title="@string/action_app_compat_palette_builder"
 			app:showAsAction="never"/>
 		<item
 			android:id="@+id/recycler_view_sorted_list"
@@ -112,6 +112,23 @@
 			android:id="@+id/recycler_view_position"
 			android:checkable="true"
 			android:title="@string/action_recycler_view_position"
+			app:showAsAction="never"/>
+	</group>
+
+	<!-- Revision 21.0.3-->
+
+	<!-- Revision 21.0.2-->
+
+	<!-- Revision 21.0.1-->
+
+	<!-- Revision 21-->
+	<group
+		android:id="@+id/revision_21">
+		<item
+			android:id="@+id/app_compat_palette"
+			android:checkable="true"
+			android:icon="@drawable/ic_action_21"
+			android:title="@string/action_app_compat_palette"
 			app:showAsAction="never"/>
 	</group>
 </menu>
