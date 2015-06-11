@@ -125,10 +125,25 @@
 	<group
 		android:id="@+id/revision_21">
 		<item
-			android:id="@+id/app_compat_palette"
+			android:id="@+id/app_compat_toolbar"
 			android:checkable="true"
 			android:icon="@drawable/ic_action_21"
-			android:title="@string/action_app_compat_palette"
+			android:title="@string/action_app_compat_toolbar"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/app_compat_actionbar_drawer_toggle"
+			android:checkable="true"
+			android:title="@string/action_app_compat_actionbar_drawer_toggle"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/app_compat_switch_compat"
+			android:checkable="true"
+			android:title="@string/action_app_compat_switch_compat"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/palette_palette"
+			android:checkable="true"
+			android:title="@string/action_palette_palette"
 			app:showAsAction="never"/>
 	</group>
 </menu>

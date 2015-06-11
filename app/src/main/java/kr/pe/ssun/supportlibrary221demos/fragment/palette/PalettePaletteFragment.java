@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
+package kr.pe.ssun.supportlibrary221demos.fragment.palette;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-28.
  */
-public class AppCompatPaletteFragment extends Fragment implements TabLayout.OnTabSelectedListener {
+public class PalettePaletteFragment extends Fragment implements TabLayout.OnTabSelectedListener {
 	private static final int SIZE = 3;
 	private static SparseIntArray RESOURCES = new SparseIntArray();
 
@@ -51,7 +51,7 @@ public class AppCompatPaletteFragment extends Fragment implements TabLayout.OnTa
 		adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
 			@Override
 			public Fragment getItem(int position) {
-				AppCompatPaletteSubFragment fragment = new AppCompatPaletteSubFragment();
+				PalettePaletteSubFragment fragment = new PalettePaletteSubFragment();
 				Bundle bundle = new Bundle();
 				bundle.putInt("resId", RESOURCES.get(position));
 				fragment.setArguments(bundle);
@@ -86,7 +86,7 @@ public class AppCompatPaletteFragment extends Fragment implements TabLayout.OnTa
 				tabLayout.getTabAt(position).select();
 
 				List<Fragment> fragments = getChildFragmentManager().getFragments();
-				AppCompatPaletteSubFragment fragment = (AppCompatPaletteSubFragment) fragments.get(position);
+				PalettePaletteSubFragment fragment = (PalettePaletteSubFragment) fragments.get(position);
 
 				tabLayout.setBackgroundColor(fragment.getRGB());
 				tabLayout.setTabTextColors(fragment.getBodyTextColor(), fragment.getTitleTextColor());

@@ -4,9 +4,12 @@ import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 
 import kr.pe.ssun.supportlibrary221demos.R;
+import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatActionBarDrawerToggleFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatSwitchCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatToolbarFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
-import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatPaletteFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.palette.PalettePaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignCollapsingToolbarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignFloatingActionButtonFragment;
@@ -59,7 +62,10 @@ public enum DemoCategories {
 	// Revision 21.0.1
 
 	// Revision 21
-	AppCompatPalette(Revision.REV_21, Library.V7_APPCOMPAT);
+	AppCompatToolbar(Revision.REV_21, Library.V7_APPCOMPAT),
+	AppCompatActionBarDrawerToggle(Revision.REV_21, Library.V7_APPCOMPAT),
+	AppCompatSwitchCompat(Revision.REV_21, Library.V7_APPCOMPAT),
+	PalettePalette(Revision.REV_21, Library.V7_PALETTE);
 
 	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
 	static {
@@ -95,7 +101,10 @@ public enum DemoCategories {
 		// Revision 21.0.1
 
 		// Revision 21
-		mArray.put(R.id.app_compat_palette, AppCompatPalette);
+		mArray.put(R.id.app_compat_toolbar, AppCompatToolbar);
+		mArray.put(R.id.app_compat_actionbar_drawer_toggle, AppCompatActionBarDrawerToggle);
+		mArray.put(R.id.app_compat_switch_compat, AppCompatSwitchCompat);
+		mArray.put(R.id.palette_palette, PalettePalette);
 	}
 
 	public static DemoCategories get(int menuId) {
@@ -167,7 +176,7 @@ public enum DemoCategories {
 		} else if (this.equals(RecyclerViewSortedList)) {
 			fragment = new RecyclerViewSortedListFragment();
 		} else if (this.equals(AppCompatPaletteBuilder)) {
-			fragment = new AppCompatPaletteFragment();
+			fragment = new PalettePaletteFragment();
 		}
 		// Revision 22
 		else if (this.equals(SupportResourceCompat)) {
@@ -179,8 +188,14 @@ public enum DemoCategories {
 		// Revision 21.0.2
 		// Revision 21.0.1
 		// Revision 21
-		else if (this.equals(AppCompatPalette)) {
-			fragment = new AppCompatPaletteFragment();
+		else if (this.equals(AppCompatToolbar)) {
+			fragment = new AppCompatToolbarFragment();
+		} else if (this.equals(AppCompatActionBarDrawerToggle)) {
+			fragment = new AppCompatActionBarDrawerToggleFragment();
+		} else if (this.equals(AppCompatSwitchCompat)) {
+			fragment = new AppCompatSwitchCompatFragment();
+		} else if (this.equals(PalettePalette)) {
+			fragment = new PalettePaletteFragment();
 		}
 
 		return fragment;

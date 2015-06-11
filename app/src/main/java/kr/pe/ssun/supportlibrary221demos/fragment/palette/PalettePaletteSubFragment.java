@@ -1,4 +1,4 @@
-package kr.pe.ssun.supportlibrary221demos.fragment.appcompat;
+package kr.pe.ssun.supportlibrary221demos.fragment.palette;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import kr.pe.ssun.supportlibrary221demos.R;
 /**
  * Created by x1210x on 2015-04-28.
  */
-public class AppCompatPaletteSubFragment extends Fragment {
+public class PalettePaletteSubFragment extends Fragment {
 	private int resId;
 	private Palette palette;
 	private Palette.Swatch swatch = new Palette.Swatch(0, 0);
