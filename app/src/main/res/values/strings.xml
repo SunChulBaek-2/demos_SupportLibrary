@@ -37,7 +37,7 @@
 	<!-- Revision 21.0.1 -->
 
 	<!-- Revision 21 -->
-	<string name="action_app_compat_toolbar" translatable="false">Toolbar (Not Yet)</string>
+	<string name="action_app_compat_toolbar" translatable="false">Toolbar</string>
 	<string name="action_app_compat_actionbar_drawer_toggle" translatable="false">ActionBarDrawerToggle (Not Yet)</string>
 	<string name="action_app_compat_switch_compat" translatable="false">SwitchCompat (Not Yet)</string>
 	<string name="action_palette_palette" translatable="false">Palette</string>
