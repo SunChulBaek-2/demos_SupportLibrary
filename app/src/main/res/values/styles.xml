@@ -3,6 +3,11 @@
 	<!-- Base application theme. -->
 	<style name="AppTheme" parent="BlueColorAppTheme">
 		<!-- Customize your theme here. -->
+		<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+	</style>
+
+	<style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+		<item name="color">@color/lightTextPrimary</item>
 	</style>
 
 	<style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>

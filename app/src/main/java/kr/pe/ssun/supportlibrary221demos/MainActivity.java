@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatCallback;
 import android.support.v7.app.AppCompatDelegate;
@@ -26,6 +27,7 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 	private AppCompatDelegate mDelegate;
 
 	private DrawerLayout mDrawer;
+	private ActionBarDrawerToggle mToggle;
 	private RelativeLayout mRlMain;
 	private NavigationView mNavigation;
 	private Toolbar mToolbar;
@@ -48,6 +50,9 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 		mRlMain = (RelativeLayout)findViewById(R.id.rlMain);
 		mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
 
+		mToggle = new ActionBarDrawerToggle(this, mDrawer, mToolbar, 0, 0);
+		mDrawer.setDrawerListener(mToggle);
+
 		mNavigation.inflateHeaderView(R.layout.header_navigation_view);
 		mNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 			@Override
@@ -69,8 +74,6 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 			onItemClick(item);
 		}
 
-		mToolbar.setNavigationIcon(R.drawable.ic_action_navigation_menu);
-
 		if(mDrawer.getTag() != null) {
 			Screen screen = Screen.valueOf(((String)mDrawer.getTag()).toUpperCase());
 			Screen.setCurrent(screen);
@@ -90,6 +93,13 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 				mToolbar.setTitle(title);
 			}
 		}
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		getDelegate().onPostCreate(savedInstanceState);
+		mToggle.syncState();
 	}
 
 	private void setNavItemChecked(int id) {
@@ -114,12 +124,6 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 	}
 
 	private void setupToolbar() {
-		mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mDrawer.openDrawer(mNavigation);
-			}
-		});
 		mToolbar.setTitle(R.string.app_name);
 		mToolbar.setTitleTextColor(Color.WHITE);
 	}
