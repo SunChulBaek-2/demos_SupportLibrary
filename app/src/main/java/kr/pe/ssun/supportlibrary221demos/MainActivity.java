@@ -1,5 +1,6 @@
 package kr.pe.ssun.supportlibrary221demos;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import kr.pe.ssun.supportlibrary221demos.activity.appcompat.AppCompatActionBarDrawerToggleActivity;
 import kr.pe.ssun.supportlibrary221demos.data.DemoCategories;
 
 public class MainActivity extends FragmentActivity implements AppCompatCallback {
@@ -172,6 +174,9 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 						.setPositiveButton(android.R.string.ok, null)
 						.create().show();
 				return true;
+			} else if (category.equals(DemoCategories.AppCompatActionBarDrawerToggle)) {
+				Intent intent = new Intent(this, AppCompatActionBarDrawerToggleActivity.class);
+				startActivity(intent);
 			}
 		}
 		return false;

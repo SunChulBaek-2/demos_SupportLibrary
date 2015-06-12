@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 
 import kr.pe.ssun.supportlibrary221demos.R;
-import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatActionBarDrawerToggleFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatSwitchCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatToolbarFragment;
@@ -190,8 +189,6 @@ public enum DemoCategories {
 		// Revision 21
 		else if (this.equals(AppCompatToolbar)) {
 			fragment = new AppCompatToolbarFragment();
-		} else if (this.equals(AppCompatActionBarDrawerToggle)) {
-			fragment = new AppCompatActionBarDrawerToggleFragment();
 		} else if (this.equals(AppCompatSwitchCompat)) {
 			fragment = new AppCompatSwitchCompatFragment();
 		} else if (this.equals(PalettePalette)) {
