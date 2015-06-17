@@ -7,6 +7,7 @@ public enum Library {
 	V4_SUPPORT("v4 support"),
 	V7_APPCOMPAT("v7 appcompat"),
 	V7_DESIGN("v7 design"),
+	V7_CARDVIEW("v7 cardview"),
 	V7_PALETTE("v7 palette"),
 	V7_RECYCLERVIEW("v7 recyclerview");
 

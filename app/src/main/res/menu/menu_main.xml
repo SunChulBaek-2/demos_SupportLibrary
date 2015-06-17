@@ -146,6 +146,16 @@
 			android:title="@string/action_app_compat_switch_compat"
 			app:showAsAction="never"/>
 		<item
+			android:id="@+id/card_view"
+			android:checkable="true"
+			android:title="@string/action_card_view"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/recycler_view"
+			android:checkable="true"
+			android:title="@string/action_recycler_view"
+			app:showAsAction="never"/>
+		<item
 			android:id="@+id/palette_palette"
 			android:checkable="true"
 			android:title="@string/action_palette_palette"
