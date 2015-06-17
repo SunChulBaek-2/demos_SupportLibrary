@@ -41,7 +41,7 @@
 	<string name="action_app_compat_toolbar" translatable="false">Toolbar</string>
 	<string name="action_app_compat_actionbar_drawer_toggle" translatable="false">ActionBarDrawerToggle</string>
 	<string name="action_app_compat_switch_compat" translatable="false">SwitchCompat</string>
-	<string name="action_card_view">CardView (Not Yet)</string>
-	<string name="action_recycler_view">RecyclerView (Not Yet)</string>
+	<string name="action_card_view" translatable="false">CardView (Not Yet)</string>
+	<string name="action_recycler_view" translatable="false">RecyclerView (Not Yet)</string>
 	<string name="action_palette_palette" translatable="false">Palette</string>
 </resources>
