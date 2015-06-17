@@ -19,6 +19,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTextInputLayoutFr
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportFragmentTransitionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportNestedScrollViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPrebuiltInterpolatorsFragment;
@@ -61,6 +62,7 @@ public enum DemoCategories {
 	// Revision 21.0.1
 
 	// Revision 21
+	SupportFragmentTransition(Revision.REV_21, Library.V4_SUPPORT),
 	AppCompatToolbar(Revision.REV_21, Library.V7_APPCOMPAT),
 	AppCompatActionBarDrawerToggle(Revision.REV_21, Library.V7_APPCOMPAT),
 	AppCompatSwitchCompat(Revision.REV_21, Library.V7_APPCOMPAT),
@@ -100,6 +102,7 @@ public enum DemoCategories {
 		// Revision 21.0.1
 
 		// Revision 21
+		mArray.put(R.id.support_fragment_transition, SupportFragmentTransition);
 		mArray.put(R.id.app_compat_toolbar, AppCompatToolbar);
 		mArray.put(R.id.app_compat_actionbar_drawer_toggle, AppCompatActionBarDrawerToggle);
 		mArray.put(R.id.app_compat_switch_compat, AppCompatSwitchCompat);
@@ -187,7 +190,9 @@ public enum DemoCategories {
 		// Revision 21.0.2
 		// Revision 21.0.1
 		// Revision 21
-		else if (this.equals(AppCompatToolbar)) {
+		else if (this.equals(SupportFragmentTransition)) {
+			fragment = new SupportFragmentTransitionFragment();
+		} else if (this.equals(AppCompatToolbar)) {
 			fragment = new AppCompatToolbarFragment();
 		} else if (this.equals(AppCompatSwitchCompat)) {
 			fragment = new AppCompatSwitchCompatFragment();

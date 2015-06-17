@@ -125,9 +125,14 @@
 	<group
 		android:id="@+id/revision_21">
 		<item
-			android:id="@+id/app_compat_toolbar"
+			android:id="@+id/support_fragment_transition"
 			android:checkable="true"
 			android:icon="@drawable/ic_action_21"
+			android:title="@string/action_support_fragment_transition"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/app_compat_toolbar"
+			android:checkable="true"
 			android:title="@string/action_app_compat_toolbar"
 			app:showAsAction="never"/>
 		<item
