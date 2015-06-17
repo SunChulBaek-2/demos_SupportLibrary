@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:android.support.design="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="#ffffff">
@@ -10,10 +11,20 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="Show Snackbar"/>
+
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/fab"
-		android:layout_width="56dp"
-		android:layout_height="56dp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_gravity="bottom|center_horizontal"
-		android:src="@drawable/ic_action_content_add"/>
+		android:src="@drawable/ic_action_content_add"
+		android.support.design:fabSize="normal"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fabMini"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|left"
+		android:src="@drawable/ic_action_content_add"
+		android.support.design:fabSize="mini"/>
 </android.support.design.widget.CoordinatorLayout>
