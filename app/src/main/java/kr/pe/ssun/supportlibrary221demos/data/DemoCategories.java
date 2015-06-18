@@ -60,6 +60,7 @@ public enum DemoCategories {
 	// Revision 21.0.3
 
 	// Revision 21.0.2
+	CardViewBackgroundColor(Revision.REV_21_0_2, Library.V7_CARDVIEW),
 
 	// Revision 21.0.1
 
@@ -102,6 +103,7 @@ public enum DemoCategories {
 		// Revision 21.0.3
 
 		// Revision 21.0.2
+		mArray.put(R.id.card_view_background_color, CardViewBackgroundColor);
 
 		// Revision 21.0.1
 
@@ -194,6 +196,9 @@ public enum DemoCategories {
 		}
 		// Revision 21.0.3
 		// Revision 21.0.2
+		else if (this.equals(CardViewBackgroundColor)) {
+			fragment = new CardViewFragment();
+		}
 		// Revision 21.0.1
 		// Revision 21
 		else if (this.equals(SupportFragmentTransition)) {
