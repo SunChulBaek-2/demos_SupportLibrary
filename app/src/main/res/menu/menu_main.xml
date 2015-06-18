@@ -169,4 +169,20 @@
 			android:title="@string/action_palette_palette"
 			app:showAsAction="never"/>
 	</group>
+
+	<!-- Revision 13 -->
+	<group
+		android:id="@+id/revision_13">
+		<item
+			android:id="@+id/support_drawer_layout"
+			android:checkable="true"
+			android:icon="@drawable/ic_action_13"
+			android:title="@string/action_support_drawer_layout"
+			app:showAsAction="never"/>
+		<item
+			android:id="@+id/support_sliding_pane_layout"
+			android:checkable="true"
+			android:title="@string/action_support_sliding_pane_layout"
+			app:showAsAction="never"/>
+	</group>
 </menu>

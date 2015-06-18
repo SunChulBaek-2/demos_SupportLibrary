@@ -21,11 +21,13 @@ import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragm
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawerLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportFragmentTransitionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportNestedScrollViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPrebuiltInterpolatorsFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportResourceCompatFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSlidingPaneLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
 
 /**
@@ -71,7 +73,11 @@ public enum DemoCategories {
 	AppCompatSwitchCompat(Revision.REV_21, Library.V7_APPCOMPAT),
 	CardView(Revision.REV_21, Library.V7_CARDVIEW),
 	RecyclerView(Revision.REV_21, Library.V7_RECYCLERVIEW),
-	PalettePalette(Revision.REV_21, Library.V7_PALETTE);
+	PalettePalette(Revision.REV_21, Library.V7_PALETTE),
+
+	// Revision 13
+	SupportDrawerLayout(Revision.REV_13, Library.V4_SUPPORT),
+	SupportSlidingPaneLayout(Revision.REV_13, Library.V4_SUPPORT);
 
 	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
 	static {
@@ -115,6 +121,10 @@ public enum DemoCategories {
 		mArray.put(R.id.card_view, CardView);
 		mArray.put(R.id.recycler_view, RecyclerView);
 		mArray.put(R.id.palette_palette, PalettePalette);
+
+		// Revision 13
+		mArray.put(R.id.support_drawer_layout, SupportDrawerLayout);
+		mArray.put(R.id.support_sliding_pane_layout, SupportSlidingPaneLayout);
 	}
 
 	public static DemoCategories get(int menuId) {
@@ -213,6 +223,12 @@ public enum DemoCategories {
 			fragment = new RecyclerViewFragment();
 		} else if (this.equals(PalettePalette)) {
 			fragment = new PalettePaletteFragment();
+		}
+		// Revision 13
+		else if (this.equals(SupportDrawerLayout)) {
+			fragment = new SupportDrawerLayoutFragment();
+		} else if (this.equals(SupportSlidingPaneLayout)) {
+			fragment = new SupportSlidingPaneLayoutFragment();
 		}
 
 		return fragment;

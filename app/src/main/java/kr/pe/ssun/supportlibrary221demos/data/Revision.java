@@ -10,7 +10,8 @@ public enum Revision {
 	REV_21_0_3("revision 21.0.3", 3),
 	REV_21_0_2("revision 21.0.2", 4),
 	REV_21_0_1("revision 21.0.1", 5),
-	REV_21("revision 21", 6);
+	REV_21("revision 21", 6),
+	REV_13("revision 13", 7);
 
 	private String text;
 	private long id;

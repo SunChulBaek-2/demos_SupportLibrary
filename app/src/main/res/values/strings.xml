@@ -45,4 +45,8 @@
 	<string name="action_card_view" translatable="false">CardView</string>
 	<string name="action_recycler_view" translatable="false">RecyclerView</string>
 	<string name="action_palette_palette" translatable="false">Palette</string>
+
+	<!-- Revision 13 -->
+	<string name="action_support_drawer_layout" translatable="false">DrawerLayout</string>
+	<string name="action_support_sliding_pane_layout" translatable="false">SlidingPaneLayout</string>
 </resources>
