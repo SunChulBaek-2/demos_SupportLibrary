@@ -18,102 +18,102 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ1"/>
+				android:text="Lorem "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ2"/>
+				android:text="ipsum "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ3"/>
+				android:text="dolor "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ4"/>
+				android:text="sit "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ5"/>
+				android:text="amet"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ6"/>
+				android:text="consectetur "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ7"/>
+				android:text="adipisicing "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ8"/>
+				android:text="elit"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ9"/>
+				android:text="sed "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ10"/>
+				android:text="do"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ1"/>
+				android:text="eiusmod "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ2"/>
+				android:text="tempor "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ3"/>
+				android:text="incididunt "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ4"/>
+				android:text="ut"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ5"/>
+				android:text="labore"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ6"/>
+				android:text="et"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ7"/>
+				android:text="dolore "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ8"/>
+				android:text="magna "/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ9"/>
+				android:text="aliqua"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="50sp"
-				android:text="ㅋㅋㅋ10"/>
+				android:text="Ut "/>
 		</LinearLayout>
 	</android.support.v4.widget.NestedScrollView>
 
