@@ -1,5 +1,6 @@
 package kr.pe.ssun.supportlibrary221demos.data;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 
@@ -35,110 +36,70 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  */
 public enum DemoCategories {
 	// Revision 22.2.0
-	DesignAppBarLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignTabLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignNavigationView(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignTextInputLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
-	DesignCollapsingToolbarLayout(Revision.REV_22_2_0, Library.V7_DESIGN),
+	DesignAppBarLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_appbar_layout),
+	DesignTabLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_tab_layout),
+	DesignNavigationView(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_navigation_view),
+	DesignFloatingActionButton(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_floating_action_button),
+	DesignSwipeDismissBehavior(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_swipe_dismiss_behavior),
+	DesignTextInputLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_text_input_layout),
+	DesignCollapsingToolbarLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_collapsing_toolbar_layout),
 
 	// Revision 22.1.0
-	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT),
-	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT),
-	SupportPathInterpolatorCompat(Revision.REV_22_1_0, Library.V4_SUPPORT),
-	SupportSpace(Revision.REV_22_1_0, Library.V4_SUPPORT),
-	SupportNestedScrollView(Revision.REV_22_1_0, Library.V4_SUPPORT),
-	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
-	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
-	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
-	AppCompatPaletteBuilder(Revision.REV_22_1_0, Library.V7_APPCOMPAT),
-	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW),
+	SupportDrawableCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, R.string.action_support_drawable_compat),
+	SupportPrebuiltInterpolators(Revision.REV_22_1_0, Library.V4_SUPPORT, R.string.action_support_prebuilt_interpolators),
+	SupportPathInterpolatorCompat(Revision.REV_22_1_0, Library.V4_SUPPORT, R.string.action_support_path_interpolator_compat),
+	SupportSpace(Revision.REV_22_1_0, Library.V4_SUPPORT, R.string.action_support_space),
+	SupportNestedScrollView(Revision.REV_22_1_0, Library.V4_SUPPORT, R.string.action_support_nested_scroll_view),
+	AppCompatDelegate(Revision.REV_22_1_0, Library.V7_APPCOMPAT, R.string.action_app_compat_delegate),
+	AppCompatDialog(Revision.REV_22_1_0, Library.V7_APPCOMPAT, R.string.action_app_compat_dialog),
+	AppCompatWidget(Revision.REV_22_1_0, Library.V7_APPCOMPAT, R.string.action_app_compat_widget),
+	AppCompatPaletteBuilder(Revision.REV_22_1_0, Library.V7_APPCOMPAT, R.string.action_app_compat_palette_builder),
+	RecyclerViewSortedList(Revision.REV_22_1_0, Library.V7_RECYCLERVIEW, R.string.action_recycler_view_sorted_list),
 
 	// Revision 22
-	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT),
-	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW),
+	SupportResourceCompat(Revision.REV_22, Library.V4_SUPPORT, R.string.action_support_resource_compat),
+	RecyclerViewPosition(Revision.REV_22, Library.V7_RECYCLERVIEW, R.string.action_recycler_view_position),
 
 	// Revision 21.0.3
 
 	// Revision 21.0.2
-	CardViewBackgroundColor(Revision.REV_21_0_2, Library.V7_CARDVIEW),
+	CardViewBackgroundColor(Revision.REV_21_0_2, Library.V7_CARDVIEW, R.string.action_card_view_background),
 
 	// Revision 21.0.1
 
 	// Revision 21
-	SupportFragmentTransition(Revision.REV_21, Library.V4_SUPPORT),
-	AppCompatToolbar(Revision.REV_21, Library.V7_APPCOMPAT),
-	AppCompatActionBarDrawerToggle(Revision.REV_21, Library.V7_APPCOMPAT),
-	AppCompatSwitchCompat(Revision.REV_21, Library.V7_APPCOMPAT),
-	CardView(Revision.REV_21, Library.V7_CARDVIEW),
-	RecyclerView(Revision.REV_21, Library.V7_RECYCLERVIEW),
-	PalettePalette(Revision.REV_21, Library.V7_PALETTE),
+	SupportFragmentTransition(Revision.REV_21, Library.V4_SUPPORT, R.string.action_support_fragment_transition),
+	AppCompatToolbar(Revision.REV_21, Library.V7_APPCOMPAT, R.string.action_app_compat_toolbar),
+	AppCompatActionBarDrawerToggle(Revision.REV_21, Library.V7_APPCOMPAT, R.string.action_app_compat_actionbar_drawer_toggle),
+	AppCompatSwitchCompat(Revision.REV_21, Library.V7_APPCOMPAT, R.string.action_app_compat_switch_compat),
+	CardView(Revision.REV_21, Library.V7_CARDVIEW, R.string.action_card_view),
+	RecyclerView(Revision.REV_21, Library.V7_RECYCLERVIEW, R.string.action_recycler_view),
+	PalettePalette(Revision.REV_21, Library.V7_PALETTE, R.string.action_palette_palette),
 
 	// Revision 13
-	SupportDrawerLayout(Revision.REV_13, Library.V4_SUPPORT),
-	SupportSlidingPaneLayout(Revision.REV_13, Library.V4_SUPPORT);
+	SupportDrawerLayout(Revision.REV_13, Library.V4_SUPPORT, R.string.action_support_drawer_layout),
+	SupportSlidingPaneLayout(Revision.REV_13, Library.V4_SUPPORT, R.string.action_support_sliding_pane_layout);
 
-	private static SparseArray<DemoCategories> mArray = new SparseArray<>();
-	static {
-		// Revision 22.2.0
-		mArray.put(R.id.design_appbar_layout, DesignAppBarLayout);
-		mArray.put(R.id.design_tab_layout, DesignTabLayout);
-		mArray.put(R.id.design_navigation_view, DesignNavigationView);
-		mArray.put(R.id.design_floating_action_button, DesignFloatingActionButton);
-		mArray.put(R.id.design_swipe_dismiss_behavior, DesignSwipeDismissBehavior);
-		mArray.put(R.id.design_text_input_layout, DesignTextInputLayout);
-		mArray.put(R.id.design_collapsing_toolbar_layout, DesignCollapsingToolbarLayout);
-
-		// Revision 22.1.0
-		mArray.put(R.id.support_drawable_compat, SupportDrawableCompat);
-		mArray.put(R.id.support_prebuilt_interpolators, SupportPrebuiltInterpolators);
-		mArray.put(R.id.support_path_interpolator_compat, SupportPathInterpolatorCompat);
-		mArray.put(R.id.support_space, SupportSpace);
-		mArray.put(R.id.support_nested_scroll_view, SupportNestedScrollView);
-		mArray.put(R.id.app_compat_delegate, AppCompatDelegate);
-		mArray.put(R.id.app_compat_dialog, AppCompatDialog);
-		mArray.put(R.id.app_compat_widget, AppCompatWidget);
-		mArray.put(R.id.app_compat_palette_builder, AppCompatPaletteBuilder);
-		mArray.put(R.id.recycler_view_sorted_list, RecyclerViewSortedList);
-
-		// Revision 22
-		mArray.put(R.id.support_resource_compat, SupportResourceCompat);
-		mArray.put(R.id.recycler_view_position, RecyclerViewPosition);
-
-		// Revision 21.0.3
-
-		// Revision 21.0.2
-		mArray.put(R.id.card_view_background_color, CardViewBackgroundColor);
-
-		// Revision 21.0.1
-
-		// Revision 21
-		mArray.put(R.id.support_fragment_transition, SupportFragmentTransition);
-		mArray.put(R.id.app_compat_toolbar, AppCompatToolbar);
-		mArray.put(R.id.app_compat_actionbar_drawer_toggle, AppCompatActionBarDrawerToggle);
-		mArray.put(R.id.app_compat_switch_compat, AppCompatSwitchCompat);
-		mArray.put(R.id.card_view, CardView);
-		mArray.put(R.id.recycler_view, RecyclerView);
-		mArray.put(R.id.palette_palette, PalettePalette);
-
-		// Revision 13
-		mArray.put(R.id.support_drawer_layout, SupportDrawerLayout);
-		mArray.put(R.id.support_sliding_pane_layout, SupportSlidingPaneLayout);
-	}
-
+	@Nullable
 	public static DemoCategories get(int menuId) {
-		return mArray.get(menuId);
+		for (DemoCategories cat : DemoCategories.values()) {
+			if (cat.getResTitle() == menuId) {
+				return cat;
+			}
+		}
+		return null;
 	}
 
 	private static int selected = -1; // menuId
 
 	private Revision revision;
 	private Library library;
+	private int resTitle;
 
-	DemoCategories(Revision revision, Library library) {
+	DemoCategories(Revision revision, Library library, int resTitle) {
 		this.revision = revision;
 		this.library = library;
+		this.resTitle = resTitle;
 	}
 
 	public Revision getRevision() {
@@ -147,6 +108,10 @@ public enum DemoCategories {
 
 	public Library getLibrary() {
 		return this.library;
+	}
+
+	public int getResTitle() {
+		return this.resTitle;
 	}
 
 	public static void setSelected(int selected) {

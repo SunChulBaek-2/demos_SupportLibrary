@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,7 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 		mToggle = new ActionBarDrawerToggle(this, mDrawer, mToolbar, 0, 0);
 		mDrawer.setDrawerListener(mToggle);
 
+		initNavMenu();
 		mNavigation.inflateHeaderView(R.layout.header_navigation_view);
 		mNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 			@Override
@@ -102,6 +104,38 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 		mToggle.syncState();
 	}
 
+	private void initNavMenu() {
+		Menu menu = mNavigation.getMenu();
+		SparseBooleanArray setIcon = new SparseBooleanArray();
+		for (int i=0; i<DemoCategories.values().length; i++) {
+			DemoCategories cat = DemoCategories.values()[i];
+			menu.add((int)cat.getRevision().getId(), // groupId
+					cat.getResTitle(), // itemId
+					0, // order
+					getString(cat.getResTitle())); // title
+
+			MenuItem item = findMenuItemById(cat.getResTitle());
+			item.setCheckable(true);
+
+			if (!setIcon.get((int)cat.getRevision().getId(), false)) {
+				item.setIcon(cat.getRevision().getResIcon());
+				setIcon.put((int) cat.getRevision().getId(), true);
+			}
+		}
+	}
+
+	@Nullable
+	private MenuItem findMenuItemById(int id) {
+		Menu menu = mNavigation.getMenu();
+		for (int i=0; i<menu.size(); i++) {
+			MenuItem item = menu.getItem(i);
+			if (item.getItemId() == id) {
+				return item;
+			}
+		}
+		return null;
+	}
+
 	private void setNavItemChecked(int id) {
 		for (int i=0; i<mNavigation.getMenu().size(); i++) {
 			MenuItem item = mNavigation.getMenu().getItem(i);
@@ -126,13 +160,6 @@ public class MainActivity extends FragmentActivity implements AppCompatCallback 
 	private void setupToolbar() {
 		mToolbar.setTitle(R.string.app_name);
 		mToolbar.setTitleTextColor(Color.WHITE);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_main, menu);
-		return true;
 	}
 
 	@Override
