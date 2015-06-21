@@ -49,4 +49,10 @@
 	<!-- Revision 13 -->
 	<string name="action_support_drawer_layout" translatable="false">DrawerLayout</string>
 	<string name="action_support_sliding_pane_layout" translatable="false">SlidingPaneLayout</string>
+
+	<!-- Revision 9 -->
+	<string name="action_support_pager_tab_strip" translatable="false">PagerTabStrip</string>
+
+	<!-- Revision 6 -->
+	<string name="action_support_pager_title_strip" translatable="false">PagerTitleStrip</string>
 </resources>

@@ -11,7 +11,9 @@ public enum Revision {
 	REV_22("revision 22", R.drawable.ic_action_22, 2),
 	REV_21_0_2("revision 21.0.2", R.drawable.ic_action_21_0_2, 4),
 	REV_21("revision 21", R.drawable.ic_action_21, 6),
-	REV_13("revision 13", R.drawable.ic_action_13, 7);
+	REV_13("revision 13", R.drawable.ic_action_13, 7),
+	REV_9("revision 9", R.drawable.ic_action_9, 8),
+	REV_6("revision 6", R.drawable.ic_action_6, 9);
 
 	private String text;
 	private int resIcon;

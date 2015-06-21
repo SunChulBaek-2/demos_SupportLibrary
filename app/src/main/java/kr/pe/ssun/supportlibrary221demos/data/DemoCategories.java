@@ -25,6 +25,8 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawableCompatF
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportDrawerLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportFragmentTransitionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportNestedScrollViewFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPagerTabStripFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPagerTitleStripFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPathInterpolatorCompatFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportPrebuiltInterpolatorsFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportResourceCompatFragment;
@@ -78,7 +80,13 @@ public enum DemoCategories {
 
 	// Revision 13
 	SupportDrawerLayout(Revision.REV_13, Library.V4_SUPPORT, R.string.action_support_drawer_layout),
-	SupportSlidingPaneLayout(Revision.REV_13, Library.V4_SUPPORT, R.string.action_support_sliding_pane_layout);
+	SupportSlidingPaneLayout(Revision.REV_13, Library.V4_SUPPORT, R.string.action_support_sliding_pane_layout),
+
+	// Revision 9
+	SupportPagerTabStrip(Revision.REV_9, Library.V4_SUPPORT, R.string.action_support_pager_tab_strip),
+
+	// Revision 6
+	SupportPagerTitleStrip(Revision.REV_6, Library.V4_SUPPORT, R.string.action_support_pager_title_strip);
 
 	@Nullable
 	public static DemoCategories get(int menuId) {
@@ -194,6 +202,14 @@ public enum DemoCategories {
 			fragment = new SupportDrawerLayoutFragment();
 		} else if (this.equals(SupportSlidingPaneLayout)) {
 			fragment = new SupportSlidingPaneLayoutFragment();
+		}
+		// Revision 9
+		else if (this.equals(SupportPagerTabStrip)) {
+			fragment = new SupportPagerTabStripFragment();
+		}
+		// Revision 6
+		else if (this.equals(SupportPagerTitleStrip)) {
+			fragment = new SupportPagerTitleStripFragment();
 		}
 
 		return fragment;
