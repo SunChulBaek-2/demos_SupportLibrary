@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		app:layout_heightPercent="50%"
+		app:layout_widthPercent="100%"
+		android:text="25%"
+		android:textSize="16dp"
+		android:textColor="@color/darkTextPrimary"
+		android:background="@color/blue100"/>
+
+	<TextView
+		app:layout_heightPercent="50%"
+		app:layout_widthPercent="100%"
+		app:layout_marginTopPercent="25%"
+		android:text="25%"
+		android:textSize="16dp"
+		android:textColor="@color/darkTextPrimary"
+		android:background="@color/green100"/>
+
+	<TextView
+		app:layout_heightPercent="50%"
+		app:layout_widthPercent="100%"
+		app:layout_marginTopPercent="50%"
+		android:text="25%"
+		android:textSize="16dp"
+		android:textColor="@color/darkTextPrimary"
+		android:background="@color/yellow100"/>
+
+	<TextView
+		app:layout_heightPercent="50%"
+		app:layout_widthPercent="100%"
+		app:layout_marginTopPercent="75%"
+		android:text="25%"
+		android:textSize="16dp"
+		android:textColor="@color/darkTextPrimary"
+		android:background="@color/red100"/>
+
+	<TextView
+		android:text="PercentRelativeLayout\nwidth, height=50%\nleft, top margin=25%"
+		android:textSize="16dp"
+		android:textColor="@color/lightTextPrimary"
+		app:layout_heightPercent="50%"
+		app:layout_marginLeftPercent="25%"
+		app:layout_marginTopPercent="25%"
+		app:layout_widthPercent="50%"
+		android:background="@color/pink500"/>
+</android.support.percent.PercentRelativeLayout>

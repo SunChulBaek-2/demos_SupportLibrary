@@ -4,8 +4,8 @@
 
 	<!-- Revision 23 -->
 	<string name="revision_23" translatable="false">Revision 23</string>
-	<string name="custom_tabs" translatable="false">Custom Tabs (Not Yet)</string>
-	<string name="percent" translatable="false">Percent (Not Yet)</string>
+	<string name="custom_tabs" translatable="false">Custom Tabs (/w Chrome 45)</string>
+	<string name="percent" translatable="false">Percent</string>
 	<string name="v7_preference" translatable="false">v7 Preference (Not Yet)</string>
 	<string name="v14_preference" translatable="false">v14 Preference (Not Yet)</string>
 
@@ -62,4 +62,11 @@
 
 	<!-- Revision 6 -->
 	<string name="action_support_pager_title_strip" translatable="false">PagerTitleStrip</string>
+
+	<!-- custom tabs -->
+	<string name="url_hint">Please type the url here.</string>
+	<string name="warmup_button_text">Warmup Chrome</string>
+	<string name="may_launch_button_text">May Launch URL</string>
+	<string name="launch_button_text">Launch URL in a Chrome Custom Tab</string>
+	<string name="connect_button_text">Connect to the service</string>
 </resources>
