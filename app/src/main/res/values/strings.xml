@@ -2,6 +2,13 @@
 	<string name="app_name" translatable="false">Support Library Demos</string>
 	<string name="my_name">Sunchul Baek</string>
 
+	<!-- Revision 23 -->
+	<string name="revision_23" translatable="false">Revision 23</string>
+	<string name="custom_tabs" translatable="false">Custom Tabs (Not Yet)</string>
+	<string name="percent" translatable="false">Percent (Not Yet)</string>
+	<string name="v7_preference" translatable="false">v7 Preference (Not Yet)</string>
+	<string name="v14_preference" translatable="false">v14 Preference (Not Yet)</string>
+
 	<!-- Revision 22.2.0 -->
 	<string name="revision_22_2_0" translatable="false">Revision 22.2.0</string>
 	<string name="action_design_appbar_layout" translatable="false">AppBarLayout</string>

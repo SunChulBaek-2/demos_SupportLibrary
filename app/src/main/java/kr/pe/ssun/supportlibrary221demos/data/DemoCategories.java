@@ -2,7 +2,6 @@ package kr.pe.ssun.supportlibrary221demos.data;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.SparseArray;
 
 import kr.pe.ssun.supportlibrary221demos.R;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatDialogFragment;
@@ -10,6 +9,7 @@ import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatSwitchCompa
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatToolbarFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.appcompat.AppCompatWidgetFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.card.CardViewFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.customtabs.CustomTabsFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.palette.PalettePaletteFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignAppBarLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignCollapsingToolbarLayoutFragment;
@@ -18,6 +18,9 @@ import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignNavigationViewFra
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignSwipeDismissBehaviorFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTabLayoutFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.design.DesignTextInputLayoutFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.percent.PercentFragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.preference.PreferenceV14Fragment;
+import kr.pe.ssun.supportlibrary221demos.fragment.preference.PreferenceV7Fragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewPositionFragment;
 import kr.pe.ssun.supportlibrary221demos.fragment.recyclerview.RecyclerViewSortedListFragment;
@@ -37,6 +40,12 @@ import kr.pe.ssun.supportlibrary221demos.fragment.support.SupportSpaceFragment;
  * Created by x1210x on 2015-04-24.
  */
 public enum DemoCategories {
+	// Revision 23.0.0
+	CustomTabs(Revision.REV_23, Library.CUSTOM_TABS, R.string.custom_tabs),
+	Percent(Revision.REV_23, Library.PERCENT, R.string.percent),
+	PreferenceV7(Revision.REV_23, Library.V7_PREFERENCE, R.string.v7_preference),
+	PreferenceV14(Revision.REV_23, Library.V14_PREFERENCE, R.string.v14_preference),
+
 	// Revision 22.2.0
 	DesignAppBarLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_appbar_layout),
 	DesignTabLayout(Revision.REV_22_2_0, Library.V7_DESIGN, R.string.action_design_tab_layout),
@@ -133,8 +142,18 @@ public enum DemoCategories {
 	public Fragment createFragment() {
 		Fragment fragment = null;
 
+		// Revision 23
+		if (this.equals(CustomTabs)) {
+			fragment = new CustomTabsFragment();
+		} else if (this.equals(Percent)) {
+			fragment = new PercentFragment();
+		} else if (this.equals(PreferenceV7)) {
+			fragment = new PreferenceV7Fragment();
+		} else if (this.equals(PreferenceV14)) {
+			fragment = new PreferenceV14Fragment();
+		}
 		// Revision 22.2.0
-		if (this.equals(DesignAppBarLayout)) {
+		else if (this.equals(DesignAppBarLayout)) {
 			fragment = new DesignAppBarLayoutFragment();
 		} else if (this.equals(DesignTabLayout)) {
 			fragment = new DesignTabLayoutFragment();

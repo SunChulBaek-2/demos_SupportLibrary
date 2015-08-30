@@ -9,7 +9,11 @@ public enum Library {
 	V7_DESIGN("v7 design"),
 	V7_CARDVIEW("v7 cardview"),
 	V7_PALETTE("v7 palette"),
-	V7_RECYCLERVIEW("v7 recyclerview");
+	V7_RECYCLERVIEW("v7 recyclerview"),
+	V7_PREFERENCE("v7 preference"),
+	V14_PREFERENCE("v14 preference"),
+	CUSTOM_TABS("custom tabs"),
+	PERCENT("percent");
 
 	private String text;
 
