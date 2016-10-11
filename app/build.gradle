@@ -8,7 +8,7 @@ android {
     buildToolsVersion versions.getProperty("buildTools")
 
     defaultConfig {
-        applicationId "kr.pe.ssun.supportlibrary221demos"
+        applicationId "kr.pe.ssun.supportlibrarydemos"
 
         minSdkVersion Integer.valueOf(versions.getProperty("minSdk"))
         targetSdkVersion Integer.valueOf(versions.getProperty("targetSdk"))
