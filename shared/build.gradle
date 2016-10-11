@@ -1,25 +1,30 @@
 apply plugin: 'com.android.library'
 
+Properties versions = project.ext.versions;
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion Integer.valueOf(versions.getProperty("compileSdk"))
+    buildToolsVersion versions.getProperty("buildTools")
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion Integer.valueOf(versions.getProperty("minSdk"))
+        targetSdkVersion Integer.valueOf(versions.getProperty("targetSdk"))
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+
     dexOptions {
         incremental false
     }
@@ -27,6 +32,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:customtabs:23.0.0'
+    compile 'com.android.support:appcompat-v7:' + versions.getProperty("support")
+    compile 'com.android.support:customtabs:' + versions.getProperty("support")
 }

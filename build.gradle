@@ -5,15 +5,28 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.0'
+        classpath 'com.android.tools.build:gradle:2.2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+    }
+
+    beforeEvaluate {
+        // [공통] 버전 관련 property
+        Properties versions = new Properties();
+        versions.load(new FileInputStream("${rootProject.rootDir}/versions.properties"));
+        project.ext.versions = versions;
+
+        // [공통] 빌드 관련 property
+        Properties build = new Properties();
+        build.load(new FileInputStream("${rootProject.rootDir}/build.properties"));
+        project.ext.build = build;
     }
 }
