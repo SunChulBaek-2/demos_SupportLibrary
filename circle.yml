@@ -7,4 +7,5 @@ dependencies:
 
 test:
   override:
+    - chmod +x gradlew
     - ./gradlew dependencyUpdates -Drevision=release -DoutputFormatter=plain assembleDebug
