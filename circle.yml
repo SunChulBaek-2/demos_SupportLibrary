@@ -1,0 +1,10 @@
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "android-25"
+    - echo y | android update sdk --no-ui --all --filter "build-tools-25.0.2"
+    - echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
+    - echo y | android update sdk --no-ui --all --filter "extra-google-m2repository"
+
+test:
+  override:
+    - ./gradlew dependencyUpdates -Drevision=release -DoutputFormatter=plain assembleDebug
