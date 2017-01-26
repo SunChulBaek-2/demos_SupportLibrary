@@ -1,4 +1,4 @@
-# demos_SupportLibrary221 [![Build Status](https://travis-ci.org/x1210x/demos_SupportLibrary221.svg?branch=master)](https://travis-ci.org/x1210x/demos_SupportLibrary221)
+# demos_SupportLibrary221 [![CircleCI](https://circleci.com/gh/x1210x/demos_SupportLibrary221.svg?style=svg)](https://circleci.com/gh/x1210x/demos_SupportLibrary221)
 
 * This Application covers support library features.
 * Added design support library features (support library revision 22.2)
