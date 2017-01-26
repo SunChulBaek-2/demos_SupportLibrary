@@ -14,10 +14,6 @@ android {
         targetSdkVersion Integer.valueOf(versions.getProperty("targetSdk"))
         versionCode Integer.valueOf(build.getProperty("versionCode"))
         versionName build.getProperty("versionName")
-
-        jackOptions {
-            enabled true
-        }
     }
 
     buildTypes {
@@ -28,11 +24,6 @@ android {
     }
 
     productFlavors {
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
