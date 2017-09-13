@@ -13,3 +13,5 @@ dependencies:
 test:
   override:
     - ./gradlew dependencyUpdates -Drevision=release -DoutputFormatter=plain assembleDebug
+    # copy the build outputs to artifacts
+    - cp -r app/build/outputs $CIRCLE_ARTIFACTS
